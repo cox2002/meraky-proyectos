@@ -1,11 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-// Importamos el Navbar desde la carpeta de componentes
-import Navbar from "@/components/shared/Navbar";
 
-// Configuramos la fuente Inter para todo el sitio
-const inter = Inter({ subsets: ["latin"] });
+// Configuramos la fuente Inter para texto base (Body & Labels)
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+// Configuramos Space Grotesk para titulares (Display & Headlines)
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Meraky Proyectos",
@@ -20,20 +29,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className="scroll-smooth">
-      <body className={`${inter.className} antialiased bg-white text-slate-900`}>
-        {/* El Navbar se coloca aquí para que sea persistente. 
-          No importa a qué página navegues, el menú siempre estará arriba.
-        */}
-        <Navbar />
-
-        {/* El elemento <main> envuelve el contenido dinámico.
-          Esto ayuda a que los buscadores identifiquen el contenido principal.
-        */}
-        <main>
-          {children}
-        </main>
-
-        {/* Aquí podrías añadir un Footer más adelante */}
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-surface text-on-surface`}>
+        {/* El Navbar ahora se maneja dentro de page.tsx (o en futuros layouts específicos) */}
+        
+        {/* El elemento <main> envuelve el contenido dinámico. */}
+        {children}
       </body>
     </html>
   );

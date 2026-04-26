@@ -1,6 +1,6 @@
 import { Servicio } from "@/types";
 
-const API_URL = "http://192.168.7.139:8000"; // La URL de tu FastAPI
+const API_URL = "http://192.168.7.139:8000";
 
 export const getServicios = async (): Promise<Servicio[]> => {
   const response = await fetch(`${API_URL}/servicios/`, {

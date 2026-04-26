@@ -1,3 +1,73 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Tipografía */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  
+  /* Colores Principales: The Material Palette */
+  --color-primary: #735C00;
+  --color-primary-container: #FACC15;
+  --color-on-primary-fixed: #231B00;
+  
+  --color-secondary: #1D4ED8;
+  
+  /* Superficies y Neutros: Ambient Light & Structure */
+  --color-surface: #f9f9ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f1f3ff;
+  --color-surface-container: #e9edff;
+  --color-surface-container-highest: #dce2f7;
+  
+  --color-on-surface: #141B2B;
+  --color-on-surface-variant: #4d4632;
+  
+  --color-outline-variant: #d1c6ab;
+
+  /* Animaciones personalizadas */
+  --animate-fade-in-up: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-in: fade-in 1s ease-out both;
+  
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism utility: The Glass & Gradient Rule */
+  .glass-panel {
+    @apply bg-surface-container-highest/50 backdrop-blur-2xl;
+  }
+  
+  /* Ghost Border utility */
+  .ghost-border {
+    @apply border border-outline-variant/15;
+  }
+  
+  /* Ambient Shadow utility */
+  .ambient-shadow {
+    box-shadow: 0 20px 80px -10px rgba(20, 27, 43, 0.08);
+  }
+  
+  /* Primary Button Gradient utility */
+  .btn-gradient {
+    @apply bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed;
+  }
+}
+
+/* Eliminar bordes por defecto según "The No-Line Rule" */
+* {
+  border-color: transparent;
+}

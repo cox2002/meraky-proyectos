@@ -1,0 +1,47 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+
+export interface GlassButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'glass';
+  children: React.ReactNode;
+  href?: string;
+}
+
+export default function GlassButton({ 
+  variant = 'primary', 
+  children, 
+  className = '', 
+  href,
+  ...props 
+}: GlassButtonProps) {
+  // Utilizando las clases personalizadas definidas en globals.css
+  const baseStyles = "inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ease-out transform";
+  
+  const variantStyles = {
+    // primary usa una combinación elegante de oscuro y amarillo
+    primary: "bg-gradient-to-b from-[#2a2415] to-[#110e08] text-[#FACC15] border border-[#FACC15]/30 hover:border-[#FACC15]/80 hover:shadow-[0_0_20px_rgba(250,204,21,0.15)] hover:scale-[1.02]",
+    // glass usa el glass-panel y border fantasma, aumentando la opacidad al hover
+    glass: "glass-panel ghost-border text-on-surface hover:bg-surface-container-highest/60 hover:scale-[1.02]"
+  };
+
+  const combinedClasses = `${baseStyles} ${variantStyles[variant]} ${className}`;
+
+  if (href) {
+    return (
+      <Link href={href} className={combinedClasses}>
+        {children}
+      </Link>
+    );
+  }
+
+  return (
+    <button 
+      className={combinedClasses}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+}

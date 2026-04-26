@@ -11,14 +11,20 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Vidriería Meraky API")
 
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://192.168.7.139:3000", # Tu IP actual del frontend
+    "*", # Esto permite CUALQUIER origen (solo para desarrollo)
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Permite CUALQUIER origen (IP, localhost, etc.)
+    allow_origins=origins, # O puedes poner allow_origins=["*"] para terminar rápido
     allow_credentials=True,
-    allow_methods=["*"], # Permite todos los métodos (GET, POST, etc.)
-    allow_headers=["*"], # Permite todos los headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
-
 
 @app.get("/")
 def inicio():
