@@ -2,6 +2,7 @@ import React from 'react';
 import Heading from '@/src/shared/ui/Heading';
 import GlassButton from '@/src/shared/ui/GlassButton';
 import ParticlesBackground from '@/src/shared/ui/ParticlesBackground';
+import ScrollReveal, { ScrollRevealItem } from '@/src/shared/ui/ScrollReveal';
 
 export default function AboutSection() {
   const images = [
@@ -19,8 +20,8 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         {/* Mosaico de Imágenes Izquierda */}
-        <div className="grid grid-cols-2 gap-4 animate-fade-in-up">
-          <div className="flex flex-col gap-4 mt-8 md:mt-12">
+        <ScrollReveal staggerChildren={0.15} direction="up" className="grid grid-cols-2 gap-4">
+          <ScrollRevealItem className="flex flex-col gap-4 mt-8 md:mt-12">
             <img 
               src={images[0]} 
               alt="Diseño de planos" 
@@ -31,8 +32,8 @@ export default function AboutSection() {
               alt="Interior moderno" 
               className="h-48 md:h-56 w-full object-cover rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
             />
-          </div>
-          <div className="flex flex-col gap-4">
+          </ScrollRevealItem>
+          <ScrollRevealItem className="flex flex-col gap-4">
             <img 
               src={images[1]} 
               alt="Construcción estructural" 
@@ -43,28 +44,33 @@ export default function AboutSection() {
               alt="Fachada de cristal" 
               className="h-64 md:h-72 w-full object-cover rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
             />
-          </div>
-        </div>
+          </ScrollRevealItem>
+        </ScrollReveal>
 
         {/* Contenido Derecha */}
-        <div className="animate-fade-in-up [animation-delay:200ms] flex flex-col items-start">
-          <span className="text-[#997a00] font-bold uppercase tracking-widest text-sm mb-4 block">
-            SOBRE NOSOTROS
-          </span>
-          <Heading level="h2" className="mb-6 text-on-surface text-4xl md:text-5xl font-extrabold leading-tight">
-            Expertos en <span className="text-[#997a00]">Vidrio</span> y <span className="text-[#997a00]">Aluminio</span>
-          </Heading>
+        <ScrollReveal staggerChildren={0.15} direction="up" className="flex flex-col items-start">
+          <ScrollRevealItem>
+            <span className="text-[#997a00] font-bold uppercase tracking-widest text-sm mb-4 block">
+              SOBRE NOSOTROS
+            </span>
+          </ScrollRevealItem>
           
-          <div className="text-on-surface-variant text-base md:text-lg leading-relaxed mb-8 flex flex-col gap-4">
+          <ScrollRevealItem>
+            <Heading level="h2" className="mb-6 text-on-surface text-4xl md:text-5xl font-extrabold leading-tight">
+              Expertos en <span className="text-[#997a00]">Vidrio</span> y <span className="text-[#997a00]">Aluminio</span>
+            </Heading>
+          </ScrollRevealItem>
+          
+          <ScrollRevealItem className="text-on-surface-variant text-base md:text-lg leading-relaxed mb-8 flex flex-col gap-4">
             <p>
               En <strong className="text-[#997a00]">MERAKY PROYECTOS</strong>, fusionamos la precisión técnica con el diseño contemporáneo. Con más de 3 años de experiencia, nos dedicamos a transformar espacios mediante soluciones innovadoras.
             </p>
             <p>
               Nuestro compromiso va más allá de la instalación: creamos ambientes luminosos, seguros y elegantes que elevan la calidad de vida de nuestros clientes.
             </p>
-          </div>
+          </ScrollRevealItem>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full mb-10">
+          <ScrollRevealItem className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full mb-10">
             {/* Tarjeta 1 */}
             <div className="flex items-center gap-4 bg-white p-4 md:p-5 rounded-2xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow">
               <div className="bg-[#110e08] p-3 rounded-xl text-[#FACC15] flex-shrink-0">
@@ -86,18 +92,20 @@ export default function AboutSection() {
                 <p className="text-xs md:text-sm text-on-surface-variant leading-tight">Atención personalizada</p>
               </div>
             </div>
-          </div>
+          </ScrollRevealItem>
 
-          <GlassButton 
-            variant="primary" 
-            className="py-4 px-8 text-base shadow-lg flex items-center justify-center gap-2"
-            href="#contacto"
-          >
-            Conocer Mas
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-          </GlassButton>
+          <ScrollRevealItem>
+            <GlassButton 
+              variant="primary" 
+              className="py-4 px-8 text-base shadow-lg flex items-center justify-center gap-2"
+              href="#contacto"
+            >
+              Conocer Mas
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            </GlassButton>
+          </ScrollRevealItem>
 
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

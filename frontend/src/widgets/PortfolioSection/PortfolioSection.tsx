@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Heading from '@/src/shared/ui/Heading';
 import ParticlesBackground from '@/src/shared/ui/ParticlesBackground';
+import ScrollReveal, { ScrollRevealItem } from '@/src/shared/ui/ScrollReveal';
 
 export default function PortfolioSection() {
   const [selectedProject, setSelectedProject] = useState<{title: string, category: string, img: string} | null>(null);
@@ -45,22 +46,29 @@ export default function PortfolioSection() {
       <ParticlesBackground />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <span className="text-[#997a00] font-bold uppercase tracking-widest text-sm mb-4 block">
-            PORTAFOLIO
-          </span>
-          <Heading level="h2" className="text-4xl md:text-5xl font-extrabold text-on-surface">
-            Galería de <span className="text-[#997a00]">Obras</span>
-          </Heading>
-        </div>
+        <ScrollReveal staggerChildren={0.15} direction="up" className="text-center mb-16">
+          <ScrollRevealItem>
+            <span className="text-[#997a00] font-bold uppercase tracking-widest text-sm mb-4 block">
+              PORTAFOLIO
+            </span>
+          </ScrollRevealItem>
+          <ScrollRevealItem>
+            <Heading level="h2" className="text-4xl md:text-5xl font-extrabold text-on-surface">
+              Galería de <span className="text-[#997a00]">Obras</span>
+            </Heading>
+          </ScrollRevealItem>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ScrollReveal staggerChildren={0.1} direction="up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((proj, idx) => (
-            <div 
+            <ScrollRevealItem 
               key={idx} 
-              onClick={() => setSelectedProject(proj)}
-              className={`relative group h-64 md:h-80 rounded-3xl overflow-hidden border border-outline-variant/10 shadow-md animate-fade-in-up [animation-delay:${idx * 100}ms] cursor-pointer`}
+              className="h-full w-full"
             >
+              <div
+                onClick={() => setSelectedProject(proj)}
+                className="relative group h-64 md:h-80 rounded-3xl overflow-hidden border border-outline-variant/10 shadow-md cursor-pointer"
+              >
               {/* Imagen de fondo con efecto de ampliación (zoom) */}
               <img 
                 src={proj.img} 
@@ -80,9 +88,10 @@ export default function PortfolioSection() {
                   {proj.title}
                 </Heading>
               </div>
-            </div>
+              </div>
+            </ScrollRevealItem>
           ))}
-        </div>
+        </ScrollReveal>
       </div>
 
       {/* Modal / Lightbox */}

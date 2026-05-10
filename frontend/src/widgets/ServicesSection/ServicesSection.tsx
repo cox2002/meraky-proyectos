@@ -1,37 +1,33 @@
 import React from 'react';
 import Heading from '@/src/shared/ui/Heading';
 import ParticlesBackground from '@/src/shared/ui/ParticlesBackground';
+import ScrollReveal, { ScrollRevealItem } from '@/src/shared/ui/ScrollReveal';
 
 export default function ServicesSection() {
   const services = [
     { 
-      title: 'Ventanas y Cancelería', 
-      desc: 'Sistemas de aislamiento termoacústico con aluminio europeo para máximo confort.',
-      img: 'https://images.unsplash.com/photo-1600607688969-a5bfcd64bd28?q=80&w=800&auto=format&fit=crop'
-    },
-    { 
-      title: 'Mamparas Interiores', 
-      desc: 'Vidrio templado de seguridad con acabados de lujo para baños y divisiones.',
+      title: 'Mamparas', 
+      desc: 'Vidrio templado de alta calidad.',
       img: 'https://images.unsplash.com/photo-1600566753086-00f18efc2291?q=80&w=800&auto=format&fit=crop'
     },
     { 
-      title: 'Fachadas Integrales', 
-      desc: 'Muros cortina para edificios comerciales y residenciales con diseño de vanguardia.',
-      img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop'
+      title: 'Ventanas', 
+      desc: 'Sistemas de aislamiento total.',
+      img: 'https://images.unsplash.com/photo-1600607688969-a5bfcd64bd28?q=80&w=800&auto=format&fit=crop'
     },
     { 
-      title: 'Barandales', 
-      desc: 'Pasamanos invisibles de máxima seguridad y diseño minimalista en cristal templado.',
+      title: 'Puertas de Aluminio', 
+      desc: 'Corredizas, batientes y más.',
+      img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop'
+    },
+    { 
+      title: 'Pasamanos', 
+      desc: 'Inox y vidrio, por metro lineal.',
       img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop'
     },
     { 
-      title: 'Espejos Decorativos', 
-      desc: 'Cortes a medida con iluminación LED integrada y biselados elegantes.',
-      img: 'https://images.unsplash.com/photo-1618220179428-22790b46a0eb?q=80&w=800&auto=format&fit=crop'
-    },
-    { 
-      title: 'Pérgolas y Domos', 
-      desc: 'Cubiertas de cristal de alta resistencia para proteger y decorar terrazas.',
+      title: 'Barandas', 
+      desc: 'Balcones y terrazas a medida.',
       img: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800&auto=format&fit=crop'
     },
   ];
@@ -42,23 +38,29 @@ export default function ServicesSection() {
       <ParticlesBackground />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <span className="text-[#997a00] font-bold uppercase tracking-widest text-sm mb-4 block">
-            NUESTROS SERVICIOS
-          </span>
-          <Heading level="h2" className="text-4xl md:text-5xl font-extrabold text-on-surface">
-            Soluciones <span className="text-[#997a00]">Integrales</span>
-          </Heading>
-          <p className="mt-4 text-on-surface-variant max-w-2xl mx-auto">
-            Ofrecemos servicios especializados para todas sus necesidades en vidrio y aluminio, asegurando calidad y durabilidad.
-          </p>
-        </div>
+        <ScrollReveal staggerChildren={0.15} direction="up" className="text-center mb-16">
+          <ScrollRevealItem>
+            <span className="text-[#997a00] font-bold uppercase tracking-widest text-sm mb-4 block">
+              NUESTROS SERVICIOS
+            </span>
+          </ScrollRevealItem>
+          <ScrollRevealItem>
+            <Heading level="h2" className="text-4xl md:text-5xl font-extrabold text-on-surface">
+              Soluciones <span className="text-[#997a00]">Integrales</span>
+            </Heading>
+          </ScrollRevealItem>
+          <ScrollRevealItem>
+            <p className="mt-4 text-on-surface-variant max-w-2xl mx-auto">
+              Ofrecemos servicios especializados para todas sus necesidades en vidrio y aluminio, asegurando calidad y durabilidad.
+            </p>
+          </ScrollRevealItem>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ScrollReveal staggerChildren={0.15} direction="up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((srv, idx) => (
-            <div 
+            <ScrollRevealItem 
               key={idx} 
-              className={`bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col border border-outline-variant/10 animate-fade-in-up [animation-delay:${idx * 100}ms]`}
+              className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col border border-outline-variant/10 h-full"
             >
               {/* Imagen y Título Superior */}
               <div className="relative h-56 w-full group">
@@ -84,9 +86,9 @@ export default function ServicesSection() {
                   </a>
                 </div>
               </div>
-            </div>
+            </ScrollRevealItem>
           ))}
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
