@@ -7,7 +7,7 @@ import ScrollReveal, { ScrollRevealItem } from '@/src/shared/ui/ScrollReveal';
 export default function AboutSection() {
   const images = [
     "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop", // Planos/arquitecto
-    "https://images.unsplash.com/photo-1541888052109-1e3df6a1eb18?q=80&w=800&auto=format&fit=crop", // Construcción/Estructura
+    "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=800&auto=format&fit=crop", // Construcción/Estructura
     "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop", // Interior con luz
     "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop"  // Casa moderna cristal
   ];

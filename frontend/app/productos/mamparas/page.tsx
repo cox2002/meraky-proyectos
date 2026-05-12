@@ -9,7 +9,7 @@ import ScrollReveal, { ScrollRevealItem } from '@/src/shared/ui/ScrollReveal';
 import Link from 'next/link';
 // Datos de Portafolio y FAQ
 const PORTAFOLIO_MAMPARAS = [
-  "https://images.unsplash.com/photo-1600566753086-00f18efc2291?q=80&w=600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=600&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=600&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=600&auto=format&fit=crop",
@@ -54,7 +54,7 @@ const TIPOS_MAMPARAS = [
     price: "Desde S/ 980",
     tags: ["Ahorro de espacio", "Fácil limpieza", "Rodamientos silenciosos"],
     materials: "5 materiales disponibles · Ver precios",
-    image: "https://images.unsplash.com/photo-1600566753086-00f18efc2291?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=800&auto=format&fit=crop",
     href: "/productos/mamparas/corrediza"
   },
   {

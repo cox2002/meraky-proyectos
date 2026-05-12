@@ -1,7 +1,7 @@
 import { Servicio } from "@/types";
 
 // La URL base donde está corriendo nuestro servidor de FastAPI.
-const API_URL = "http://192.168.7.139:8000";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://192.168.7.139:8000";
 
 // --- Funciones de Servicio (API Layer) ---
 // Separar las llamadas a la API en esta carpeta ("services") es una excelente práctica.

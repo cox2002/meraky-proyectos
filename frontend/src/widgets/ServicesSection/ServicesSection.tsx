@@ -8,12 +8,12 @@ export default function ServicesSection() {
     { 
       title: 'Mamparas', 
       desc: 'Vidrio templado de alta calidad.',
-      img: 'https://images.unsplash.com/photo-1600566753086-00f18efc2291?q=80&w=800&auto=format&fit=crop'
+      img: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=800&auto=format&fit=crop'
     },
     { 
       title: 'Ventanas', 
       desc: 'Sistemas de aislamiento total.',
-      img: 'https://images.unsplash.com/photo-1600607688969-a5bfcd64bd28?q=80&w=800&auto=format&fit=crop'
+      img: 'https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=800&auto=format&fit=crop'
     },
     { 
       title: 'Puertas de Aluminio', 

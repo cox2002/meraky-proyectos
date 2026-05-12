@@ -11,6 +11,7 @@ export default function Navigation() {
   // useState crea una variable que React "vigila". Si su valor cambia, React actualiza la pantalla.
   // Aquí guardamos si el usuario ha hecho scroll hacia abajo o no.
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // --- Efectos Secundarios ---
   // useEffect permite ejecutar código después de que el componente se dibuja en pantalla.
@@ -126,12 +127,67 @@ export default function Navigation() {
         </div>
 
         {/* Botón de menú hamburguesa (Móviles): Solo se ve en pantallas pequeñas. */}
-        <button className="md:hidden text-on-surface p-2">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+        <button 
+          className="lg:hidden text-white hover:text-[#FACC15] p-2 transition-colors"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {isMobileMenuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+            )}
           </svg>
         </button>
 
+      </div>
+
+      {/* Menú Móvil */}
+      <div 
+        className={`lg:hidden absolute top-full left-0 w-full bg-[#110e08]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-300 overflow-hidden ${
+          isMobileMenuOpen ? 'max-h-[85vh] py-6 opacity-100' : 'max-h-0 py-0 opacity-0'
+        }`}
+      >
+        <nav className="flex flex-col gap-4 px-8 max-h-[70vh] overflow-y-auto w-full">
+          {navLinks.map((link) => (
+            <div key={link.label} className="flex flex-col w-full">
+              {link.isDropdown ? (
+                <>
+                  <div className="text-lg font-bold text-[#FACC15] py-2 border-b border-white/10">{link.label}</div>
+                  <div className="flex flex-col gap-4 pl-4 pt-4 pb-2">
+                    {link.items?.map((item, idx) => (
+                      <Link 
+                        key={idx} 
+                        href={item.href}
+                        className="text-base text-white/80 hover:text-white transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <Link 
+                  href={link.href || '#'}
+                  className="text-lg font-medium text-white/90 hover:text-[#FACC15] py-2 border-b border-white/5 transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              )}
+            </div>
+          ))}
+          <div className="pt-6 mt-2 w-full flex justify-center">
+            <GlassButton 
+              variant="primary" 
+              href="/#contacto"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Cotizar Proyecto
+            </GlassButton>
+          </div>
+        </nav>
       </div>
     </header>
   );
