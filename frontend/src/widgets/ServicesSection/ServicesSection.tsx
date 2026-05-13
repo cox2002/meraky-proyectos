@@ -2,33 +2,39 @@ import React from 'react';
 import Heading from '@/src/shared/ui/Heading';
 import ParticlesBackground from '@/src/shared/ui/ParticlesBackground';
 import ScrollReveal, { ScrollRevealItem } from '@/src/shared/ui/ScrollReveal';
+import Link from 'next/link';
 
 export default function ServicesSection() {
   const services = [
     { 
       title: 'Mamparas', 
       desc: 'Vidrio templado de alta calidad.',
-      img: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=800&auto=format&fit=crop'
+      img: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=800&auto=format&fit=crop',
+      href: '/productos/mamparas'
     },
     { 
       title: 'Ventanas', 
       desc: 'Sistemas de aislamiento total.',
-      img: 'https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=800&auto=format&fit=crop'
+      img: 'https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=800&auto=format&fit=crop',
+      href: '/productos/ventanas'
     },
     { 
       title: 'Puertas de Aluminio', 
       desc: 'Corredizas, batientes y más.',
-      img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop'
+      img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop',
+      href: '#contacto'
     },
     { 
       title: 'Pasamanos', 
       desc: 'Inox y vidrio, por metro lineal.',
-      img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop'
+      img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop',
+      href: '#contacto'
     },
     { 
       title: 'Barandas', 
       desc: 'Balcones y terrazas a medida.',
-      img: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800&auto=format&fit=crop'
+      img: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800&auto=format&fit=crop',
+      href: '#contacto'
     },
   ];
 
@@ -81,7 +87,7 @@ export default function ServicesSection() {
                     Solicitar Info
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                   </a>
-                  <a href="#contacto" className="bg-gradient-to-r from-[#2a2415] to-[#110e08] text-[#FACC15] px-5 py-2.5 rounded-full text-sm font-bold shadow-md hover:shadow-lg transition-all hover:scale-105">
+                  <a href={srv.href} className="bg-gradient-to-r from-[#2a2415] to-[#110e08] text-[#FACC15] px-5 py-2.5 rounded-full text-sm font-bold shadow-md hover:shadow-lg transition-all hover:scale-105">
                     Ver Más
                   </a>
                 </div>

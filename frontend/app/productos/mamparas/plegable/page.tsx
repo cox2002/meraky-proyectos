@@ -8,21 +8,13 @@ import Heading from '@/src/shared/ui/Heading';
 import ScrollReveal, { ScrollRevealItem } from '@/src/shared/ui/ScrollReveal';
 import Link from 'next/link';
 
-const PRECIOS = [
-  { material: "Moduglas", precio: "S/ 980.00", badge: "DESDE" },
-  { material: "Serie 25", precio: "S/ 1,150.00" },
-  { material: "Convencional", precio: "S/ 1,250.00" },
-  { material: "Serie 62", precio: "S/ 2,450.00" },
-  { material: "Serie 80", precio: "S/ 3,180.00" },
-];
-
 const INCLUYE = [
-  "Ahorro de espacio",
-  "Fácil limpieza",
-  "Rodamientos silenciosos",
-  "Perfil de aluminio anodizado",
-  "Vidrio templado certificado",
-  "Sistema anti-descarrilamiento"
+  "Diseño versátil",
+  "Acceso amplio",
+  "Ideal para bañeras",
+  "Perfil minimalista",
+  "Plegado suave",
+  "Múltiples configuraciones"
 ];
 
 const DATOS_TECNICOS = [
@@ -32,10 +24,10 @@ const DATOS_TECNICOS = [
     ),
     title: "Dimensiones",
     items: [
-      { label: "Ancho mínimo", value: "80 cm" },
-      { label: "Ancho máximo", value: "180 cm" },
-      { label: "Alto estándar", value: "180 - 200 cm" },
-      { label: "Alto máximo", value: "220 cm" },
+      { label: "Ancho total", value: "80 - 160 cm" },
+      { label: "Hojas", value: "2, 3 o 4 paneles" },
+      { label: "Alto estándar", value: "140 - 200 cm" },
+      { label: "Ancho por hoja", value: "30 - 50 cm" },
     ]
   },
   {
@@ -45,29 +37,33 @@ const DATOS_TECNICOS = [
     title: "Vidrio",
     items: [
       { label: "Tipo", value: "Templado de seguridad" },
-      { label: "Espesor disponible", value: "8mm / 10mm" },
-      { label: "Acabados", value: "Transparente, Pavonado, Esmerilado" },
-      { label: "Certificación", value: "NTP 399 / ISO 9001" },
+      { label: "Espesor", value: "6mm / 8mm" },
+      { label: "Acabados", value: "Transparente, Pavonado, Decorado" },
+      { label: "Tratamiento", value: "Easy Clean disponible" },
     ]
   },
   {
     icon: (
       <svg className="w-6 h-6 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
     ),
-    title: "Perfilería",
+    title: "Sistema de plegado",
     items: [
-      { label: "Material", value: "Aluminio anodizado" },
-      { label: "Acabados", value: "Plata, Cromo, Negro mate" },
+      { label: "Bisagras", value: "Articuladas de acero" },
+      { label: "Perfil", value: "Aluminio anodizado" },
+      { label: "Ángulo de plegado", value: "180°" },
+      { label: "Sentido", value: "Hacia dentro o fuera" },
     ]
   },
   {
     icon: (
-      <svg className="w-6 h-6 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>
+      <svg className="w-6 h-6 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
     ),
-    title: "Sistema de deslizamiento",
+    title: "Rendimiento",
     items: [
-      { label: "Rodamientos", value: "Acero inoxidable con nylon" },
-      { label: "Capacidad", value: "Hasta 80 kg por hoja" },
+      { label: "Ciclos garantizados", value: "+50,000 plegados" },
+      { label: "Sellado", value: "Burlete magnético" },
+      { label: "Estabilidad", value: "Guía superior e inferior" },
+      { label: "Mantenimiento", value: "Mínimo" },
     ]
   }
 ];
@@ -75,44 +71,44 @@ const DATOS_TECNICOS = [
 const VENTAJAS = [
   {
     icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg>
     ),
-    title: "Ideal para espacios pequeños",
-    desc: "No requiere espacio de apertura, perfecta para baños compactos."
+    title: "Máxima Versatilidad",
+    desc: "Se adapta a espacios irregulares o donde puertas tradicionales no pueden abrirse."
   },
   {
     icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
     ),
-    title: "Fácil mantenimiento",
-    desc: "Superficies lisas que facilitan la limpieza diaria."
+    title: "Apertura Total",
+    desc: "Pliega casi al 100%, dejando prácticamente todo el espacio libre para el paso."
   },
   {
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
     ),
-    title: "Máxima seguridad",
-    desc: "Vidrio templado que resiste impactos y cambios de temperatura."
+    title: "Seguridad y Cierre",
+    desc: "El sistema de burletes garantiza hermeticidad evitando filtraciones al exterior."
   },
   {
     icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" /></svg>
     ),
-    title: "Instalación rápida",
-    desc: "Proceso de instalación en 2-3 horas por profesionales."
+    title: "Diseño Inteligente",
+    desc: "Mecanismos ocultos y guías discretas para una apariencia limpia y contemporánea."
   }
 ];
 
 const APLICACIONES = [
-  "Baños de departamentos",
-  "Espacios reducidos",
-  "Duchas de tamaño estándar",
-  "Hoteles y hostales",
-  "Renovaciones de baño"
+  "Bañeras",
+  "Duchas amplias",
+  "Baños familiares",
+  "Espacios versátiles",
+  "Personas mayores"
 ];
 
 const GALERIA = [
-  "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=800&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=800&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800&auto=format&fit=crop"
@@ -120,20 +116,20 @@ const GALERIA = [
 
 const FAQ = [
   {
-    pregunta: "¿Cuántas hojas puede tener una mampara corrediza?",
-    respuesta: "Las mamparas corredizas pueden tener 2, 3 o 4 hojas dependiendo del ancho del espacio. Para anchos de hasta 120cm se recomiendan 2 hojas, y para espacios más amplios, 3 o 4 hojas."
+    pregunta: "¿Cuántos paneles necesito para mi bañera?",
+    respuesta: "La cantidad de paneles dependerá del ancho total de tu bañera o ducha. Generalmente fabricamos configuraciones de 2, 3 o 4 paneles. Nuestros técnicos te asesorarán para encontrar la distribución perfecta que garantice un plegado óptimo y la máxima amplitud de entrada."
   },
   {
-    pregunta: "¿Los rieles acumulan agua y suciedad?",
-    respuesta: "Nuestros rieles inferiores cuentan con sistema de drenaje integrado que evita la acumulación de agua. Además, el diseño facilita la limpieza con un paño húmedo."
+    pregunta: "¿El sistema de plegado es resistente?",
+    respuesta: "Totalmente. Utilizamos bisagras articuladas de acero inoxidable de alta resistencia, diseñadas específicamente para soportar el peso de los cristales templados. Nuestro sistema está probado para garantizar más de 50,000 ciclos de apertura y cierre sin perder alineación ni suavidad."
   },
   {
-    pregunta: "¿Se puede instalar sobre una bañera?",
-    respuesta: "Sí, ofrecemos versiones especiales para bañeras con rieles adaptados y sellado especial para evitar filtraciones."
+    pregunta: "¿Se puede instalar sobre el borde de la bañera?",
+    respuesta: "Sí, la mampara plegable es ideal para instalarse directamente sobre el borde de la bañera. Utilizamos perfiles y burletes de sellado inferior especiales que evitan filtraciones de agua, convirtiendo tu bañera en una ducha completamente funcional y hermética."
   }
 ];
 
-export default function MamparaCorredizaPage() {
+export default function MamparaPlegablePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const toggleFaq = (idx: number) => {
@@ -153,8 +149,8 @@ export default function MamparaCorredizaPage() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2000&auto=format&fit=crop" 
-            alt="Fondo Mampara Corrediza" 
+            src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=2000&auto=format&fit=crop" 
+            alt="Fondo Mampara Plegable" 
             className="w-full h-full object-cover opacity-60 md:opacity-90" 
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0c0a07] via-[#0c0a07]/70 to-transparent"></div>
@@ -170,35 +166,34 @@ export default function MamparaCorredizaPage() {
                 Volver a tipos de mamparas
               </Link>
               <span className="bg-[#16130c] border border-[#FACC15]/30 text-[#FACC15] text-xs px-3 py-1 rounded-full font-medium">
-                Corrediza
+                Plegable
               </span>
             </div>
 
             <Heading level="h1" className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
-              Mampara <span className="text-[#FACC15]">Corrediza</span>
+              Mampara <span className="text-[#FACC15]">Plegable</span>
             </Heading>
             
-            <h2 className="text-[#4da1ff] md:text-xl font-medium mb-6"> {/* Use a blue tint here if desired, or keep gold. User's image had light blue, let's adapt to gold to keep dark luxury */}
-              <span className="text-white/90">La solución perfecta para espacios reducidos</span>
+            <h2 className="text-[#FACC15] md:text-xl font-medium mb-6">
+              <span className="text-white/90">Versatilidad y diseño en un solo producto</span>
             </h2>
 
             <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-2xl font-light">
-              Las mamparas corredizas son la opción más popular para baños de tamaño estándar. Su sistema de paneles deslizantes permite un acceso cómodo sin ocupar espacio adicional al abrir. Fabricadas con vidrio templado de alta resistencia y perfilería de aluminio anodizado, ofrecen durabilidad y un acabado elegante que complementa cualquier diseño de baño.
+              Las mamparas plegables combinan la funcionalidad de una puerta con el ahorro de espacio de un sistema corredizo. Sus paneles articulados se pliegan hacia un lado, permitiendo un acceso amplio cuando está abierta y un cierre hermético cuando está cerrada. Es la opción ideal para bañeras y duchas donde se requiere máxima accesibilidad.
             </p>
 
             {/* Info Pills */}
             <div className="flex flex-wrap gap-4 mb-10">
               <div className="bg-[#16130c]/80 backdrop-blur-sm border border-[#2a2415] rounded-full px-6 py-3 flex items-center gap-3">
-                <span className="text-white/50 text-xs font-bold uppercase">Desde</span>
-                <span className="text-white font-extrabold text-lg">S/ 980</span>
+                <span className="text-white font-extrabold text-lg">Consultar</span>
               </div>
               <div className="bg-[#16130c]/80 backdrop-blur-sm border border-[#2a2415] rounded-full px-6 py-3 flex items-center gap-3">
                 <svg className="w-5 h-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                <span className="text-white/90 text-sm font-medium">2-3 horas</span>
+                <span className="text-white/90 text-sm font-medium">3-4 horas</span>
               </div>
               <div className="bg-[#16130c]/80 backdrop-blur-sm border border-[#2a2415] rounded-full px-6 py-3 flex items-center gap-3">
                 <svg className="w-5 h-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                <span className="text-white/90 text-sm font-medium">5 años en vidrio, 2 años en perfilería</span>
+                <span className="text-white/90 text-sm font-medium">5 años en vidrio, 2 años en sistema plegable</span>
               </div>
             </div>
 
@@ -217,7 +212,7 @@ export default function MamparaCorredizaPage() {
         </div>
       </section>
 
-      {/* Precios por Material */}
+      {/* Precios por Material (Custom for Plegable) */}
       <section className="py-24 px-6 bg-[#16130c] relative">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal direction="up" className="text-center mb-16">
@@ -225,46 +220,31 @@ export default function MamparaCorredizaPage() {
             <Heading level="h2" className="text-4xl md:text-5xl font-bold text-white mb-6">
               Precios por <span className="text-[#FACC15]">Material</span>
             </Heading>
-            <div className="inline-flex items-center gap-2 bg-[#0c0a07] border border-[#2a2415] px-4 py-2 rounded-full text-white/60 text-sm mb-6">
-              <svg className="w-4 h-4 text-[#FACC15]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
-              Medida de referencia: 2.50m × 2.40m
+          </ScrollReveal>
+
+          <ScrollReveal direction="up">
+            <div className="bg-[#0c0a07] border border-[#2a2415] border-dashed rounded-[3rem] p-12 text-center flex flex-col items-center max-w-3xl mx-auto">
+              <div className="w-16 h-16 bg-[#16130c] border border-[#2a2415] rounded-xl flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </div>
+              <h4 className="text-2xl font-bold text-white mb-4">Precios próximamente</h4>
+              <p className="text-white/60 leading-relaxed max-w-md">
+                Estamos preparando la información de precios para este tipo de mampara. Contáctenos para recibir una cotización personalizada.
+              </p>
             </div>
-            <p className="text-white/50 text-sm">Precios referenciales para la medida indicada. Solicita cotización para tu medida exacta.</p>
           </ScrollReveal>
-
-          <ScrollReveal staggerChildren={0.1} direction="up" className="space-y-4">
-            {PRECIOS.map((item, idx) => (
-              <ScrollRevealItem key={idx}>
-                <div className={`bg-[#0c0a07] border ${item.badge ? 'border-[#FACC15]/50 shadow-[0_0_15px_rgba(250,204,21,0.1)]' : 'border-[#2a2415] hover:border-[#FACC15]/30'} transition-colors rounded-2xl p-6 flex items-center justify-between`}>
-                  <div className="flex items-center gap-4">
-                    {item.badge && (
-                      <span className="bg-[#FACC15] text-[#110e08] text-xs font-bold px-2 py-1 rounded">
-                        {item.badge}
-                      </span>
-                    )}
-                    <span className="text-white font-medium text-lg">{item.material}</span>
-                  </div>
-                  <span className={`text-xl font-bold ${item.badge ? 'text-[#FACC15]' : 'text-white/90'}`}>
-                    {item.precio}
-                  </span>
-                </div>
-              </ScrollRevealItem>
-            ))}
-          </ScrollReveal>
-
-          <p className="text-center text-white/40 text-xs mt-8">
-            * Los precios incluyen materiales e instalación. Pueden variar según las medidas y acabados elegidos.
-          </p>
         </div>
       </section>
 
-      {/* Lo que incluye tu Corrediza */}
+      {/* Lo que incluye tu Plegable */}
       <section className="py-24 px-6 bg-[#0c0a07] relative">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal direction="up" className="text-center mb-16">
             <h3 className="text-[#FACC15] text-sm font-bold tracking-[0.2em] uppercase mb-3">Características</h3>
             <Heading level="h2" className="text-4xl md:text-5xl font-bold text-white">
-              Lo que incluye tu <span className="text-[#FACC15]">Corrediza</span>
+              Lo que incluye tu <span className="text-[#FACC15]">Plegable</span>
             </Heading>
           </ScrollReveal>
 
@@ -321,7 +301,7 @@ export default function MamparaCorredizaPage() {
           <ScrollReveal direction="up" className="text-center mb-16">
             <h3 className="text-[#FACC15] text-sm font-bold tracking-[0.2em] uppercase mb-3">Beneficios</h3>
             <Heading level="h2" className="text-4xl md:text-5xl font-bold text-white">
-              Ventajas de elegir <span className="text-[#FACC15]">Corrediza</span>
+              Ventajas de elegir <span className="text-[#FACC15]">Plegable</span>
             </Heading>
           </ScrollReveal>
 
@@ -349,7 +329,7 @@ export default function MamparaCorredizaPage() {
                 Ideal <span className="text-[#FACC15]">para</span>
               </Heading>
               <p className="text-white/70 text-lg mb-10 leading-relaxed font-light max-w-lg">
-                La mampara corrediza es perfecta para diferentes tipos de espacios y necesidades. Descubre si es la opción correcta para tu proyecto.
+                La mampara plegable es perfecta para diferentes tipos de espacios y necesidades. Descubre si es la opción correcta para tu proyecto.
               </p>
 
               <div className="space-y-4">
@@ -368,8 +348,8 @@ export default function MamparaCorredizaPage() {
               <div className="relative rounded-3xl overflow-hidden aspect-[3/4] border border-[#2a2415]">
                 <div className="absolute inset-0 bg-[#110e08]/20 z-10" />
                 <img 
-                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop" 
-                  alt="Baño ideal para corrediza" 
+                  src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=800&auto=format&fit=crop" 
+                  alt="Baño ideal para plegable" 
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-6 left-6 right-6 z-20">
@@ -464,7 +444,7 @@ export default function MamparaCorredizaPage() {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <ScrollReveal direction="up">
             <Heading level="h2" className="text-3xl md:text-5xl font-bold text-white mb-6">
-              ¿Listo para tu nueva <span className="text-[#FACC15]">Corrediza</span>?
+              ¿Listo para tu nueva <span className="text-[#FACC15]">Plegable</span>?
             </Heading>
             <p className="text-white/70 text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
               Solicita una cotización gratuita y sin compromiso. Nuestro equipo te contactará en menos de 24 horas.

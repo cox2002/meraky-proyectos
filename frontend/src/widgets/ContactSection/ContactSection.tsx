@@ -78,7 +78,7 @@ export default function ContactSection() {
                 allowFullScreen={false} 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
-                className="absolute inset-0 grayscale contrast-125 opacity-90 hover:grayscale-0 transition-all duration-500"
+                className="absolute inset-0 w-full h-full"
               />
             </ScrollRevealItem>
 
