@@ -49,7 +49,7 @@ export default function Navigation() {
         { label: 'Barandas', desc: 'Balcones y terrazas a medida', href: '/productos/barandas' },
       ]
     },
-    { label: 'Mantenimiento', href: '/#mantenimiento' },
+    { label: 'Mantenimiento', href: '/mantenimiento' },
     { label: 'Contacto', href: '/#contacto' },
   ];
 

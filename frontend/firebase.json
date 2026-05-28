@@ -6,6 +6,8 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "cleanUrls": true,
+    "trailingSlash": false,
     "headers": [
       {
         "source": "**/*.@(html)",
@@ -16,6 +18,65 @@
           }
         ]
       }
+    ],
+    "rewrites": [
+      {
+        "source": "/productos/mamparas/corrediza",
+        "destination": "/productos/mamparas/corrediza/index.html"
+      },
+      {
+        "source": "/productos/mamparas/batiente",
+        "destination": "/productos/mamparas/batiente/index.html"
+      },
+      {
+        "source": "/productos/mamparas/ducha",
+        "destination": "/productos/mamparas/ducha/index.html"
+      },
+      {
+        "source": "/productos/mamparas/fija",
+        "destination": "/productos/mamparas/fija/index.html"
+      },
+      {
+        "source": "/productos/mamparas/plegable",
+        "destination": "/productos/mamparas/plegable/index.html"
+      },
+      {
+        "source": "/productos/mamparas",
+        "destination": "/productos/mamparas/index.html"
+      },
+      {
+        "source": "/productos/ventanas/corrediza",
+        "destination": "/productos/ventanas/corrediza/index.html"
+      },
+      {
+        "source": "/productos/ventanas/batiente",
+        "destination": "/productos/ventanas/batiente/index.html"
+      },
+      {
+        "source": "/productos/ventanas/fija",
+        "destination": "/productos/ventanas/fija/index.html"
+      },
+      {
+        "source": "/productos/ventanas/pivotante",
+        "destination": "/productos/ventanas/pivotante/index.html"
+      },
+      {
+        "source": "/productos/ventanas/proyectante",
+        "destination": "/productos/ventanas/proyectante/index.html"
+      },
+      {
+        "source": "/productos/ventanas/termoacustica",
+        "destination": "/productos/ventanas/termoacustica/index.html"
+      },
+      {
+        "source": "/productos/ventanas",
+        "destination": "/productos/ventanas/index.html"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   }
 }
+

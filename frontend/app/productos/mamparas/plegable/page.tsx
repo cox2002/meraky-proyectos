@@ -213,24 +213,24 @@ export default function MamparaPlegablePage() {
       </section>
 
       {/* Precios por Material (Custom for Plegable) */}
-      <section className="py-24 px-6 bg-[#16130c] relative">
+      <section className="py-24 px-6 bg-[#FAFAFA] border-b border-gray-100 relative">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal direction="up" className="text-center mb-16">
-            <h3 className="text-[#FACC15] text-sm font-bold tracking-[0.2em] uppercase mb-3">Inversión</h3>
-            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Precios por <span className="text-[#FACC15]">Material</span>
+            <h3 className="text-[#eab308] text-sm font-bold tracking-[0.2em] uppercase mb-3">Inversión</h3>
+            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Precios por <span className="text-[#eab308]">Material</span>
             </Heading>
           </ScrollReveal>
 
           <ScrollReveal direction="up">
-            <div className="bg-[#0c0a07] border border-[#2a2415] border-dashed rounded-[3rem] p-12 text-center flex flex-col items-center max-w-3xl mx-auto">
-              <div className="w-16 h-16 bg-[#16130c] border border-[#2a2415] rounded-xl flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="bg-white border border-gray-200 border-dashed rounded-[3rem] p-12 text-center flex flex-col items-center max-w-3xl mx-auto">
+              <div className="w-16 h-16 bg-[#FAFAFA] border-b border-gray-100 border border-gray-200 rounded-xl flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-[#eab308]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
               </div>
-              <h4 className="text-2xl font-bold text-white mb-4">Precios próximamente</h4>
-              <p className="text-white/60 leading-relaxed max-w-md">
+              <h4 className="text-2xl font-bold text-gray-900 mb-4">Precios próximamente</h4>
+              <p className="text-gray-600 leading-relaxed max-w-md">
                 Estamos preparando la información de precios para este tipo de mampara. Contáctenos para recibir una cotización personalizada.
               </p>
             </div>
@@ -262,30 +262,30 @@ export default function MamparaPlegablePage() {
       </section>
 
       {/* Datos Técnicos */}
-      <section className="py-24 px-6 bg-[#16130c] relative">
+      <section className="py-24 px-6 bg-white relative">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal direction="up" className="text-center mb-16">
             <h3 className="text-[#FACC15] text-sm font-bold tracking-[0.2em] uppercase mb-3">Especificaciones</h3>
-            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Datos <span className="text-[#FACC15]">Técnicos</span>
             </Heading>
-            <p className="text-white/60">Información detallada sobre materiales, dimensiones y características técnicas.</p>
+            <p className="text-gray-500">Información detallada sobre materiales, dimensiones y características técnicas.</p>
           </ScrollReveal>
 
           <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {DATOS_TECNICOS.map((seccion, idx) => (
-              <ScrollRevealItem key={idx} className="bg-[#0c0a07] border border-[#2a2415] rounded-3xl p-8 hover:border-[#FACC15]/30 transition-colors">
-                <div className="flex items-center gap-4 mb-8 pb-6 border-b border-[#2a2415]">
+              <ScrollRevealItem key={idx} className="bg-[#FAFAFA] border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-3xl p-8 hover:border-[#FACC15]/30 transition-colors">
+                <div className="flex items-center gap-4 mb-8 pb-6 border-b border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                   <div className="w-12 h-12 bg-[#FACC15]/10 rounded-xl flex items-center justify-center">
                     {seccion.icon}
                   </div>
-                  <h4 className="text-2xl font-bold text-white">{seccion.title}</h4>
+                  <h4 className="text-2xl font-bold text-gray-800">{seccion.title}</h4>
                 </div>
                 <div className="space-y-5">
                   {seccion.items.map((item, iIdx) => (
                     <div key={iIdx} className="flex justify-between items-center gap-4">
-                      <span className="text-white/50 text-sm">{item.label}</span>
-                      <span className="text-white font-medium text-right text-sm sm:text-base">{item.value}</span>
+                      <span className="text-gray-500 text-sm">{item.label}</span>
+                      <span className="text-gray-900 font-medium text-right text-sm sm:text-base">{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -320,15 +320,15 @@ export default function MamparaPlegablePage() {
       </section>
 
       {/* Aplicaciones (Ideal para) */}
-      <section className="py-24 px-6 bg-[#16130c] relative">
+      <section className="py-24 px-6 bg-[#FAFAFA] relative">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left">
               <h3 className="text-[#FACC15] text-sm font-bold tracking-[0.2em] uppercase mb-3">Aplicaciones</h3>
-              <Heading level="h2" className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Ideal <span className="text-[#FACC15]">para</span>
               </Heading>
-              <p className="text-white/70 text-lg mb-10 leading-relaxed font-light max-w-lg">
+              <p className="text-gray-600 text-lg mb-10 leading-relaxed font-light max-w-lg">
                 La mampara plegable es perfecta para diferentes tipos de espacios y necesidades. Descubre si es la opción correcta para tu proyecto.
               </p>
 
@@ -338,15 +338,15 @@ export default function MamparaPlegablePage() {
                     <div className="w-6 h-6 rounded-full bg-[#FACC15]/20 text-[#FACC15] flex items-center justify-center shrink-0">
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
                     </div>
-                    <span className="text-white/90 font-medium">{app}</span>
+                    <span className="text-gray-800 font-medium">{app}</span>
                   </div>
                 ))}
               </div>
             </ScrollReveal>
 
             <ScrollReveal direction="right" className="relative mt-8 lg:mt-0">
-              <div className="relative rounded-3xl overflow-hidden aspect-[3/4] border border-[#2a2415]">
-                <div className="absolute inset-0 bg-[#110e08]/20 z-10" />
+              <div className="relative rounded-3xl overflow-hidden aspect-[3/4] border border-gray-200">
+                <div className="absolute inset-0 bg-black/5 z-10" />
                 <img 
                   src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=800&auto=format&fit=crop" 
                   alt="Baño ideal para plegable" 
@@ -356,8 +356,8 @@ export default function MamparaPlegablePage() {
                   <div className="bg-[#110e08]/90 backdrop-blur-md border border-[#FACC15]/30 p-4 rounded-2xl flex items-center gap-4">
                     <svg className="w-8 h-8 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                     <div>
-                      <div className="text-white font-bold text-sm">Garantía de 5 años</div>
-                      <div className="text-white/50 text-xs">En vidrio templado certificado</div>
+                      <div className="text-gray-900 font-bold text-sm">Garantía de 5 años</div>
+                      <div className="text-gray-500 text-xs">En vidrio templado certificado</div>
                     </div>
                   </div>
                 </div>
@@ -393,12 +393,12 @@ export default function MamparaPlegablePage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 px-6 bg-[#16130c] relative">
+      <section className="py-24 px-6 bg-white relative">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal direction="up" className="text-center mb-16">
-            <h3 className="text-[#FACC15] text-sm font-bold tracking-[0.2em] uppercase mb-3">FAQ</h3>
-            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-white">
-              Preguntas <span className="text-[#FACC15]">Frecuentes</span>
+            <h3 className="text-[#110e08] font-bold text-sm font-bold tracking-[0.2em] uppercase mb-3">FAQ</h3>
+            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900">
+              Preguntas <span className="text-[#110e08] font-bold">Frecuentes</span>
             </Heading>
           </ScrollReveal>
 
@@ -406,17 +406,17 @@ export default function MamparaPlegablePage() {
             {FAQ.map((faq, idx) => (
               <ScrollRevealItem key={idx}>
                 <div 
-                  className={`bg-[#0c0a07] border ${openFaq === idx ? 'border-[#FACC15]/50 shadow-[0_0_15px_rgba(250,204,21,0.05)]' : 'border-[#2a2415] hover:border-[#FACC15]/50'} transition-all duration-300 rounded-2xl overflow-hidden`}
+                  className={`bg-[#FAFAFA] border ${openFaq === idx ? 'border-[#eab308] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)]' : 'border-gray-200 hover:border-[#FACC15]/50'} transition-all duration-300 rounded-2xl overflow-hidden`}
                 >
                   <button 
                     onClick={() => toggleFaq(idx)}
                     className="w-full text-left p-6 flex items-center justify-between cursor-pointer group"
                   >
-                    <span className={`font-medium md:text-lg transition-colors pr-8 ${openFaq === idx ? 'text-[#FACC15]' : 'text-white/90 group-hover:text-white'}`}>
+                    <span className={`font-medium md:text-lg transition-colors pr-8 ${openFaq === idx ? 'text-[#110e08] font-bold' : 'text-gray-700 group-hover:text-gray-950'}`}>
                       {faq.pregunta}
                     </span>
                     <svg 
-                      className={`w-5 h-5 text-[#FACC15] shrink-0 transition-transform duration-300 ${openFaq === idx ? 'rotate-180' : ''}`} 
+                      className={`w-5 h-5 text-[#110e08] font-bold shrink-0 transition-transform duration-300 ${openFaq === idx ? 'rotate-180' : ''}`} 
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"
@@ -427,7 +427,7 @@ export default function MamparaPlegablePage() {
                   <div 
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${openFaq === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                   >
-                    <p className="p-6 pt-0 text-white/70 leading-relaxed">
+                    <p className="p-6 pt-0 text-gray-600 leading-relaxed">
                       {faq.respuesta}
                     </p>
                   </div>

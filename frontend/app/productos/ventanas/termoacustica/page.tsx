@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from 'react';
 import Navigation from '@/src/widgets/Navigation/Navigation';
 import Footer from '@/src/widgets/Footer/Footer';
@@ -7,91 +8,584 @@ import Heading from '@/src/shared/ui/Heading';
 import ScrollReveal, { ScrollRevealItem } from '@/src/shared/ui/ScrollReveal';
 import Link from 'next/link';
 
-const INCLUYE = ["Doble vidrio con cámara de aire","Reducción de ruido hasta 45dB","Ahorro energético 70%","Perfil reforzado de alta prestación","Sellado estructural","Condensación interior minimizada"];
+const INCLUYE = [
+  "Doble vidrio con cámara",
+  "Reducción de ruido 45dB",
+  "Ahorro energético 70%",
+  "Perfil reforzado premium",
+  "Sellado estructural doble",
+  "Minimiza condensación"
+];
+
 const VENTAJAS = [
-  { title: "Aislamiento Acústico", desc: "La cámara de aire entre los vidrios reduce el ruido exterior hasta 45dB, ideal para zonas de alto tráfico." },
-  { title: "Ahorro Energético", desc: "Reduce hasta un 70% la pérdida de calor o frío, bajando significativamente los costos de climatización." },
-  { title: "Confort Total", desc: "Elimina las corrientes de aire frío en invierno y el calor excesivo en verano manteniendo temperatura estable." },
-  { title: "Inversión Inteligente", desc: "El ahorro en energía amortiza la inversión adicional en pocos años, mientras aumenta el valor de la propiedad." }
+  { 
+    title: "Aislamiento Acústico", 
+    desc: "La cámara de gas o aire hermético reduce el ruido exterior hasta en 45dB, ideal para avenidas muy ruidosas." 
+  },
+  { 
+    title: "Ahorro Energético", 
+    desc: "Impide la fuga de temperatura, reduciendo hasta en un 70% los costos de climatización artificial." 
+  },
+  { 
+    title: "Confort Térmico", 
+    desc: "Elimina la radiación de frío o calor proveniente del exterior, manteniendo una temperatura interior homogénea." 
+  },
+  { 
+    title: "Inversión Inteligente", 
+    desc: "El ahorro acumulado en energía amortiza el costo adicional del sistema en pocos años y eleva el valor de la propiedad." 
+  }
 ];
+
 const DATOS = [
-  { title: "Sistema de Vidrio", items: [{ label: "Configuración", value: "4mm + 12mm aire + 4mm" }, { label: "Alternativa", value: "6mm + 12mm + 6mm" }, { label: "Triple vidrio", value: "4+10+4+10+4mm" }, { label: "Llenado cámara", value: "Aire o gas Argón" }] },
-  { title: "Perfilería Reforzada", items: [{ label: "Material", value: "Aluminio de alta prestación" }, { label: "Espesor perfil", value: "2.0 – 2.5 mm" }, { label: "Rotura de puente", value: "Disponible" }, { label: "Acabado", value: "Natural / Champagne / Negro" }] },
-  { title: "Aislamiento Térmico", items: [{ label: "Vidrio simple", value: "U = 5.8 W/m²K" }, { label: "Doble vidrio", value: "U = 2.8 W/m²K" }, { label: "Con Argón", value: "U = 1.8 W/m²K" }, { label: "Triple vidrio", value: "U = 1.0 W/m²K" }] },
-  { title: "Aislamiento Acústico", items: [{ label: "Vidrio simple 6mm", value: "28-30 dB" }, { label: "Doble 4+12+4mm", value: "35-38 dB" }, { label: "Doble acústico", value: "40-42 dB" }, { label: "Triple vidrio", value: "44-47 dB" }] }
+  { 
+    title: "Sistema de Vidrio", 
+    icon: (
+      <svg className="w-6 h-6 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+      </svg>
+    ),
+    items: [
+      { label: "Configuración estándar", value: "4mm + 12mm aire + 4mm" }, 
+      { label: "Alternativa premium", value: "6mm + 12mm aire + 6mm" }, 
+      { label: "Triple aislamiento", value: "4+10+4+10+4 mm" }, 
+      { label: "Llenado de cámara", value: "Aire seco o gas Argón" }
+    ] 
+  },
+  { 
+    title: "Perfilería Reforzada", 
+    icon: (
+      <svg className="w-6 h-6 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    ),
+    items: [
+      { label: "Material estructural", value: "Aluminio de alta prestación" }, 
+      { label: "Espesor de perfil", value: "2.0 – 2.5 mm" }, 
+      { label: "Rotura de puente térmico", value: "Disponible (RPT)" }, 
+      { label: "Acabados disponibles", value: "Natural / Champagne / Negro" }
+    ] 
+  },
+  { 
+    title: "Aislamiento Térmico", 
+    icon: (
+      <svg className="w-6 h-6 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    ),
+    items: [
+      { label: "Vidrio simple de ref.", value: "U = 5.8 W/m²K" }, 
+      { label: "Doble vidrio (cámara)", value: "U = 2.8 W/m²K" }, 
+      { label: "Doble vidrio + Argón", value: "U = 1.8 W/m²K" }, 
+      { label: "Triple vidrio (máximo)", value: "U = 1.0 W/m²K" }
+    ] 
+  },
+  { 
+    title: "Aislamiento Acústico", 
+    icon: (
+      <svg className="w-6 h-6 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+      </svg>
+    ),
+    items: [
+      { label: "Vidrio simple 6mm ref.", value: "28 – 30 dB" }, 
+      { label: "Doble vidrio 4+12+4mm", value: "35 – 38 dB" }, 
+      { label: "Doble acústico especial", value: "40 – 42 dB" }, 
+      { label: "Triple vidrio insulado", value: "44 – 47 dB" }
+    ] 
+  }
 ];
+
+const GALERIA = [
+  "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop"
+];
+
+const APLICACIONES = [
+  "Departamentos o casas frente a avenidas de alto tráfico y ruido",
+  "Dormitorios principales para garantizar un descanso óptimo",
+  "Zonas residenciales con temperaturas extremas (frío o calor constante)",
+  "Salas de estudio, home office o áreas que requieren máximo silencio",
+  "Edificaciones que buscan reducir drásticamente el consumo de aire acondicionado/calefacción"
+];
+
 const FAQ = [
-  { pregunta: "¿Qué diferencia hay entre doble vidrio con aire y con Argón?", respuesta: "El gas Argón es más denso que el aire, por lo que ofrece mejor aislamiento térmico (U = 1.8 vs 2.8 W/m²K) y ligeramente mejor aislamiento acústico. La diferencia de precio es mínima y el retorno energético compensa la inversión." },
-  { pregunta: "¿Se puede combinar con cualquier tipo de apertura?", respuesta: "Sí, el doble vidrio puede instalarse en ventanas corredizas, batientes, proyectantes, fijas y pivotantes. El sistema insulado se adapta a prácticamente cualquier tipo de ventana de aluminio." },
-  { pregunta: "¿Cuánto tarda en amortizarse la inversión?", respuesta: "Dependiendo del clima de Arequipa y el uso de sistemas de climatización, la inversión adicional se amortiza en 3 a 6 años gracias al ahorro en energía. Además, aumenta significativamente el confort y el valor de la propiedad." }
+  { 
+    pregunta: "¿Qué diferencia técnica hay entre rellenar la cámara con aire seco o gas Argón?", 
+    prewerp: "", 
+    pregunta_id: 1,
+    respuesta: "El gas Argón es más denso y pesado que el aire, lo que reduce de manera más eficiente la transferencia de temperatura por convección (logrando un coeficiente U de 1.8 frente al 2.8 W/m²K del aire). Esto se traduce en un aislamiento térmico superior con una inversión adicional sumamente baja." 
+  },
+  { 
+    pregunta: "¿Se puede instalar doble vidrio en cualquier sistema de ventana?", 
+    respuesta: "Sí, el doble acristalamiento insulado se puede adaptar e instalar en ventanas corredizas, batientes, proyectantes, fijas y pivotantes. El marco de aluminio requiere perfiles de mayor espesor y profundidad de canal para soportar la cámara." 
+  },
+  { 
+    pregunta: "¿En cuánto tiempo se recupera la inversión de esta ventana?", 
+    respuesta: "Gracias al notable ahorro de energía (hasta un 70% en el uso de calefacción o aire acondicionado), el costo adicional de una ventana termoacústica se amortiza típicamente en un rango de 3 a 5 años. Además de esto, el confort y la tranquilidad auditiva diaria son inmediatos." 
+  }
 ];
 
 export default function VentanaTermoacusticaPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const toggleFaq = (idx: number) => setOpenFaq(openFaq === idx ? null : idx);
+
+  const [activeSlide, setActiveSlide] = useState(0);
+  const nextSlide = () => {
+    setActiveSlide((prev) => (prev + 1) % GALERIA.length);
+  };
+  const prevSlide = () => {
+    setActiveSlide((prev) => (prev - 1 + GALERIA.length) % GALERIA.length);
+  };
+
+  const [activeCard, setActiveCard] = useState(0);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const cards = [
+    { img: GALERIA[0], alt: "Diseño Elegante" },
+    { img: GALERIA[1], alt: "Diseño Minimalista" },
+    { img: GALERIA[2], alt: "Diseño Rústico" }
+  ];
+
+  const getCardStyle = (idx: number) => {
+    const diff = (idx - activeCard + 3) % 3;
+    
+    // Base styles for the normal state
+    let zIndex = 10;
+    let transform = 'translate3d(-24%, -18%, 0) scale(0.88) rotate(3deg)';
+    let opacity = 0.6;
+    let boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.2)';
+
+    if (diff === 0) {
+      zIndex = 30;
+      transform = 'translate3d(10%, 10%, 0) scale(1) rotate(4deg)';
+      opacity = 1;
+      boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.5)';
+    } else if (diff === 1) {
+      zIndex = 20;
+      transform = 'translate3d(-10%, -6%, 0) scale(0.95) rotate(-6deg)';
+      opacity = 0.8;
+      boxShadow = '0 15px 20px -5px rgba(0, 0, 0, 0.3)';
+    }
+
+    // Expand (scale up) the card being hovered
+    if (hoveredCard === idx) {
+      zIndex = 50;
+      opacity = 1;
+      boxShadow = '0 25px 35px -5px rgba(0, 0, 0, 0.6)';
+      if (diff === 0) {
+        transform = 'translate3d(10%, 10%, 0) scale(1.1) rotate(2deg)';
+      } else if (diff === 1) {
+        transform = 'translate3d(-10%, -6%, 0) scale(1.06) rotate(-3deg)';
+      } else {
+        transform = 'translate3d(-24%, -18%, 0) scale(1.0) rotate(1deg)';
+      }
+    }
+
+    return {
+      zIndex,
+      transform,
+      opacity,
+      boxShadow
+    };
+  };
+
   return (
     <main className="min-h-screen w-full bg-[#0c0a07] overflow-hidden flex flex-col">
       <Navigation />
+
+      {/* Hero Section */}
       <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 px-6 flex items-center min-h-screen">
         <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2000&auto=format&fit=crop" alt="Ventana Termoacústica" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-[#0c0a07]/70"></div>
+          <img 
+            src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2000&auto=format&fit=crop" 
+            alt="Ventana Termoacústica de Aluminio" 
+            className="w-full h-full object-cover" 
+          />
+          <div className="absolute inset-0 bg-[#0c0a07]/75"></div>
         </div>
         <div className="max-w-7xl mx-auto w-full relative z-10">
-          <ScrollReveal direction="left" className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-8">
-              <Link href="/productos/ventanas" className="text-white/60 hover:text-[#FACC15] transition-colors flex items-center gap-2 text-sm font-medium">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-                Volver a tipos de ventanas
-              </Link>
-              <span className="bg-[#16130c] border border-[#FACC15]/30 text-[#FACC15] text-xs px-3 py-1 rounded-full font-medium">Termoacústica</span>
-            </div>
-            <Heading level="h1" className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
-              Ventana <span className="text-[#FACC15]">Termoacústica</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            
+            {/* Left Content */}
+            <ScrollReveal staggerChildren={0.15} direction="left" className="flex flex-col items-start">
+              <ScrollRevealItem>
+                <div className="flex items-center gap-4 mb-6">
+                  <Link href="/productos/ventanas" className="text-white/60 hover:text-[#FACC15] transition-colors flex items-center gap-2 text-sm font-medium">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                    Volver a tipos de ventanas
+                  </Link>
+                  <span className="bg-[#16130c] border border-[#FACC15]/30 text-[#FACC15] text-xs px-3 py-1 rounded-full font-medium">
+                    Termoacústica
+                  </span>
+                </div>
+              </ScrollRevealItem>
+
+              <ScrollRevealItem>
+                <Heading level="h1" className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+                  Ventana <br className="hidden md:block"/>
+                  <span className="text-[#FACC15] drop-shadow-[0_0_15px_rgba(250,204,21,0.2)]">Termoacústica</span>
+                </Heading>
+              </ScrollRevealItem>
+
+              <ScrollRevealItem>
+                <p className="text-white/80 text-lg md:text-xl max-w-lg mb-8 leading-relaxed font-light">
+                  La cumbre del confort, el silencio y la eficiencia energética. Su sistema de doble o triple acristalamiento con cámara aislante hermética detiene de forma sobresaliente el ruido molesto de la calle y reduce las pérdidas de temperatura hasta un 70%.
+                </p>
+              </ScrollRevealItem>
+
+              {/* Feature List */}
+              <ScrollRevealItem className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-10 w-full">
+                <div className="flex items-center gap-2 text-white/90 text-sm font-medium">
+                  <svg className="w-5 h-5 text-[#FACC15]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/></svg>
+                  Instalación 1-2 días
+                </div>
+                <div className="flex items-center gap-2 text-white/90 text-sm font-medium">
+                  <svg className="w-5 h-5 text-[#FACC15]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/></svg>
+                  Garantía 10 Años
+                </div>
+                <div className="flex items-center gap-2 text-white/90 text-sm font-medium">
+                  <svg className="w-5 h-5 text-[#FACC15]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/></svg>
+                  Ahorro Energético
+                </div>
+              </ScrollRevealItem>
+
+              {/* Buttons */}
+              <ScrollRevealItem className="flex flex-wrap items-center gap-4">
+                <a href="#contacto" className="bg-[#FACC15] text-[#110e08] px-8 py-3.5 rounded-full font-bold shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.5)] hover:-translate-y-1 transition-all flex items-center gap-2">
+                  Cotizar Ahora
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+                <a href="tel:+51929765802" className="bg-[#16130c]/80 text-white border border-[#2a2415] hover:border-[#FACC15]/50 px-8 py-3.5 rounded-full font-bold hover:bg-[#1f1a11] backdrop-blur-sm hover:-translate-y-1 transition-all">
+                  +51 929 765 802
+                </a>
+              </ScrollRevealItem>
+            </ScrollReveal>
+
+            {/* Right Content: Overlapping Cards & Pricing below */}
+            <ScrollReveal direction="right" className="relative mt-8 lg:mt-0 flex flex-col items-center">
+              <div className="relative w-full aspect-[4/3] max-w-md md:max-w-lg lg:max-w-xl mx-auto flex items-center justify-center pt-8 pl-8 pr-4 pb-4 h-[320px] sm:h-[380px] md:h-[420px]">
+                {cards.map((card, idx) => {
+                  const isActive = idx === activeCard;
+                  return (
+                    <div
+                      key={idx}
+                      onClick={() => setActiveCard(idx)}
+                      onMouseEnter={() => setHoveredCard(idx)}
+                      onMouseLeave={() => setHoveredCard(null)}
+                      style={getCardStyle(idx)}
+                      className="absolute w-[80%] h-[85%] rounded-[2rem] overflow-hidden border border-[#2a2415]/60 transition-all duration-500 ease-in-out cursor-pointer group bg-[#16130c]"
+                    >
+                      {/* Dark overlay for background cards, fades on hover */}
+                      <div className={`absolute inset-0 bg-[#110e08] z-10 transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-40 group-hover:opacity-10'}`} />
+                      <img 
+                        src={card.img} 
+                        alt={card.alt} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+              
+              {/* Pricing Card below the image stack */}
+              <div className="mt-8 bg-[#110e08]/90 backdrop-blur-md border border-[#FACC15]/30 p-5 rounded-2xl flex items-center justify-between shadow-2xl w-[85%] max-w-md mx-auto">
+                <div>
+                  <span className="text-white/50 text-xs font-bold uppercase tracking-widest block mb-1">Desde</span>
+                  <span className="text-white text-3xl font-extrabold tracking-tight">S/. 750</span>
+                </div>
+                <div className="text-right">
+                  <span className="text-[#FACC15] text-xs font-bold uppercase tracking-widest block mb-1">Incluye</span>
+                  <span className="text-white/90 text-sm font-medium">Instalación + Garantía</span>
+                </div>
+              </div>
+            </ScrollReveal>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Características Section */}
+      <section className="py-24 px-6 bg-[#FAFAFA]">
+        <div className="max-w-5xl mx-auto text-center">
+          <ScrollReveal direction="up" className="mb-16">
+            <h3 className="bg-[#FACC15] text-[#110e08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
+              CARACTERÍSTICAS
+            </h3>
+            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900">
+              Lo que incluye tu <span className="text-[#eab308]">Termoacústica</span>
             </Heading>
-            <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-2xl font-light">
-              Sistema de doble o triple vidrio con cámara de aire o gas Argón. La solución premium para máximo confort, ahorro energético hasta el 70% y reducción de ruido hasta 47dB.
+          </ScrollReveal>
+          
+          <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {INCLUYE.map((item, idx) => (
+              <ScrollRevealItem key={idx} className="bg-white border border-gray-100 rounded-2xl p-6 flex items-center gap-4 shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-lg transition-all text-left">
+                <div className="w-10 h-10 shrink-0 bg-[#FACC15] rounded-xl flex items-center justify-center text-[#110e08]">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <span className="text-gray-800 font-semibold text-base">{item}</span>
+              </ScrollRevealItem>
+            ))}
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Especificaciones Técnicas Section */}
+      <section className="py-24 px-6 bg-[#0c0a07] relative border-y border-[#2a2415]">
+        <div className="max-w-6xl mx-auto text-center">
+          <ScrollReveal direction="up" className="mb-16">
+            <h3 className="bg-[#FACC15] text-[#110e08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
+              ESPECIFICACIONES
+            </h3>
+            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Datos <span className="text-[#FACC15]">Técnicos</span>
+            </Heading>
+            <p className="text-white/60 text-lg font-light max-w-2xl mx-auto">
+              Detalle estructural y coeficientes de aislamiento termoacústico del panel insulado.
             </p>
-            <div className="flex flex-wrap gap-4 mb-10">
-              <div className="bg-[#16130c]/80 backdrop-blur-sm border border-[#2a2415] rounded-full px-6 py-3"><span className="text-white font-extrabold text-lg">Desde S/ 750</span></div>
-              <div className="bg-[#16130c]/80 backdrop-blur-sm border border-[#2a2415] rounded-full px-6 py-3 flex items-center gap-2">
-                <svg className="w-5 h-5 text-[#FACC15]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span className="text-white/90 text-sm font-medium">Instalación: 1-2 días</span>
+          </ScrollReveal>
+          
+          <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {DATOS.map((seccion, idx) => (
+              <ScrollRevealItem key={idx} className="bg-[#16130c] border border-[#2a2415] rounded-3xl p-8 hover:border-[#FACC15]/30 transition-colors text-left shadow-[0_8px_30px_rgba(0,0,0,0.02)]">
+                <div className="flex items-center gap-4 mb-8 pb-6 border-b border-[#2a2415]">
+                  <div className="w-12 h-12 bg-[#FACC15]/10 rounded-xl flex items-center justify-center text-[#FACC15]">
+                    {seccion.icon}
+                  </div>
+                  <h4 className="text-2xl font-bold text-white">{seccion.title}</h4>
+                </div>
+                <div className="space-y-4">
+                  {seccion.items.map((item, iIdx) => (
+                    <div key={iIdx} className="flex justify-between items-center gap-4 border-b border-[#2a2415]/50 pb-3 last:border-0 last:pb-0">
+                      <span className="text-white/50 text-sm">{item.label}</span>
+                      <span className="text-white font-semibold text-right text-sm sm:text-base">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </ScrollRevealItem>
+            ))}
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Ventajas Section */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-7xl mx-auto text-center">
+          <ScrollReveal direction="up" className="mb-16">
+            <h3 className="bg-[#FACC15] text-[#110e08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
+              BENEFICIOS
+            </h3>
+            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900">
+              Ventajas de elegir <span className="text-[#eab308]">Termoacústica</span>
+            </Heading>
+          </ScrollReveal>
+          
+          <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {VENTAJAS.map((v, idx) => (
+              <ScrollRevealItem key={idx} className="bg-[#16130c] border border-[#2a2415] rounded-3xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.12)] group hover:border-[#FACC15]/30 transition-colors">
+                <div className="w-14 h-14 bg-[#FACC15] text-[#110e08] rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <h4 className="text-xl font-bold text-white mb-4">{v.title}</h4>
+                <p className="text-white/60 text-sm leading-relaxed font-light">{v.desc}</p>
+              </ScrollRevealItem>
+            ))}
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Aplicaciones (Ideal para) */}
+      <section className="py-24 px-6 bg-[#FAFAFA] relative border-t border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <ScrollReveal direction="left">
+              <h3 className="text-[#eab308] text-base font-bold tracking-[0.2em] uppercase mb-4">Aplicaciones</h3>
+              <Heading level="h2" className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+                Ideal <span className="text-[#eab308]">para</span>
+              </Heading>
+              <p className="text-gray-600 text-xl md:text-2xl mb-12 leading-relaxed font-light max-w-xl">
+                La ventana termoacústica es perfecta para diferentes tipos de espacios y necesidades. Descubre si es la opción correcta para tu proyecto.
+              </p>
+
+              <div className="space-y-6">
+                {APLICACIONES.map((app, idx) => (
+                  <div key={idx} className="flex items-center gap-5">
+                    <div className="w-8 h-8 rounded-full bg-[#FACC15]/20 text-[#eab308] flex items-center justify-center shrink-0">
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                    </div>
+                    <span className="text-gray-800 font-semibold text-lg md:text-xl">{app}</span>
+                  </div>
+                ))}
               </div>
-              <div className="bg-[#16130c]/80 backdrop-blur-sm border border-[#2a2415] rounded-full px-6 py-3 flex items-center gap-2">
-                <svg className="w-5 h-5 text-[#FACC15]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                <span className="text-white/90 text-sm font-medium">Garantía 10 años</span>
+            </ScrollReveal>
+
+            {/* Slider de Imágenes del Producto */}
+            <ScrollReveal direction="right" className="flex flex-col gap-6 mt-8 lg:mt-0">
+              <div className="relative rounded-3xl overflow-hidden aspect-[4/3] sm:aspect-[4/3] md:aspect-[16/10] lg:aspect-[3/4] border border-gray-200 group shadow-lg">
+                
+                {/* Contenedor de Imágenes con Transición Suave */}
+                <div 
+                  className="absolute inset-0 w-full h-full flex transition-transform duration-500 ease-in-out" 
+                  style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+                >
+                  {GALERIA.map((img, idx) => (
+                    <div key={idx} className="w-full h-full shrink-0 relative">
+                      <img 
+                        src={img} 
+                        alt={`Vista de producto ${idx + 1}`} 
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/10 z-10" />
+                    </div>
+                  ))}
+                </div>
+
+                {/* Flechas de Navegación */}
+                <button 
+                  onClick={prevSlide}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md text-white flex items-center justify-center transition-all cursor-pointer opacity-0 group-hover:opacity-100 shadow-md"
+                  aria-label="Anterior"
+                >
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" /></svg>
+                </button>
+                <button 
+                  onClick={nextSlide}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md text-white flex items-center justify-center transition-all cursor-pointer opacity-0 group-hover:opacity-100 shadow-md"
+                  aria-label="Siguiente"
+                >
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+                </button>
+
+                {/* Indicadores inferiores (Dots) */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                  {GALERIA.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveSlide(idx)}
+                      className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${activeSlide === idx ? 'bg-[#FACC15] w-6' : 'bg-white/50'}`}
+                      aria-label={`Ir al slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <a href="#contacto" className="bg-[#FACC15] text-[#110e08] px-8 py-3.5 rounded-full font-bold shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.5)] hover:-translate-y-1 transition-all flex items-center gap-2">Cotizar Ahora <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a>
-              <a href="tel:+51929765802" className="bg-[#16130c]/80 text-white border border-[#2a2415] hover:border-[#FACC15]/50 px-8 py-3.5 rounded-full font-bold hover:bg-[#1f1a11] backdrop-blur-sm hover:-translate-y-1 transition-all">+51 929 765 802</a>
+
+              {/* Tarjeta de Garantía (Colocada ABAJO de la imagen, no flotante) */}
+              <div className="bg-[#110e08]/95 backdrop-blur-md border border-[#FACC15]/30 p-5 rounded-2xl flex items-center gap-4 shadow-xl w-full">
+                <div className="w-12 h-12 rounded-xl bg-[#FACC15]/10 flex items-center justify-center text-[#FACC15] shrink-0">
+                  <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                </div>
+                <div>
+                  <div className="text-white font-bold text-base">Garantía de 10 Años</div>
+                  <div className="text-white/60 text-sm">En perfilería de aluminio y herrajes Meraky</div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Trabajos Realizados Section */}
+      <section className="py-24 px-6 bg-[#0c0a07] relative border-t border-[#2a2415]">
+        <div className="max-w-7xl mx-auto text-center">
+          <ScrollReveal direction="up" className="mb-16">
+            <h3 className="bg-[#FACC15] text-[#110e08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
+              GALERÍA
+            </h3>
+            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-white">
+              Trabajos <span className="text-[#FACC15]">Realizados</span>
+            </Heading>
+          </ScrollReveal>
+          
+          <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {GALERIA.map((img, idx) => (
+              <ScrollRevealItem key={idx} className="aspect-square md:aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden group border border-[#2a2415] relative cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
+                <img 
+                  src={img} 
+                  alt={`Proyecto de ventana termoacústica ${idx + 1}`} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
+              </ScrollRevealItem>
+            ))}
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Preguntas Frecuentes FAQ Section */}
+      <section className="py-24 px-6 bg-[#FAFAFA] border-t border-gray-100">
+        <div className="max-w-3xl mx-auto text-center">
+          <ScrollReveal direction="up" className="mb-16">
+            <h3 className="bg-[#110e08] text-[#FACC15] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
+              FAQ
+            </h3>
+            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900">
+              Preguntas <span className="text-[#eab308]">Frecuentes</span>
+            </Heading>
+          </ScrollReveal>
+          
+          <ScrollReveal staggerChildren={0.1} direction="up" className="space-y-4 text-left">
+            {FAQ.map((faq, idx) => (
+              <ScrollRevealItem key={idx}>
+                <div 
+                  className={`bg-white border ${openFaq === idx ? 'border-[#FACC15] shadow-md' : 'border-gray-200 hover:border-[#FACC15]/50'} transition-all duration-300 rounded-2xl overflow-hidden`}
+                >
+                  <button 
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full text-left p-6 flex items-center justify-between cursor-pointer group"
+                  >
+                    <span className={`font-bold md:text-lg transition-colors pr-8 ${openFaq === idx ? 'text-[#110e08]' : 'text-gray-700 group-hover:text-gray-900'}`}>
+                      {faq.pregunta}
+                    </span>
+                    <svg 
+                      className={`w-5 h-5 text-[#FACC15] shrink-0 transition-transform duration-300 ${openFaq === idx ? 'rotate-180' : ''}`} 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div 
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${openFaq === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                  >
+                    <p className="p-6 pt-0 text-gray-600 leading-relaxed font-light">
+                      {faq.respuesta}
+                    </p>
+                  </div>
+                </div>
+              </ScrollRevealItem>
+            ))}
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-6 bg-[#110e08] border-y border-[#2a2415] relative">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10 mix-blend-overlay"></div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <ScrollReveal direction="up">
+            <Heading level="h2" className="text-3xl md:text-5xl font-bold text-white mb-6">
+              ¿Listo para tu nueva <span className="text-[#FACC15]">Termoacústica</span>?
+            </Heading>
+            <p className="text-white/70 text-lg mb-10 leading-relaxed max-w-2xl mx-auto font-light">
+              Solicita una cotización gratuita y sin ningún compromiso. Nuestro equipo de técnicos expertos te contactará en menos de 24 horas.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <a href="#contacto" className="bg-[#FACC15] text-[#110e08] px-8 py-3.5 rounded-full font-bold shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.5)] hover:-translate-y-1 transition-all flex items-center gap-2">
+                Cotizar Gratis
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+              <a href="tel:+51929765802" className="text-white border border-[#2a2415] hover:border-[#FACC15]/50 px-8 py-3.5 rounded-full font-medium hover:bg-white/5 transition-all flex items-center gap-2">
+                <svg className="w-5 h-5 text-[#FACC15]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                +51 929 765 802
+              </a>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Stats Banner */}
-      <section className="py-16 px-6 bg-[#FACC15]">
-        <div className="max-w-5xl mx-auto">
-          <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <ScrollRevealItem><div className="text-5xl font-extrabold text-[#110e08] mb-2">45 dB</div><div className="text-[#110e08]/70 font-semibold uppercase tracking-wider text-sm">Reducción de ruido máxima</div></ScrollRevealItem>
-            <ScrollRevealItem><div className="text-5xl font-extrabold text-[#110e08] mb-2">70%</div><div className="text-[#110e08]/70 font-semibold uppercase tracking-wider text-sm">Ahorro energético</div></ScrollRevealItem>
-            <ScrollRevealItem><div className="text-5xl font-extrabold text-[#110e08] mb-2">20+</div><div className="text-[#110e08]/70 font-semibold uppercase tracking-wider text-sm">Años de vida útil</div></ScrollRevealItem>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <section className="py-24 px-6 bg-[#FAFAFA]"><div className="max-w-5xl mx-auto"><ScrollReveal direction="up" className="text-center mb-16"><h3 className="bg-[#FACC15] text-[#110e08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6">Características</h3><Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900">Lo que incluye tu <span className="text-[#FACC15]">Ventana</span></Heading></ScrollReveal><ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">{INCLUYE.map((item, idx) => (<ScrollRevealItem key={idx} className="bg-white border border-gray-100 rounded-2xl p-6 flex items-center gap-4 shadow-[0_8px_30px_rgb(0,0,0,0.08)]"><div className="w-10 h-10 shrink-0 bg-[#FACC15] rounded-xl flex items-center justify-center text-[#110e08]"><svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/></svg></div><span className="text-gray-800 font-medium">{item}</span></ScrollRevealItem>))}</ScrollReveal></div></section>
-
-      <section className="py-24 px-6 bg-[#0c0a07]"><div className="max-w-6xl mx-auto"><ScrollReveal direction="up" className="text-center mb-16"><h3 className="text-[#FACC15] text-sm font-bold tracking-[0.2em] uppercase mb-3">Especificaciones</h3><Heading level="h2" className="text-4xl md:text-5xl font-bold text-white">Datos <span className="text-[#FACC15]">Técnicos</span></Heading></ScrollReveal><ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 gap-6">{DATOS.map((sec, idx) => (<ScrollRevealItem key={idx} className="bg-[#16130c] border border-[#2a2415] rounded-3xl p-8 hover:border-[#FACC15]/30 transition-colors"><h4 className="text-xl font-bold text-white mb-6 pb-4 border-b border-[#2a2415]">{sec.title}</h4><div className="space-y-4">{sec.items.map((item, i) => (<div key={i} className="flex justify-between items-center"><span className="text-white/50 text-sm">{item.label}</span><span className="text-white font-medium text-sm text-right">{item.value}</span></div>))}</div></ScrollRevealItem>))}</ScrollReveal></div></section>
-
-      <section className="py-24 px-6 bg-white"><div className="max-w-7xl mx-auto"><ScrollReveal direction="up" className="text-center mb-16"><h3 className="bg-[#FACC15] text-[#110e08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6">Beneficios</h3><Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900">Ventajas de la <span className="text-[#FACC15]">Termoacústica</span></Heading></ScrollReveal><ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">{VENTAJAS.map((v, idx) => (<ScrollRevealItem key={idx} className="bg-[#FAFAFA] border border-gray-100 rounded-3xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.08)]"><div className="w-14 h-14 bg-[#FACC15] rounded-2xl flex items-center justify-center mb-6"><svg className="w-7 h-7 text-[#110e08]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/></svg></div><h4 className="text-xl font-bold text-gray-900 mb-3">{v.title}</h4><p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p></ScrollRevealItem>))}</ScrollReveal></div></section>
-
-      <section className="py-24 px-6 bg-[#FAFAFA]"><div className="max-w-3xl mx-auto"><ScrollReveal direction="up" className="text-center mb-16"><h3 className="text-[#110e08] text-sm font-bold tracking-[0.2em] uppercase mb-3">Preguntas Frecuentes</h3><Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900">Resolvemos tus <span className="text-[#FACC15]">Dudas</span></Heading></ScrollReveal><ScrollReveal staggerChildren={0.1} className="space-y-4">{FAQ.map((faq, idx) => (<ScrollRevealItem key={idx}><div className={`bg-white border ${openFaq === idx ? 'border-[#FACC15] shadow-md' : 'border-gray-200 hover:border-[#FACC15]/50'} rounded-2xl overflow-hidden transition-all duration-300`}><button onClick={() => toggleFaq(idx)} className="w-full text-left p-6 flex items-center justify-between"><span className={`font-bold md:text-lg pr-8 ${openFaq === idx ? 'text-[#110e08]' : 'text-gray-700'}`}>{faq.pregunta}</span><svg className={`w-5 h-5 text-[#FACC15] shrink-0 transition-transform duration-300 ${openFaq === idx ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7"/></svg></button><div className={`overflow-hidden transition-all duration-300 ${openFaq === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}><p className="p-6 pt-0 text-gray-600 leading-relaxed">{faq.respuesta}</p></div></div></ScrollRevealItem>))}</ScrollReveal></div></section>
-
-      <section className="py-20 px-6 bg-[#110e08] border-y border-[#2a2415]"><div className="max-w-4xl mx-auto text-center"><ScrollReveal direction="up"><Heading level="h2" className="text-3xl md:text-5xl font-bold text-white mb-6">¿Listo para tu <span className="text-[#FACC15]">Ventana Termoacústica</span>?</Heading><p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">Cotización gratuita y sin compromiso. Te contactamos en menos de 24 horas.</p><div className="flex flex-wrap items-center justify-center gap-4"><a href="#contacto" className="bg-[#FACC15] text-[#110e08] px-8 py-3.5 rounded-full font-bold hover:-translate-y-1 transition-all flex items-center gap-2">Cotizar Gratis <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a><a href="tel:+51929765802" className="text-white border border-[#2a2415] hover:border-[#FACC15]/50 px-8 py-3.5 rounded-full font-medium hover:bg-white/5 transition-all">+51 929 765 802</a></div></ScrollReveal></div></section>
-      <ContactSection /><Footer />
+      <ContactSection />
+      <Footer />
     </main>
   );
 }
