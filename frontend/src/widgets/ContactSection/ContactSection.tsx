@@ -64,14 +64,14 @@ export default function ContactSection() {
               </div>
               <div>
                 <span className="block text-xs text-white/50 uppercase tracking-widest font-bold mb-1">Dirección</span>
-                <span className="text-white font-semibold">Av. Independencia 1338 - IV Centenario, Arequipa</span>
+                <span className="text-white font-semibold">2W85+PF7 San Martín de Porres, Lima</span>
               </div>
             </ScrollRevealItem>
 
             {/* Mapa de Google Real */}
             <ScrollRevealItem className="h-56 rounded-2xl border border-[#2a2415] overflow-hidden shadow-lg relative mt-2">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.218526558362!2d-71.53188998466184!3d-16.413725542848525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b071720d2cb%3A0xc68e5904fc7c2295!2sAv.%20Independencia%201338%2C%20Arequipa%2004001!5e0!3m2!1ses!2spe!4v1680000000000!5m2!1ses!2spe" 
+                src="https://maps.google.com/maps?q=2W85%2BPF7%20San%20Mart%C3%ADn%20de%20Porres&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                 width="100%" 
                 height="100%" 
                 style={{border:0}} 

@@ -10,33 +10,33 @@ export default function PortfolioSection() {
   const projects = [
     { 
       title: "Residencia Las Lomas", 
-      category: "Puertas Corredizas",
-      img: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop"
+      category: "Ventanas Corredizas",
+      img: "/images/ventanas/ventana-corrediza.png"
     },
     { 
-      title: "Oficinas Vértice", 
-      category: "Interiores",
-      img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop"
+      title: "Centro Empresarial Vértice", 
+      category: "Mamparas Divisorias",
+      img: "/images/mamparas/mampara-corrediza.png"
     },
     { 
-      title: "Casa del Bosque", 
-      category: "Fachada Residencial",
-      img: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop"
+      title: "Casa de Campo Girasoles", 
+      category: "Ventanas Pivotantes",
+      img: "/images/ventanas/ventana-pivotante.png"
     },
     { 
-      title: "Departamento Minimalista", 
-      category: "Ventanas Acústicas",
-      img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop"
+      title: "Baño Suite Principal", 
+      category: "Mamparas Fijas",
+      img: "/images/mamparas/mampara-fija.png"
     },
     { 
-      title: "Torre Althea", 
-      category: "Fachada Comercial",
-      img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop"
+      title: "Penthouse San Isidro", 
+      category: "Ventanas Fijas Panorámicas",
+      img: "/images/ventanas/ventana-fija.png"
     },
     { 
-      title: "Hotel Boutique", 
-      category: "Mamparas de Baño",
-      img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop"
+      title: "Ducha Esquinera Moderna", 
+      category: "Mamparas de Ducha Integrales",
+      img: "/images/mamparas/mampara-ducha.png"
     },
   ];
 

@@ -65,10 +65,6 @@
         "destination": "/productos/ventanas/proyectante/index.html"
       },
       {
-        "source": "/productos/ventanas/termoacustica",
-        "destination": "/productos/ventanas/termoacustica/index.html"
-      },
-      {
         "source": "/productos/ventanas",
         "destination": "/productos/ventanas/index.html"
       },

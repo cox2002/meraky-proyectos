@@ -13,22 +13,22 @@ export default function HeroSection() {
   // Arreglo de datos. Separar los datos de la estructura HTML hace el componente más limpio.
   const slides = [
     {
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop", // Residencia de lujo con mamparas y piscina iluminada
       badge: "Soluciones en Vidrio y Aluminio",
       title: "Elegancia en Cristal",
-      subtitle: "Transformamos espacios con soluciones innovadoras en vidrio templado y aluminio arquitectónico."
+      subtitle: "Transformamos espacios con soluciones innovadoras en vidrio templado y aluminio arquitectónico de alta gama."
     },
     {
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2000&auto=format&fit=crop", // Sala premium con inmensos ventanales de piso a techo y luz natural
       badge: "Diseño Interior Premium",
       title: "Divisiones que Inspiran",
-      subtitle: "Acabados de lujo que maximizan la luz natural y crean ambientes sofisticados."
+      subtitle: "Acabados de lujo que maximizan la luz natural y crean ambientes sofisticados y amplios."
     },
     {
-      image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop",
-      badge: "Arquitectura Comercial",
+      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000&auto=format&fit=crop", // Fachada residencial de obra maestra arquitectónica y barandas de cristal
+      badge: "Fachadas Residenciales",
       title: "Fachadas Modernas",
-      subtitle: "Sistemas de aluminio de alta resistencia para proyectos corporativos y comerciales."
+      subtitle: "Sistemas de aluminio de alta resistencia y cristales templados de seguridad para proyectos exclusivos."
     }
   ];
 
@@ -44,13 +44,15 @@ export default function HeroSection() {
 
   // Efecto secundario para el cambio automático de diapositivas.
   useEffect(() => {
-    // setInterval ejecuta 'nextSlide' cada 5000 milisegundos (5 segundos).
+    // Al incluir 'currentSlide' en las dependencias, el temporizador se reiniciará 
+    // automáticamente cada vez que el usuario cambie de slide de forma manual,
+    // garantizando que siempre se mantenga durante 6 segundos (6000ms) antes de avanzar.
     const timer = setInterval(() => {
       nextSlide();
-    }, 5000);
-    // Limpieza del intervalo al desmontar el componente para evitar que se ejecute en segundo plano.
+    }, 6000);
+    // Limpieza del intervalo al cambiar de diapositiva o desmontar el componente.
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, [currentSlide]);
 
   return (
     // section relativa que ocupa al menos la pantalla completa (min-h-screen)

@@ -6,10 +6,10 @@ import ScrollReveal, { ScrollRevealItem } from '@/src/shared/ui/ScrollReveal';
 
 export default function AboutSection() {
   const images = [
-    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop", // Planos/arquitecto
-    "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=800&auto=format&fit=crop", // Construcción/Estructura
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop", // Interior con luz
-    "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop"  // Casa moderna cristal
+    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop", // Operario cortando perfiles metálicos y de aluminio con sierra circular (chispas en taller)
+    "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800&auto=format&fit=crop", // Constructor con casco midiendo perfiles de montaje estructural en obra
+    "https://images.unsplash.com/photo-1590674899484-d5640e854abe?q=80&w=800&auto=format&fit=crop", // Detalle de medición y trazado milimétrico de perfiles y marcos
+    "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop"  // Operario calificado con herramientas de seguridad listo para instalación
   ];
 
   return (

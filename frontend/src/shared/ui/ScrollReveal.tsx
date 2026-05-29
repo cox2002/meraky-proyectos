@@ -10,6 +10,7 @@ export type ScrollRevealProps = {
   delay?: number;
   duration?: number;
   staggerChildren?: number;
+  amount?: number | 'some' | 'all';
 };
 
 export default function ScrollReveal({
@@ -19,6 +20,7 @@ export default function ScrollReveal({
   delay = 0,
   duration = 0.6,
   staggerChildren,
+  amount = 'some',
 }: ScrollRevealProps) {
   // Desplazamiento inicial oculto (30px como se solicitó)
   const offset = 30;
@@ -63,7 +65,7 @@ export default function ScrollReveal({
       variants={variants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount }}
       className={className}
     >
       {children}

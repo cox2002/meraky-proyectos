@@ -54,7 +54,7 @@ const TIPOS_MAMPARAS = [
     price: "Desde S/ 980",
     tags: ["Ahorro de espacio", "Fácil limpieza", "Rodamientos silenciosos"],
     materials: "5 materiales disponibles · Ver precios",
-    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=800&auto=format&fit=crop",
+    image: "/images/mamparas/mampara-corrediza.png",
     href: "/productos/mamparas/corrediza"
   },
   {
@@ -63,7 +63,7 @@ const TIPOS_MAMPARAS = [
     price: "Desde S/ 800",
     tags: ["Apertura 180°", "Bisagras de acero inox", "Cierre magnético"],
     materials: "2 materiales disponibles · Ver precios",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop",
+    image: "/images/mamparas/mampara-batiente.png",
     href: "/productos/mamparas/batiente"
   },
   {
@@ -72,7 +72,7 @@ const TIPOS_MAMPARAS = [
     price: "Consultar precio",
     tags: ["Diseño versátil", "Acceso amplio", "Ideal para bañeras"],
     materials: "Precios próximamente",
-    image: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=800&auto=format&fit=crop",
+    image: "/images/mamparas/mampara-plegable.png",
     href: "/productos/mamparas/plegable"
   },
   {
@@ -81,7 +81,7 @@ const TIPOS_MAMPARAS = [
     price: "Desde S/ 380",
     tags: ["Minimalista", "Fácil acceso", "Fácil limpieza"],
     materials: "Moduglas | Enmarcado",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop",
+    image: "/images/mamparas/mampara-fija.png",
     href: "/productos/mamparas/fija"
   },
   {
@@ -90,7 +90,7 @@ const TIPOS_MAMPARAS = [
     price: "Desde S/ 335",
     tags: ["Diseño integral", "Múltiples configuraciones", "Perfiles de alta calidad"],
     materials: "3 materiales disponibles · Ver precios",
-    image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800&auto=format&fit=crop",
+    image: "/images/mamparas/mampara-ducha.png",
     href: "/productos/mamparas/ducha"
   }
 ];
@@ -197,7 +197,7 @@ export default function MamparasPage() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=2000&auto=format&fit=crop" 
+            src="/images/mamparas/mampara-hero-bg.png" 
             alt="Fondo Mamparas" 
             className="w-full h-full object-cover" 
           />
@@ -265,7 +265,7 @@ export default function MamparasPage() {
                 {/* Overlay oscuro sutil */}
                 <div className="absolute inset-0 bg-[#110e08]/10 z-10 group-hover:bg-transparent transition-colors duration-500" />
                 <img 
-                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&auto=format&fit=crop" 
+                  src="/images/mamparas/mampara-hero-card.png" 
                   alt="Mampara de baño moderna" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />

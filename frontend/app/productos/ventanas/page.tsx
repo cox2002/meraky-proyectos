@@ -55,7 +55,7 @@ const TIPOS_VENTANAS = [
     price: "Desde S/ 298",
     tags: ["Ahorro de espacio", "Fácil operación", "Múltiples hojas"],
     materials: "3 materiales disponibles · Ver precios",
-    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop",
+    image: "/images/ventanas/ventana-corrediza.png",
     href: "/productos/ventanas/corrediza"
   },
   {
@@ -64,7 +64,7 @@ const TIPOS_VENTANAS = [
     price: "Desde S/ 245",
     tags: ["Ventilación con lluvia", "Seguridad adicional", "Fácil limpieza"],
     materials: "2 materiales disponibles · Ver precios",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop",
+    image: "/images/ventanas/ventana-proyectante.png",
     href: "/productos/ventanas/proyectante"
   },
   {
@@ -73,7 +73,7 @@ const TIPOS_VENTANAS = [
     price: "Desde S/ 180",
     tags: ["Máxima ventilación", "Fácil limpieza exterior", "Cierre multipunto"],
     materials: "2 materiales disponibles · Ver precios",
-    image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=800&auto=format&fit=crop",
+    image: "/images/ventanas/ventana-batiente.png",
     href: "/productos/ventanas/batiente"
   },
   {
@@ -82,7 +82,7 @@ const TIPOS_VENTANAS = [
     price: "Desde S/ 250",
     tags: ["Diseño moderno", "Limpieza desde interior", "Giro 180°"],
     materials: "2 materiales disponibles · Ver precios",
-    image: "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop",
+    image: "/images/ventanas/ventana-pivotante.png",
     href: "/productos/ventanas/pivotante"
   },
   {
@@ -91,17 +91,8 @@ const TIPOS_VENTANAS = [
     price: "Desde S/ 290",
     tags: ["Máxima luminosidad", "Sin mantenimiento de herrajes", "Mayor aislamiento"],
     materials: "2 materiales disponibles · Ver precios",
-    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=800&auto=format&fit=crop",
+    image: "/images/ventanas/ventana-fija.png",
     href: "/productos/ventanas/fija"
-  },
-  {
-    title: "Ventana Termoacústica",
-    desc: "Sistema de doble o triple vidrio con cámara de aire. Máximo aislamiento térmico y acústico para confort total.",
-    price: "Desde S/ 750",
-    tags: ["Aislamiento térmico", "Reducción de ruido hasta 45dB", "Ahorro energético"],
-    materials: "2 materiales disponibles · Ver precios",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop",
-    href: "/productos/ventanas/termoacustica"
   }
 ];
 
@@ -207,7 +198,7 @@ export default function VentanasPage() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop" 
+            src="/images/ventanas/ventana-hero-bg.png" 
             alt="Fondo Ventanas" 
             className="w-full h-full object-cover" 
           />
@@ -274,7 +265,7 @@ export default function VentanasPage() {
                 {/* Overlay oscuro sutil */}
                 <div className="absolute inset-0 bg-[#110e08]/10 z-10 group-hover:bg-transparent transition-colors duration-500" />
                 <img 
-                  src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop" 
+                  src="/images/ventanas/ventana-hero-card.png" 
                   alt="Ventana de aluminio moderna" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -465,7 +456,7 @@ export default function VentanasPage() {
           {/* Filtros */}
           <ScrollReveal direction="up" className="flex flex-wrap justify-center gap-3 mb-12">
             <button className="bg-[#FACC15] text-[#110e08] px-6 py-2 rounded-full text-sm font-bold shadow-md">Todos</button>
-            {['Corrediza', 'Proyectante', 'Batiente', 'Pivotante', 'Fija', 'Termoacústica'].map((filtro, idx) => (
+            {['Corrediza', 'Proyectante', 'Batiente', 'Pivotante', 'Fija'].map((filtro, idx) => (
               <button key={idx} className="bg-white border border-gray-200 text-gray-600 hover:text-[#110e08] hover:border-[#FACC15] px-6 py-2 rounded-full text-sm font-medium transition-colors shadow-sm">
                 {filtro}
               </button>
