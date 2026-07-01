@@ -21,7 +21,7 @@ export default function GlassButton({
   
   const variantStyles = {
     // primary usa una combinación elegante de oscuro y amarillo sin bordes
-    primary: "bg-gradient-to-b from-[#2a2415] to-[#110e08] text-[#FACC15] hover:shadow-[0_0_20px_rgba(250,204,21,0.15)] hover:scale-[1.02]",
+    primary: "bg-gradient-to-b from-[#2D2110] to-[#140F08] text-[#F59E1B] hover:shadow-[0_0_20px_rgba(245,158,27,0.15)] hover:scale-[1.02]",
     // glass usa el glass-panel y border fantasma, aumentando la opacidad al hover
     glass: "glass-panel ghost-border text-on-surface hover:bg-surface-container-highest/60 hover:scale-[1.02]"
   };
@@ -30,7 +30,7 @@ export default function GlassButton({
 
   if (href) {
     return (
-      <Link href={href} className={combinedClasses}>
+      <Link href={href} className={combinedClasses} {...(props as any)}>
         {children}
       </Link>
     );

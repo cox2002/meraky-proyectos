@@ -8,6 +8,12 @@ import Heading from '@/src/shared/ui/Heading';
 import ScrollReveal, { ScrollRevealItem } from '@/src/shared/ui/ScrollReveal';
 import Link from 'next/link';
 
+const PRECIOS = [
+  { material: "Moduglas Plegable", precio: "S/ 1,200.00", badge: "DESDE" },
+  { material: "Serie 25 Plegable", precio: "S/ 1,450.00" },
+  { material: "Premium Plegable", precio: "S/ 1,850.00" },
+];
+
 const INCLUYE = [
   "Diseño versátil",
   "Acceso amplio",
@@ -20,7 +26,9 @@ const INCLUYE = [
 const DATOS_TECNICOS = [
   {
     icon: (
-      <svg className="w-6 h-6 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
+      <svg className="w-7 h-7 text-[#140F08]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+      </svg>
     ),
     title: "Dimensiones",
     items: [
@@ -32,9 +40,11 @@ const DATOS_TECNICOS = [
   },
   {
     icon: (
-      <svg className="w-6 h-6 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+      <svg className="w-7 h-7 text-[#140F08]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+      </svg>
     ),
-    title: "Vidrio",
+    title: "Vidrio de Seguridad",
     items: [
       { label: "Tipo", value: "Templado de seguridad" },
       { label: "Espesor", value: "6mm / 8mm" },
@@ -44,9 +54,11 @@ const DATOS_TECNICOS = [
   },
   {
     icon: (
-      <svg className="w-6 h-6 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+      <svg className="w-7 h-7 text-[#140F08]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
     ),
-    title: "Sistema de plegado",
+    title: "Sistema Plegable",
     items: [
       { label: "Bisagras", value: "Articuladas de acero" },
       { label: "Perfil", value: "Aluminio anodizado" },
@@ -56,7 +68,9 @@ const DATOS_TECNICOS = [
   },
   {
     icon: (
-      <svg className="w-6 h-6 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+      <svg className="w-7 h-7 text-[#140F08]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+      </svg>
     ),
     title: "Rendimiento",
     items: [
@@ -71,14 +85,14 @@ const DATOS_TECNICOS = [
 const VENTAJAS = [
   {
     icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg>
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
     ),
     title: "Máxima Versatilidad",
     desc: "Se adapta a espacios irregulares o donde puertas tradicionales no pueden abrirse."
   },
   {
     icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
     ),
     title: "Apertura Total",
     desc: "Pliega casi al 100%, dejando prácticamente todo el espacio libre para el paso."
@@ -92,7 +106,7 @@ const VENTAJAS = [
   },
   {
     icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" /></svg>
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
     ),
     title: "Diseño Inteligente",
     desc: "Mecanismos ocultos y guías discretas para una apariencia limpia y contemporánea."
@@ -100,18 +114,25 @@ const VENTAJAS = [
 ];
 
 const APLICACIONES = [
-  "Bañeras",
-  "Duchas amplias",
-  "Baños familiares",
-  "Espacios versátiles",
-  "Personas mayores"
+  "Bañeras y tinas residenciales",
+  "Duchas de acceso amplio",
+  "Baños familiares y multifuncionales",
+  "Espacios altamente versátiles",
+  "Accesibilidad para personas mayores"
 ];
 
 const GALERIA = [
-  "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800&auto=format&fit=crop"
+  "/images/mamparas/mampara-plegable-usuario.png",
+  "/images/mamparas/mampara-plegable-abierta.png",
+  "/images/mamparas/mampara-plegable-detalle.png",
+  "/images/mamparas/mampara-plegable-fondo.jpg"
+];
+
+const GALERIA_PRODUCTO = [
+  "/images/mamparas/mampara-plegable-usuario.png",
+  "/images/mamparas/mampara-plegable-abierta.png",
+  "/images/mamparas/mampara-plegable-detalle.png",
+  "/images/mamparas/mampara-plegable-fondo.jpg"
 ];
 
 const FAQ = [
@@ -140,121 +161,203 @@ export default function MamparaPlegablePage() {
     }
   };
 
+  const [activeSlide, setActiveSlide] = useState(0);
+  const nextSlide = () => {
+    setActiveSlide((prev) => (prev + 1) % GALERIA_PRODUCTO.length);
+  };
+  const prevSlide = () => {
+    setActiveSlide((prev) => (prev - 1 + GALERIA_PRODUCTO.length) % GALERIA_PRODUCTO.length);
+  };
+
+  const [selectedImageIdx, setSelectedImageIdx] = useState<number | null>(null);
+  const nextImage = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (selectedImageIdx !== null) {
+      setSelectedImageIdx((prev) => (prev! + 1) % GALERIA.length);
+    }
+  };
+  const prevImage = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (selectedImageIdx !== null) {
+      setSelectedImageIdx((prev) => (prev! - 1 + GALERIA.length) % GALERIA.length);
+    }
+  };
+
   return (
-    <main className="min-h-screen w-full bg-[#0c0a07] overflow-hidden flex flex-col">
+    <main className="min-h-screen w-full bg-[#0E0B06] overflow-x-hidden flex flex-col">
       <Navigation />
 
-      {/* Hero Section Específico */}
-      <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 px-6 flex-grow flex items-center min-h-[90vh]">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=2000&auto=format&fit=crop" 
-            alt="Fondo Mampara Plegable" 
-            className="w-full h-full object-cover opacity-60 md:opacity-90" 
+      {/* Hero Section Premium para Mampara Plegable */}
+      <section className="relative pt-24 pb-12 md:pt-28 md:pb-16 px-4 sm:px-6 flex-grow flex items-center min-h-screen lg:min-h-screen bg-[#0E0B06]">
+        
+        {/* Contenedor de fondo fluido */}
+        <div className="absolute inset-0 z-0 overflow-hidden bg-[#0E0B06] flex justify-end">
+          <img
+            src="/images/mamparas/mampara-plegable-fondo.jpg"
+            alt="Fondo Mampara Plegable Completa"
+            className="w-full lg:w-[65%] h-full object-cover object-right md:object-right-top absolute right-0 top-0 opacity-85 lg:opacity-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0c0a07] via-[#0c0a07]/70 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0c0a07] via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-[#0E0B06]/35 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06] via-[#0E0B06]/85 to-[#0E0B06]/10 lg:to-transparent z-10"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto w-full relative z-10">
-          <ScrollReveal direction="left" className="max-w-3xl">
-            {/* Back Link & Tag */}
-            <div className="flex items-center gap-4 mb-8">
-              <Link href="/productos/mamparas" className="text-white/60 hover:text-[#FACC15] transition-colors flex items-center gap-2 text-sm font-medium">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                Volver a tipos de mamparas
-              </Link>
-              <span className="bg-[#16130c] border border-[#FACC15]/30 text-[#FACC15] text-xs px-3 py-1 rounded-full font-medium">
-                Plegable
-              </span>
-            </div>
+        <div className="max-w-7xl mx-auto w-full relative z-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-            <Heading level="h1" className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
-              Mampara <span className="text-[#FACC15]">Plegable</span>
-            </Heading>
-            
-            <h2 className="text-[#FACC15] md:text-xl font-medium mb-6">
-              <span className="text-white/90">Versatilidad y diseño en un solo producto</span>
-            </h2>
+            {/* Columna Izquierda: Textos y Acciones */}
+            <ScrollReveal staggerChildren={0.15} direction="left" className="flex flex-col items-start">
+              
+              <ScrollRevealItem className="flex flex-wrap items-center gap-4 mb-6">
+                <Link href="/productos/mamparas" className="text-white/60 hover:text-[#F59E1B] transition-colors flex items-center gap-2 text-xs md:text-sm font-sans font-bold">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                  </svg>
+                  Volver a tipos
+                </Link>
+                <div className="inline-block px-4 py-1.5 rounded-full border border-[#F59E1B]/30 bg-[#2D2110]/50 text-[#F59E1B] text-xs font-sans font-bold shadow-sm backdrop-blur-md">
+                  Línea Plegable Premium
+                </div>
+              </ScrollRevealItem>
 
-            <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-2xl font-light">
-              Las mamparas plegables combinan la funcionalidad de una puerta con el ahorro de espacio de un sistema corredizo. Sus paneles articulados se pliegan hacia un lado, permitiendo un acceso amplio cuando está abierta y un cierre hermético cuando está cerrada. Es la opción ideal para bañeras y duchas donde se requiere máxima accesibilidad.
-            </p>
+              <ScrollRevealItem>
+                <Heading level="display" className="text-white drop-shadow-2xl font-display font-bold text-4xl sm:text-5xl lg:text-[54px] leading-[1.1] mb-6 tracking-tight">
+                  Mampara <span className="text-[#F59E1B] drop-shadow-[0_0_15px_rgba(245,158,27,0.15)]">Plegable</span> <br className="hidden md:block" />
+                  <span className="text-white/90 text-2xl sm:text-3xl lg:text-[32px] font-sans font-medium block mt-3 leading-tight">
+                    Versatilidad y diseño en un solo producto
+                  </span>
+                </Heading>
+              </ScrollRevealItem>
 
-            {/* Info Pills */}
-            <div className="flex flex-wrap gap-4 mb-10">
-              <div className="bg-[#16130c]/80 backdrop-blur-sm border border-[#2a2415] rounded-full px-6 py-3 flex items-center gap-3">
-                <span className="text-white font-extrabold text-lg">Consultar</span>
+              <ScrollRevealItem>
+                <p className="font-sans font-normal text-white/95 text-sm sm:text-[15px] leading-relaxed max-w-[500px] mb-8">
+                  Las mamparas plegables combinan la funcionalidad de una puerta con el ahorro de espacio de un sistema corredizo. Sus paneles articulados se pliegan hacia un lado, permitiendo un acceso amplio cuando está abierta y un cierre hermético cuando está cerrada. Es la opción ideal para bañeras y duchas donde se requiere máxima accesibilidad.
+                </p>
+              </ScrollRevealItem>
+
+              <ScrollRevealItem className="grid grid-cols-2 gap-x-6 gap-y-3 mb-10 w-full max-w-md font-sans font-bold text-xs sm:text-[13px] text-white/90">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[#F59E1B] font-extrabold text-sm">✓</span>
+                  Máximo ahorro de espacio
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[#F59E1B] font-extrabold text-sm">✓</span>
+                  Plegado suave y hermético
+                </div>
+                <div className="flex items-center gap-1.5 col-span-2">
+                  <span className="text-[#F59E1B] font-extrabold text-sm">✓</span>
+                  Vidrio Templado de Seguridad
+                </div>
+              </ScrollRevealItem>
+
+              <ScrollRevealItem className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto font-sans">
+                <a href="#contacto" className="bg-[#F59E1B] hover:bg-[#E08B10] text-[#0E0B06] px-8 py-3.5 rounded-full font-bold transition-all duration-300 flex items-center justify-center gap-2 text-sm shadow-[0_4px_20px_rgba(245,158,27,0.25)] hover:scale-[1.02]">
+                  Cotizar Ahora
+                  <span className="text-base font-bold">→</span>
+                </a>
+                <a href="tel:+51929765802" className="bg-[#1C1712]/60 hover:bg-[#1C1712]/80 text-white border border-[#F59E1B]/20 hover:border-[#F59E1B]/40 px-8 py-3.5 rounded-full font-bold transition-all duration-300 text-sm backdrop-blur-sm hover:scale-[1.02] flex items-center justify-center gap-2">
+                  <svg className="w-4 h-4 text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  Llamar Asesor
+                </a>
+              </ScrollRevealItem>
+            </ScrollReveal>
+
+            {/* Columna Derecha: Cuadro con la foto y el precio */}
+            <ScrollReveal direction="right" className="relative mt-8 lg:mt-0 font-sans w-full max-w-[440px] lg:max-w-[480px] mx-auto z-20">
+              
+              <div className="mb-4 transition-transform duration-700 hover:scale-[1.01]">
+                <img
+                  src="/images/mamparas/mampara-plegable-usuario.png"
+                  alt="Instalación de Mampara Plegable"
+                  className="w-full h-auto object-contain block mx-auto rounded-[1.5rem] shadow-2xl border border-white/5"
+                />
               </div>
-              <div className="bg-[#16130c]/80 backdrop-blur-sm border border-[#2a2415] rounded-full px-6 py-3 flex items-center gap-3">
-                <svg className="w-5 h-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                <span className="text-white/90 text-sm font-medium">3-4 horas</span>
-              </div>
-              <div className="bg-[#16130c]/80 backdrop-blur-sm border border-[#2a2415] rounded-full px-6 py-3 flex items-center gap-3">
-                <svg className="w-5 h-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                <span className="text-white/90 text-sm font-medium">5 años en vidrio, 2 años en sistema plegable</span>
-              </div>
-            </div>
 
-            {/* Actions */}
-            <div className="flex flex-wrap items-center gap-4">
-              <a href="#contacto" className="bg-[#FACC15] text-[#110e08] px-8 py-3.5 rounded-full font-bold shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.5)] hover:-translate-y-1 transition-all flex items-center gap-2">
-                Cotizar Ahora
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-              </a>
-              <a href="tel:+51999999999" className="bg-[#16130c]/80 text-white border border-[#2a2415] hover:border-[#FACC15]/50 px-8 py-3.5 rounded-full font-bold hover:bg-[#1f1a11] backdrop-blur-sm hover:-translate-y-1 transition-all flex items-center gap-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                Llamar
-              </a>
-            </div>
-          </ScrollReveal>
+              <div className="bg-[#1A1410]/60 backdrop-blur-lg px-7 py-5 flex items-center justify-between rounded-[1.5rem] border border-white/10 shadow-2xl select-none font-sans transition-all duration-300 hover:border-[#F59E1B]/30">
+                <div>
+                  <span className="text-white/40 text-[10px] font-bold uppercase tracking-widest block mb-1">Desde</span>
+                  <span className="text-white text-3xl font-extrabold tracking-tight">
+                    S/. 1,200
+                  </span>
+                </div>
+                <div className="text-right flex flex-col items-end">
+                  <span className="text-[#F59E1B] text-[10px] font-bold uppercase tracking-widest block mb-1">Garantía Certificada</span>
+                  <span className="text-white text-sm font-bold block leading-tight">
+                    5 Años en Vidrio Templado
+                  </span>
+                </div>
+              </div>
+            </ScrollReveal>
+
+          </div>
         </div>
       </section>
 
-      {/* Precios por Material (Custom for Plegable) */}
-      <section className="py-24 px-6 bg-[#FAFAFA] border-b border-gray-100 relative">
+      {/* Precios por Material */}
+      <section id="precios" className="py-20 px-4 sm:px-6 bg-[#FAFAFA] relative">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal direction="up" className="text-center mb-16">
-            <h3 className="text-[#eab308] text-sm font-bold tracking-[0.2em] uppercase mb-3">Inversión</h3>
-            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Precios por <span className="text-[#eab308]">Material</span>
+            <h3 className="bg-[#F59E1B] text-[#140F08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6">Inversión</h3>
+            <Heading level="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Precios por <span className="text-[#F59E1B]">Material</span>
             </Heading>
+            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-gray-600 text-sm mb-4 shadow-sm">
+              <svg className="w-4 h-4 text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+              </svg>
+              Medida de referencia estándar: 2.50m × 2.40m
+            </div>
+            <p className="text-gray-500 max-w-xl mx-auto text-sm">
+              Precios referenciales basados en las dimensiones indicadas. Solicita una visita técnica para calcular tu presupuesto exacto.
+            </p>
           </ScrollReveal>
 
-          <ScrollReveal direction="up">
-            <div className="bg-white border border-gray-200 border-dashed rounded-[3rem] p-12 text-center flex flex-col items-center max-w-3xl mx-auto">
-              <div className="w-16 h-16 bg-[#FAFAFA] border-b border-gray-100 border border-gray-200 rounded-xl flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-[#eab308]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                </svg>
-              </div>
-              <h4 className="text-2xl font-bold text-gray-900 mb-4">Precios próximamente</h4>
-              <p className="text-gray-600 leading-relaxed max-w-md">
-                Estamos preparando la información de precios para este tipo de mampara. Contáctenos para recibir una cotización personalizada.
-              </p>
-            </div>
+          <ScrollReveal staggerChildren={0.1} direction="up" className="space-y-4">
+            {PRECIOS.map((item, idx) => (
+              <ScrollRevealItem key={idx}>
+                <div className={`bg-white border ${item.badge ? 'border-[#F59E1B] shadow-[0_8px_30px_rgba(245,158,27,0.08)]' : 'border-gray-100 hover:border-[#F59E1B]/40'} transition-all duration-300 rounded-2xl p-6 flex items-center justify-between shadow-sm`}>
+                  <div className="flex items-center gap-4">
+                    {item.badge && (
+                      <span className="bg-[#F59E1B] text-[#140F08] text-xs font-bold px-2.5 py-1 rounded-md">
+                        {item.badge}
+                      </span>
+                    )}
+                    <span className="text-gray-800 font-bold text-lg">{item.material}</span>
+                  </div>
+                  <span className={`text-xl font-extrabold ${item.badge ? 'text-[#F59E1B]' : 'text-gray-900'}`}>
+                    {item.precio}
+                  </span>
+                </div>
+              </ScrollRevealItem>
+            ))}
           </ScrollReveal>
+
+          <p className="text-center text-gray-400 text-xs mt-8">
+            * Los precios incluyen materiales base e instalación profesional. Pueden variar según las especificaciones finales de obra.
+          </p>
         </div>
       </section>
 
       {/* Lo que incluye tu Plegable */}
-      <section className="py-24 px-6 bg-[#0c0a07] relative">
+      <section className="py-20 px-4 sm:px-6 bg-[#0E0B06] relative">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal direction="up" className="text-center mb-16">
-            <h3 className="text-[#FACC15] text-sm font-bold tracking-[0.2em] uppercase mb-3">Características</h3>
-            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-white">
-              Lo que incluye tu <span className="text-[#FACC15]">Plegable</span>
+            <h3 className="text-[#F59E1B] text-sm font-bold tracking-[0.2em] uppercase mb-3">Características</h3>
+            <Heading level="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+              Lo que incluye tu <span className="text-[#F59E1B]">Plegable</span>
             </Heading>
           </ScrollReveal>
 
           <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {INCLUYE.map((item, idx) => (
-              <ScrollRevealItem key={idx} className="bg-[#16130c] border border-[#2a2415] rounded-2xl p-6 flex items-center gap-4 hover:border-[#FACC15]/30 transition-colors">
-                <div className="w-10 h-10 shrink-0 bg-[#FACC15] rounded-xl flex items-center justify-center text-[#110e08]">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+              <ScrollRevealItem key={idx} className="bg-[#1B150B] border border-[#2D2110] rounded-2xl p-6 flex items-center gap-4 hover:border-[#F59E1B]/30 transition-colors">
+                <div className="w-10 h-10 shrink-0 bg-[#F59E1B] rounded-xl flex items-center justify-center text-[#140F08] shadow-md">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                  </svg>
                 </div>
-                <span className="text-white/90 font-medium">{item}</span>
+                <span className="text-white/90 font-bold font-sans text-sm md:text-base">{item}</span>
               </ScrollRevealItem>
             ))}
           </ScrollReveal>
@@ -262,53 +365,70 @@ export default function MamparaPlegablePage() {
       </section>
 
       {/* Datos Técnicos */}
-      <section className="py-24 px-6 bg-white relative">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-20 px-4 sm:px-6 bg-white relative">
+        <div className="max-w-7xl mx-auto">
           <ScrollReveal direction="up" className="text-center mb-16">
-            <h3 className="text-[#FACC15] text-sm font-bold tracking-[0.2em] uppercase mb-3">Especificaciones</h3>
-            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Datos <span className="text-[#FACC15]">Técnicos</span>
+            <h3 className="text-[#140F08] text-sm font-bold tracking-[0.2em] uppercase mb-3">Especificaciones</h3>
+            <Heading level="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Datos <span className="text-[#F59E1B]">Técnicos</span>
             </Heading>
-            <p className="text-gray-500">Información detallada sobre materiales, dimensiones y características técnicas.</p>
+            <p className="text-gray-500 max-w-xl mx-auto">Información detallada de ingeniería sobre materiales, dimensiones y resistencia del sistema plegable.</p>
           </ScrollReveal>
 
-          <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {DATOS_TECNICOS.map((seccion, idx) => (
-              <ScrollRevealItem key={idx} className="bg-[#FAFAFA] border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-3xl p-8 hover:border-[#FACC15]/30 transition-colors">
-                <div className="flex items-center gap-4 mb-8 pb-6 border-b border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                  <div className="w-12 h-12 bg-[#FACC15]/10 rounded-xl flex items-center justify-center">
-                    {seccion.icon}
-                  </div>
-                  <h4 className="text-2xl font-bold text-gray-800">{seccion.title}</h4>
+          <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {DATOS_TECNICOS.map((spec, idx) => (
+              <ScrollRevealItem key={idx} className="bg-white border border-gray-100 rounded-[2rem] p-8 hover:shadow-2xl transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+                <div className="w-14 h-14 bg-[#F59E1B] rounded-2xl flex items-center justify-center mb-6 text-[#140F08] shadow-md">
+                  {spec.icon}
                 </div>
-                <div className="space-y-5">
-                  {seccion.items.map((item, iIdx) => (
-                    <div key={iIdx} className="flex justify-between items-center gap-4">
+                <h4 className="text-2xl font-bold text-gray-900 mb-6">{spec.title}</h4>
+                <div className="space-y-4">
+                  {spec.items.map((item, iIdx) => (
+                    <div key={iIdx} className="flex justify-between items-center text-base border-b border-gray-50 pb-3 last:border-0 last:pb-0">
                       <span className="text-gray-500 text-sm">{item.label}</span>
-                      <span className="text-gray-900 font-medium text-right text-sm sm:text-base">{item.value}</span>
+                      <span className="text-gray-900 font-bold text-right max-w-[55%] leading-tight text-sm md:text-base">{item.value}</span>
                     </div>
                   ))}
                 </div>
               </ScrollRevealItem>
             ))}
           </ScrollReveal>
+
+          <ScrollReveal direction="up">
+            <div className="bg-gradient-to-r from-[#F59E1B] to-[#d4af37] rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl mt-12 text-[#140F08]">
+              <div className="text-center md:text-left">
+                <div className="text-4xl md:text-5xl font-extrabold mb-2">NTP 399</div>
+                <div className="font-semibold text-[#140F08]/80 uppercase tracking-wider text-sm">Norma Técnica Peruana</div>
+              </div>
+              <div className="hidden md:block w-px h-16 bg-[#140F08]/20"></div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-extrabold mb-2">5x</div>
+                <div className="font-semibold text-[#140F08]/80 uppercase tracking-wider text-sm">Más resistente que vidrio común</div>
+              </div>
+              <div className="hidden md:block w-px h-16 bg-[#140F08]/20"></div>
+              <div className="text-center md:text-right">
+                <div className="text-4xl md:text-5xl font-extrabold mb-2">100%</div>
+                <div className="font-semibold text-[#140F08]/80 uppercase tracking-wider text-sm">Vidrio de seguridad templado</div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Ventajas */}
-      <section className="py-24 px-6 bg-[#0c0a07] relative">
+      <section className="py-20 px-4 sm:px-6 bg-[#0E0B06] relative">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal direction="up" className="text-center mb-16">
-            <h3 className="text-[#FACC15] text-sm font-bold tracking-[0.2em] uppercase mb-3">Beneficios</h3>
-            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-white">
-              Ventajas de elegir <span className="text-[#FACC15]">Plegable</span>
+            <h3 className="text-[#F59E1B] text-sm font-bold tracking-[0.2em] uppercase mb-3">Beneficios</h3>
+            <Heading level="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+              Ventajas de elegir <span className="text-[#F59E1B]">Plegable</span>
             </Heading>
           </ScrollReveal>
 
           <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {VENTAJAS.map((ventaja, idx) => (
-              <ScrollRevealItem key={idx} className="bg-[#16130c] border border-[#2a2415] rounded-3xl p-8 hover:border-[#FACC15]/30 transition-colors flex flex-col items-center text-center">
-                <div className="w-14 h-14 bg-[#FACC15] text-[#110e08] rounded-2xl flex items-center justify-center mb-6">
+              <ScrollRevealItem key={idx} className="bg-[#1B150B] border border-[#2D2110] rounded-3xl p-8 hover:border-[#F59E1B]/30 transition-colors flex flex-col items-center text-center">
+                <div className="w-14 h-14 bg-[#F59E1B] text-[#140F08] rounded-2xl flex items-center justify-center mb-6 shadow-md">
                   {ventaja.icon}
                 </div>
                 <h4 className="text-xl font-bold text-white mb-4">{ventaja.title}</h4>
@@ -319,71 +439,128 @@ export default function MamparaPlegablePage() {
         </div>
       </section>
 
-      {/* Aplicaciones (Ideal para) */}
-      <section className="py-24 px-6 bg-[#FAFAFA] relative">
+      {/* Aplicaciones */}
+      <section className="py-20 px-4 sm:px-6 bg-[#FAFAFA] relative">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
             <ScrollReveal direction="left">
-              <h3 className="text-[#FACC15] text-sm font-bold tracking-[0.2em] uppercase mb-3">Aplicaciones</h3>
-              <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Ideal <span className="text-[#FACC15]">para</span>
+              <h3 className="text-[#F59E1B] text-sm font-bold tracking-[0.2em] uppercase mb-3">Aplicaciones</h3>
+              <Heading level="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Ideal <span className="text-[#F59E1B]">para</span>
               </Heading>
               <p className="text-gray-600 text-lg mb-10 leading-relaxed font-light max-w-lg">
-                La mampara plegable es perfecta para diferentes tipos de espacios y necesidades. Descubre si es la opción correcta para tu proyecto.
+                La mampara plegable es perfecta para optimizar el paso libre al plegarse de forma compacta:
               </p>
 
               <div className="space-y-4">
                 {APLICACIONES.map((app, idx) => (
                   <div key={idx} className="flex items-center gap-4">
-                    <div className="w-6 h-6 rounded-full bg-[#FACC15]/20 text-[#FACC15] flex items-center justify-center shrink-0">
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                    <div className="w-6 h-6 rounded-full bg-[#F59E1B]/20 text-[#F59E1B] flex items-center justify-center shrink-0">
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
                     </div>
-                    <span className="text-gray-800 font-medium">{app}</span>
+                    <span className="text-gray-800 font-bold text-base">{app}</span>
                   </div>
                 ))}
               </div>
             </ScrollReveal>
 
-            <ScrollReveal direction="right" className="relative mt-8 lg:mt-0">
-              <div className="relative rounded-3xl overflow-hidden aspect-[3/4] border border-gray-200">
-                <div className="absolute inset-0 bg-black/5 z-10" />
-                <img 
-                  src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=800&auto=format&fit=crop" 
-                  alt="Baño ideal para plegable" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-6 left-6 right-6 z-20">
-                  <div className="bg-[#110e08]/90 backdrop-blur-md border border-[#FACC15]/30 p-4 rounded-2xl flex items-center gap-4">
-                    <svg className="w-8 h-8 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                    <div>
-                      <div className="text-gray-900 font-bold text-sm">Garantía de 5 años</div>
-                      <div className="text-gray-500 text-xs">En vidrio templado certificado</div>
+            {/* Slider de Imágenes del Producto */}
+            <ScrollReveal direction="right" className="flex flex-col gap-6 mt-8 lg:mt-0 w-full max-w-[440px] lg:max-w-[480px] mx-auto">
+              <div className="relative rounded-3xl overflow-hidden aspect-[4/3] sm:aspect-[4/3] md:aspect-[16/10] lg:aspect-[3/4] border border-gray-200 group shadow-lg bg-white">
+                
+                {/* Contenedor de Imágenes con Transición Suave */}
+                <div 
+                  className="absolute inset-0 w-full h-full flex transition-transform duration-500 ease-in-out" 
+                  style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+                >
+                  {GALERIA_PRODUCTO.map((img, idx) => (
+                    <div key={idx} className="w-full h-full shrink-0 relative flex items-center justify-center bg-white">
+                      <img 
+                        src={img} 
+                        alt={`Vista de producto ${idx + 1}`} 
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/5 z-10" />
                     </div>
-                  </div>
+                  ))}
+                </div>
+
+                {/* Flechas de Navegación */}
+                <button 
+                  onClick={prevSlide}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md text-white flex items-center justify-center transition-all cursor-pointer opacity-0 group-hover:opacity-100 shadow-md"
+                  aria-label="Anterior"
+                >
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button 
+                  onClick={nextSlide}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md text-white flex items-center justify-center transition-all cursor-pointer opacity-0 group-hover:opacity-100 shadow-md"
+                  aria-label="Siguiente"
+                >
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+
+                {/* Indicadores inferiores (Dots) */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                  {GALERIA_PRODUCTO.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveSlide(idx)}
+                      className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${activeSlide === idx ? 'bg-[#F59E1B] w-6' : 'bg-white/50'}`}
+                      aria-label={`Ir al slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Tarjeta de Garantía */}
+              <div className="bg-[#140F08]/90 backdrop-blur-md border border-[#F59E1B]/30 p-5 rounded-2xl flex items-center gap-4 shadow-xl w-full">
+                <div className="w-12 h-12 rounded-xl bg-[#F59E1B]/10 flex items-center justify-center text-[#F59E1B] shrink-0 shadow-md">
+                  <svg className="w-8 h-8 text-[#F59E1B] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-white font-bold text-sm font-sans">Garantía Certificada</div>
+                  <div className="text-white/60 text-xs font-sans">5 años en estructuras de vidrio templado</div>
                 </div>
               </div>
             </ScrollReveal>
+
           </div>
         </div>
       </section>
 
       {/* Galería */}
-      <section className="py-24 px-6 bg-[#0c0a07] relative">
+      <section id="trabajos" className="py-20 px-4 sm:px-6 bg-[#0E0B06] relative">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal direction="up" className="text-center mb-16">
-            <h3 className="text-[#FACC15] text-sm font-bold tracking-[0.2em] uppercase mb-3">Galería</h3>
-            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-white">
-              Trabajos <span className="text-[#FACC15]">Realizados</span>
+            <h3 className="text-[#F59E1B] text-sm font-bold tracking-[0.2em] uppercase mb-3">Galería</h3>
+            <Heading level="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+              Trabajos <span className="text-[#F59E1B]">Realizados</span>
             </Heading>
           </ScrollReveal>
 
           <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {GALERIA.map((img, idx) => (
-              <ScrollRevealItem key={idx} className="aspect-square md:aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden group border border-[#2a2415] relative cursor-pointer">
+              <ScrollRevealItem 
+                key={idx} 
+                className="aspect-square rounded-[2rem] overflow-hidden group border border-[#2D2110] relative cursor-pointer shadow-lg"
+                onClick={() => setSelectedImageIdx(idx)}
+              >
                 <img 
                   src={img} 
-                  alt={`Proyecto ${idx + 1}`} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                  alt={`Proyecto Ejecutado ${idx + 1}`} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
               </ScrollRevealItem>
@@ -393,12 +570,12 @@ export default function MamparaPlegablePage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 px-6 bg-white relative">
+      <section className="py-20 px-4 sm:px-6 bg-white relative">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal direction="up" className="text-center mb-16">
-            <h3 className="text-[#110e08] font-bold text-sm font-bold tracking-[0.2em] uppercase mb-3">FAQ</h3>
-            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900">
-              Preguntas <span className="text-[#110e08] font-bold">Frecuentes</span>
+            <h3 className="text-[#140F08] text-sm font-bold tracking-[0.2em] uppercase mb-3">Preguntas Frecuentes</h3>
+            <Heading level="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+              Resolvemos tus <span className="text-[#F59E1B]">Dudas</span>
             </Heading>
           </ScrollReveal>
 
@@ -406,28 +583,28 @@ export default function MamparaPlegablePage() {
             {FAQ.map((faq, idx) => (
               <ScrollRevealItem key={idx}>
                 <div 
-                  className={`bg-[#FAFAFA] border ${openFaq === idx ? 'border-[#eab308] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)]' : 'border-gray-200 hover:border-[#FACC15]/50'} transition-all duration-300 rounded-2xl overflow-hidden`}
+                  className={`bg-[#FAFAFA] border ${openFaq === idx ? 'border-[#F59E1B] bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)]' : 'border-gray-200 hover:border-[#F59E1B]/50'} transition-all duration-300 rounded-2xl overflow-hidden`}
                 >
                   <button 
                     onClick={() => toggleFaq(idx)}
                     className="w-full text-left p-6 flex items-center justify-between cursor-pointer group"
                   >
-                    <span className={`font-medium md:text-lg transition-colors pr-8 ${openFaq === idx ? 'text-[#110e08] font-bold' : 'text-gray-700 group-hover:text-gray-950'}`}>
+                    <span className={`font-bold md:text-lg transition-colors pr-8 ${openFaq === idx ? 'text-[#140F08]' : 'text-gray-700 group-hover:text-gray-950'}`}>
                       {faq.pregunta}
                     </span>
                     <svg 
-                      className={`w-5 h-5 text-[#110e08] font-bold shrink-0 transition-transform duration-300 ${openFaq === idx ? 'rotate-180' : ''}`} 
+                      className={`w-5 h-5 text-[#F59E1B] shrink-0 transition-transform duration-300 ${openFaq === idx ? 'rotate-180' : ''}`} 
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
                   <div 
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${openFaq === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                   >
-                    <p className="p-6 pt-0 text-gray-600 leading-relaxed">
+                    <p className="p-6 pt-0 text-gray-600 leading-relaxed text-sm md:text-base">
                       {faq.respuesta}
                     </p>
                   </div>
@@ -439,23 +616,27 @@ export default function MamparaPlegablePage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-20 px-6 bg-gradient-to-r from-[#16130c] via-[#1f1a11] to-[#16130c] border-y border-[#2a2415] relative">
+      <section className="py-20 px-4 sm:px-6 bg-gradient-to-r from-[#1B150B] via-[#1f1a11] to-[#1B150B] border-y border-[#2D2110] relative">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10 mix-blend-overlay"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <ScrollReveal direction="up">
             <Heading level="h2" className="text-3xl md:text-5xl font-bold text-white mb-6">
-              ¿Listo para tu nueva <span className="text-[#FACC15]">Plegable</span>?
+              ¿Listo para tu nueva <span className="text-[#F59E1B]">Plegable</span>?
             </Heading>
-            <p className="text-white/70 text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
-              Solicita una cotización gratuita y sin compromiso. Nuestro equipo te contactará en menos de 24 horas.
+            <p className="text-white/70 text-lg mb-10 leading-relaxed max-w-2xl mx-auto font-sans">
+              Solicita una cotización gratuita y sin compromiso. Nuestro equipo de soporte técnico te responderá en menos de 24 horas.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <a href="#contacto" className="bg-white text-[#110e08] px-8 py-3.5 rounded-full font-bold shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:-translate-y-1 transition-all flex items-center gap-2">
+              <a href="#contacto" className="bg-white text-[#140F08] px-8 py-3.5 rounded-full font-bold shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:-translate-y-1 transition-all flex items-center gap-2">
                 Cotizar Gratis
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
               </a>
-              <a href="tel:+51929765802" className="bg-transparent text-white border border-[#2a2415] hover:border-[#FACC15]/50 px-8 py-3.5 rounded-full font-medium hover:bg-white/5 transition-all flex items-center gap-2">
-                <svg className="w-5 h-5 text-[#FACC15]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              <a href="tel:+51929765802" className="bg-transparent text-white border border-[#2D2110] hover:border-[#F59E1B]/50 px-8 py-3.5 rounded-full font-bold hover:bg-white/5 transition-all flex items-center gap-2">
+                <svg className="w-5 h-5 text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
                 +51 929765802
               </a>
             </div>
@@ -465,6 +646,65 @@ export default function MamparaPlegablePage() {
 
       <ContactSection />
       <Footer />
+
+      {/* Lightbox Modal / Vista Completa */}
+      {selectedImageIdx !== null && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 sm:p-6 md:p-10 select-none animate-fade-in"
+          onClick={() => setSelectedImageIdx(null)}
+        >
+          {/* Botón de cerrar */}
+          <button 
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white/70 hover:text-[#F59E1B] transition-colors p-3 bg-[#140F08]/60 rounded-full backdrop-blur-md z-[110] cursor-pointer border-0"
+            onClick={() => setSelectedImageIdx(null)}
+            aria-label="Cerrar"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Flecha Izquierda */}
+          <button 
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-[#F59E1B] transition-colors p-3 bg-[#140F08]/60 rounded-full backdrop-blur-md z-[110] cursor-pointer border-0"
+            onClick={prevImage}
+            aria-label="Anterior"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Flecha Derecha */}
+          <button 
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-[#F59E1B] transition-colors p-3 bg-[#140F08]/60 rounded-full backdrop-blur-md z-[110] cursor-pointer border-0"
+            onClick={nextImage}
+            aria-label="Siguiente"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Contenedor de la Imagen */}
+          <div 
+            className="relative max-w-5xl w-full h-[75vh] md:h-[85vh] flex flex-col items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src={GALERIA[selectedImageIdx]} 
+              alt={`Vista completa de Proyecto ${selectedImageIdx + 1}`} 
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl transition-all duration-300"
+              style={{ objectFit: 'contain' }}
+            />
+            
+            {/* Indicador de número de imagen */}
+            <div className="absolute bottom-[-40px] text-white/80 font-sans text-sm bg-[#140F08]/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+              {selectedImageIdx + 1} / {GALERIA.length}
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

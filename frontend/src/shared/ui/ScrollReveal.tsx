@@ -79,10 +79,12 @@ export function ScrollRevealItem({
   children,
   className = '',
   direction = 'up',
+  onClick,
 }: {
   children: React.ReactNode;
   className?: string;
   direction?: 'up' | 'down' | 'left' | 'right' | 'none';
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }) {
   const offset = 30;
   
@@ -114,7 +116,7 @@ export function ScrollRevealItem({
   };
 
   return (
-    <motion.div variants={variants} className={className}>
+    <motion.div variants={variants} className={className} onClick={onClick}>
       {children}
     </motion.div>
   );

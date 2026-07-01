@@ -26,7 +26,7 @@ export default function PortfolioSection() {
     { 
       title: "Baño Suite Principal", 
       category: "Mamparas Fijas",
-      img: "/images/mamparas/mampara-fija.png"
+      img: "/images/mamparas/mampara-fija.jpg"
     },
     { 
       title: "Penthouse San Isidro", 
@@ -41,20 +41,20 @@ export default function PortfolioSection() {
   ];
 
   return (
-    <section id="proyectos" className="py-24 md:py-32 relative bg-surface overflow-hidden w-full">
+    <section id="proyectos" className="py-20 md:py-32 relative bg-surface overflow-hidden w-full">
       {/* Fondo Interactivo de Partículas */}
       <ParticlesBackground />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <ScrollReveal staggerChildren={0.15} direction="up" className="text-center mb-16">
           <ScrollRevealItem>
-            <span className="text-[#997a00] font-bold uppercase tracking-widest text-sm mb-4 block">
+            <span className="text-[#F59E1B] font-bold uppercase tracking-widest text-sm mb-4 block">
               PORTAFOLIO
             </span>
           </ScrollRevealItem>
           <ScrollRevealItem>
-            <Heading level="h2" className="text-4xl md:text-5xl font-extrabold text-on-surface">
-              Galería de <span className="text-[#997a00]">Obras</span>
+            <Heading level="h2" className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-on-surface">
+              Galería de <span className="text-[#F59E1B]">Obras</span>
             </Heading>
           </ScrollRevealItem>
         </ScrollReveal>
@@ -67,7 +67,7 @@ export default function PortfolioSection() {
             >
               <div
                 onClick={() => setSelectedProject(proj)}
-                className="relative group h-64 md:h-80 rounded-3xl overflow-hidden border border-outline-variant/10 shadow-md cursor-pointer"
+                className="relative group h-56 sm:h-64 md:h-80 rounded-3xl overflow-hidden border border-outline-variant/10 shadow-md cursor-pointer"
               >
               {/* Imagen de fondo con efecto de ampliación (zoom) */}
               <img 
@@ -80,8 +80,8 @@ export default function PortfolioSection() {
               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/40 transition-colors duration-500" />
               
               {/* Efecto oscuro elegante al hacer Hover para mostrar el texto */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-[#110e08]/90 via-[#110e08]/50 to-transparent flex flex-col justify-end p-8">
-                <span className="text-[#FACC15] font-bold uppercase tracking-widest text-xs mb-2 block transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-[#140F08]/90 via-[#140F08]/50 to-transparent flex flex-col justify-end p-8">
+                <span className="text-[#F59E1B] font-bold uppercase tracking-widest text-xs mb-2 block transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   {proj.category}
                 </span>
                 <Heading level="h3" className="text-white text-2xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
@@ -102,7 +102,7 @@ export default function PortfolioSection() {
         >
           {/* Botón de cerrar (esquina superior derecha) */}
           <button 
-            className="absolute top-6 right-6 text-white/70 hover:text-[#FACC15] transition-colors p-2"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white/70 hover:text-[#F59E1B] transition-colors p-2 bg-black/30 rounded-full backdrop-blur-sm"
             onClick={() => setSelectedProject(null)}
           >
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
@@ -114,7 +114,7 @@ export default function PortfolioSection() {
             onClick={(e) => e.stopPropagation()} // Evita cerrar el modal al hacer click en el contenido
           >
             {/* Imagen grande */}
-            <div className="relative w-full h-[50vh] md:h-[65vh] bg-[#110e08]">
+            <div className="relative w-full h-[50vh] md:h-[65vh] bg-[#140F08]">
               <img 
                 src={selectedProject.img} 
                 alt={selectedProject.title} 
@@ -124,7 +124,7 @@ export default function PortfolioSection() {
             
             {/* Pie de foto con información */}
             <div className="p-6 md:p-8 bg-white flex flex-col items-start gap-3 border-t border-outline-variant/10">
-              <span className="bg-[#110e08] text-[#FACC15] px-4 py-1.5 rounded-full text-xs md:text-sm font-bold tracking-wider uppercase shadow-sm">
+              <span className="bg-[#140F08] text-[#F59E1B] px-4 py-1.5 rounded-full text-xs md:text-sm font-bold tracking-wider uppercase shadow-sm">
                 {selectedProject.category}
               </span>
               <Heading level="h3" className="text-on-surface text-2xl md:text-3xl font-extrabold">

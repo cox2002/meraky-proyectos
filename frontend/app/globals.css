@@ -2,13 +2,14 @@
 
 @theme {
   /* Tipografía */
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-lato), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-inter: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   
   /* Colores Principales: The Material Palette */
-  --color-primary: #735C00;
-  --color-primary-container: #FACC15;
-  --color-on-primary-fixed: #231B00;
+  --color-primary: #F59E1B;
+  --color-primary-container: #F59E1B;
+  --color-on-primary-fixed: #2A1200;
   
   --color-secondary: #1D4ED8;
   
@@ -20,9 +21,9 @@
   --color-surface-container-highest: #dce2f7;
   
   --color-on-surface: #141B2B;
-  --color-on-surface-variant: #4d4632;
+  --color-on-surface-variant: #4D4535;
   
-  --color-outline-variant: #d1c6ab;
+  --color-outline-variant: #D1C6B0;
 
   /* Animaciones personalizadas */
   --animate-fade-in-up: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -70,4 +71,25 @@
 /* Eliminar bordes por defecto según "The No-Line Rule" */
 * {
   border-color: transparent;
+  box-sizing: border-box;
+}
+
+/* Imágenes responsive por defecto */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ocultar scrollbar en el carrusel de videos */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html {
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
 }

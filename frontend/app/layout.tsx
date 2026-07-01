@@ -1,23 +1,28 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Poppins, Lato, Inter } from "next/font/google";
 import "./globals.css";
 
-// --- Fuentes Optimizadas de Next.js ---
-// Next.js descarga estas fuentes en tiempo de compilación y las sirve desde 
-// nuestro propio dominio, lo que evita que la página parpadee al cargar (layout shift)
-// y mejora el rendimiento porque no hacemos peticiones externas a Google Fonts.
-
-// Configuramos la fuente Inter para texto base (Párrafos, botones)
-const inter = Inter({ 
+// Configuramos la fuente Lato para texto base
+const lato = Lato({ 
+  weight: ["400", "700"],
   subsets: ["latin"],
-  variable: "--font-inter", // Creamos una variable CSS personalizada
+  variable: "--font-lato",
   display: "swap",
 });
 
-// Configuramos Space Grotesk para titulares (H1, H2, Logos)
-const spaceGrotesk = Space_Grotesk({ 
+// Configuramos Poppins para titulares
+const poppins = Poppins({ 
+  weight: ["500", "700"],
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-poppins",
+  display: "swap",
+});
+
+// Configuramos Inter para el estilo tecnológico
+const inter = Inter({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -46,7 +51,7 @@ export default function RootLayout({
         'antialiased' suaviza los bordes de las letras.
         'bg-surface' y 'text-on-surface' aplican nuestros colores base globales definidos en globals.css.
       */}
-      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-surface text-on-surface`}>
+      <body className={`${lato.variable} ${poppins.variable} ${inter.variable} font-sans antialiased bg-surface text-on-surface overflow-x-hidden`}>
         
         {/* 
           'children' representa la página actual que el usuario está visitando (por ejemplo, page.tsx).

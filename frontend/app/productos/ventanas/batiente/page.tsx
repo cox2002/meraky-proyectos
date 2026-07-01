@@ -40,7 +40,7 @@ const DATOS = [
   { 
     title: "Dimensiones", 
     icon: (
-      <svg className="w-6 h-6 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-6 h-6 text-[#F59E1B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
       </svg>
     ),
@@ -54,7 +54,7 @@ const DATOS = [
   { 
     title: "Perfilería", 
     icon: (
-      <svg className="w-6 h-6 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-6 h-6 text-[#F59E1B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
@@ -68,7 +68,7 @@ const DATOS = [
   { 
     title: "Vidrio", 
     icon: (
-      <svg className="w-6 h-6 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-6 h-6 text-[#F59E1B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
       </svg>
     ),
@@ -82,7 +82,7 @@ const DATOS = [
   { 
     title: "Rendimiento", 
     icon: (
-      <svg className="w-6 h-6 text-[#FACC15]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-6 h-6 text-[#F59E1B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
@@ -150,18 +150,18 @@ export default function VentanaBatientePage() {
     
     // Base styles for the normal state
     let zIndex = 10;
-    let transform = 'translate3d(-24%, -18%, 0) scale(0.88) rotate(3deg)';
+    let transform = 'translate3d(-74%, -68%, 0) scale(0.88) rotate(3deg)';
     let opacity = 0.6;
     let boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.2)';
 
     if (diff === 0) {
       zIndex = 30;
-      transform = 'translate3d(10%, 10%, 0) scale(1) rotate(4deg)';
+      transform = 'translate3d(-40%, -40%, 0) scale(1) rotate(4deg)';
       opacity = 1;
       boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.5)';
     } else if (diff === 1) {
       zIndex = 20;
-      transform = 'translate3d(-10%, -6%, 0) scale(0.95) rotate(-6deg)';
+      transform = 'translate3d(-60%, -56%, 0) scale(0.95) rotate(-6deg)';
       opacity = 0.8;
       boxShadow = '0 15px 20px -5px rgba(0, 0, 0, 0.3)';
     }
@@ -172,11 +172,11 @@ export default function VentanaBatientePage() {
       opacity = 1;
       boxShadow = '0 25px 35px -5px rgba(0, 0, 0, 0.6)';
       if (diff === 0) {
-        transform = 'translate3d(10%, 10%, 0) scale(1.1) rotate(2deg)';
+        transform = 'translate3d(-40%, -40%, 0) scale(1.1) rotate(2deg)';
       } else if (diff === 1) {
-        transform = 'translate3d(-10%, -6%, 0) scale(1.06) rotate(-3deg)';
+        transform = 'translate3d(-60%, -56%, 0) scale(1.06) rotate(-3deg)';
       } else {
-        transform = 'translate3d(-24%, -18%, 0) scale(1.0) rotate(1deg)';
+        transform = 'translate3d(-74%, -68%, 0) scale(1.0) rotate(1deg)';
       }
     }
 
@@ -189,31 +189,33 @@ export default function VentanaBatientePage() {
   };
 
   return (
-    <main className="min-h-screen w-full bg-[#0c0a07] overflow-hidden flex flex-col">
+    <main className="min-h-screen w-full bg-[#0E0B06] overflow-x-hidden flex flex-col">
       <Navigation />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 px-6 flex items-center min-h-screen">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img 
             src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=2000&auto=format&fit=crop" 
             alt="Ventana Batiente de Aluminio" 
-            className="w-full h-full object-cover" 
+            className="w-full h-[104%] object-cover absolute top-0" 
           />
-          <div className="absolute inset-0 bg-[#0c0a07]/75"></div>
+          <div className="absolute inset-0 bg-[#0E0B06]/40 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06]/95 via-[#0E0B06]/65 to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0E0B06] via-transparent to-transparent z-10"></div>
         </div>
-        <div className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="max-w-7xl mx-auto w-full relative z-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
             {/* Left Content */}
             <ScrollReveal staggerChildren={0.15} direction="left" className="flex flex-col items-start">
               <ScrollRevealItem>
                 <div className="flex items-center gap-4 mb-6">
-                  <Link href="/productos/ventanas" className="text-white/60 hover:text-[#FACC15] transition-colors flex items-center gap-2 text-sm font-medium">
+                  <Link href="/productos/ventanas" className="text-white/60 hover:text-[#F59E1B] transition-colors flex items-center gap-2 text-sm font-medium">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                     Volver a tipos de ventanas
                   </Link>
-                  <span className="bg-[#16130c] border border-[#FACC15]/30 text-[#FACC15] text-xs px-3 py-1 rounded-full font-medium">
+                  <span className="bg-[#1B150B] border border-[#F59E1B]/30 text-[#F59E1B] text-xs px-3 py-1 rounded-full font-medium">
                     Batiente
                   </span>
                 </div>
@@ -222,7 +224,7 @@ export default function VentanaBatientePage() {
               <ScrollRevealItem>
                 <Heading level="h1" className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
                   Ventana <br className="hidden md:block"/>
-                  <span className="text-[#FACC15] drop-shadow-[0_0_15px_rgba(250,204,21,0.2)]">Batiente</span>
+                  <span className="text-[#F59E1B] drop-shadow-[0_0_15px_rgba(245,158,27,0.2)]">Batiente</span>
                 </Heading>
               </ScrollRevealItem>
 
@@ -235,26 +237,26 @@ export default function VentanaBatientePage() {
               {/* Feature List */}
               <ScrollRevealItem className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-10 w-full">
                 <div className="flex items-center gap-2 text-white/90 text-sm font-medium">
-                  <svg className="w-5 h-5 text-[#FACC15]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/></svg>
+                  <svg className="w-5 h-5 text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/></svg>
                   Instalación 2-4 horas
                 </div>
                 <div className="flex items-center gap-2 text-white/90 text-sm font-medium">
-                  <svg className="w-5 h-5 text-[#FACC15]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/></svg>
+                  <svg className="w-5 h-5 text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/></svg>
                   Garantía 10 Años
                 </div>
                 <div className="flex items-center gap-2 text-white/90 text-sm font-medium">
-                  <svg className="w-5 h-5 text-[#FACC15]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/></svg>
+                  <svg className="w-5 h-5 text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/></svg>
                   Cierre Multipunto
                 </div>
               </ScrollRevealItem>
 
               {/* Buttons */}
               <ScrollRevealItem className="flex flex-wrap items-center gap-4">
-                <a href="#contacto" className="bg-[#FACC15] text-[#110e08] px-8 py-3.5 rounded-full font-bold shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.5)] hover:-translate-y-1 transition-all flex items-center gap-2">
+                <a href="#contacto" className="bg-[#F59E1B] text-[#140F08] px-8 py-3.5 rounded-full font-bold shadow-[0_0_20px_rgba(245,158,27,0.3)] hover:shadow-[0_0_30px_rgba(245,158,27,0.5)] hover:-translate-y-1 transition-all flex items-center gap-2">
                   Cotizar Ahora
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
-                <a href="tel:+51929765802" className="bg-[#16130c]/80 text-white border border-[#2a2415] hover:border-[#FACC15]/50 px-8 py-3.5 rounded-full font-bold hover:bg-[#1f1a11] backdrop-blur-sm hover:-translate-y-1 transition-all">
+                <a href="tel:+51929765802" className="bg-[#1B150B]/80 text-white border border-[#2D2110] hover:border-[#F59E1B]/50 px-8 py-3.5 rounded-full font-bold hover:bg-[#1f1a11] backdrop-blur-sm hover:-translate-y-1 transition-all">
                   +51 929 765 802
                 </a>
               </ScrollRevealItem>
@@ -272,10 +274,10 @@ export default function VentanaBatientePage() {
                       onMouseEnter={() => setHoveredCard(idx)}
                       onMouseLeave={() => setHoveredCard(null)}
                       style={getCardStyle(idx)}
-                      className="absolute w-[80%] h-[85%] rounded-[2rem] overflow-hidden border border-[#2a2415]/60 transition-all duration-500 ease-in-out cursor-pointer group bg-[#16130c]"
+                      className="absolute top-1/2 left-1/2 w-[80%] h-[85%] rounded-[2rem] overflow-hidden border border-[#2D2110]/60 transition-all duration-500 ease-in-out cursor-pointer group bg-[#1B150B]"
                     >
                       {/* Dark overlay for background cards, fades on hover */}
-                      <div className={`absolute inset-0 bg-[#110e08] z-10 transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-40 group-hover:opacity-10'}`} />
+                      <div className={`absolute inset-0 bg-[#140F08] z-10 transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-40 group-hover:opacity-10'}`} />
                       <img 
                         src={card.img} 
                         alt={card.alt} 
@@ -287,13 +289,13 @@ export default function VentanaBatientePage() {
               </div>
               
               {/* Pricing Card below the image stack */}
-              <div className="mt-8 bg-[#110e08]/90 backdrop-blur-md border border-[#FACC15]/30 p-5 rounded-2xl flex items-center justify-between shadow-2xl w-[85%] max-w-md mx-auto">
+              <div className="mt-8 bg-[#140F08]/90 backdrop-blur-md border border-[#F59E1B]/30 p-5 rounded-2xl flex items-center justify-between shadow-2xl w-[85%] max-w-md mx-auto">
                 <div>
                   <span className="text-white/50 text-xs font-bold uppercase tracking-widest block mb-1">Desde</span>
                   <span className="text-white text-3xl font-extrabold tracking-tight">S/. 180</span>
                 </div>
                 <div className="text-right">
-                  <span className="text-[#FACC15] text-xs font-bold uppercase tracking-widest block mb-1">Incluye</span>
+                  <span className="text-[#F59E1B] text-xs font-bold uppercase tracking-widest block mb-1">Incluye</span>
                   <span className="text-white/90 text-sm font-medium">Instalación + Garantía</span>
                 </div>
               </div>
@@ -307,7 +309,7 @@ export default function VentanaBatientePage() {
       <section className="py-24 px-6 bg-[#FAFAFA]">
         <div className="max-w-5xl mx-auto text-center">
           <ScrollReveal direction="up" className="mb-16">
-            <h3 className="bg-[#FACC15] text-[#110e08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
+            <h3 className="bg-[#F59E1B] text-[#140F08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
               CARACTERÍSTICAS
             </h3>
             <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900">
@@ -318,7 +320,7 @@ export default function VentanaBatientePage() {
           <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {INCLUYE.map((item, idx) => (
               <ScrollRevealItem key={idx} className="bg-white border border-gray-100 rounded-2xl p-6 flex items-center gap-4 shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-lg transition-all text-left">
-                <div className="w-10 h-10 shrink-0 bg-[#FACC15] rounded-xl flex items-center justify-center text-[#110e08]">
+                <div className="w-10 h-10 shrink-0 bg-[#F59E1B] rounded-xl flex items-center justify-center text-[#140F08]">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/></svg>
                 </div>
                 <span className="text-gray-800 font-semibold text-base">{item}</span>
@@ -329,14 +331,14 @@ export default function VentanaBatientePage() {
       </section>
 
       {/* Especificaciones Técnicas Section */}
-      <section className="py-24 px-6 bg-[#0c0a07] relative border-y border-[#2a2415]">
+      <section className="py-24 px-6 bg-[#0E0B06] relative border-y border-[#2D2110]">
         <div className="max-w-6xl mx-auto text-center">
           <ScrollReveal direction="up" className="mb-16">
-            <h3 className="bg-[#FACC15] text-[#110e08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
+            <h3 className="bg-[#F59E1B] text-[#140F08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
               ESPECIFICACIONES
             </h3>
             <Heading level="h2" className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Datos <span className="text-[#FACC15]">Técnicos</span>
+              Datos <span className="text-[#F59E1B]">Técnicos</span>
             </Heading>
             <p className="text-white/60 text-lg font-light max-w-2xl mx-auto">
               Detalle exacto sobre los materiales y parámetros de resistencia mecánica de la ventana batiente.
@@ -345,16 +347,16 @@ export default function VentanaBatientePage() {
           
           <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {DATOS.map((seccion, idx) => (
-              <ScrollRevealItem key={idx} className="bg-[#16130c] border border-[#2a2415] rounded-3xl p-8 hover:border-[#FACC15]/30 transition-colors text-left shadow-[0_8px_30px_rgba(0,0,0,0.02)]">
-                <div className="flex items-center gap-4 mb-8 pb-6 border-b border-[#2a2415]">
-                  <div className="w-12 h-12 bg-[#FACC15]/10 rounded-xl flex items-center justify-center text-[#FACC15]">
+              <ScrollRevealItem key={idx} className="bg-[#1B150B] border border-[#2D2110] rounded-3xl p-8 hover:border-[#F59E1B]/30 transition-colors text-left shadow-[0_8px_30px_rgba(0,0,0,0.02)]">
+                <div className="flex items-center gap-4 mb-8 pb-6 border-b border-[#2D2110]">
+                  <div className="w-12 h-12 bg-[#F59E1B]/10 rounded-xl flex items-center justify-center text-[#F59E1B]">
                     {seccion.icon}
                   </div>
                   <h4 className="text-2xl font-bold text-white">{seccion.title}</h4>
                 </div>
                 <div className="space-y-4">
                   {seccion.items.map((item, iIdx) => (
-                    <div key={iIdx} className="flex justify-between items-center gap-4 border-b border-[#2a2415]/50 pb-3 last:border-0 last:pb-0">
+                    <div key={iIdx} className="flex justify-between items-center gap-4 border-b border-[#2D2110]/50 pb-3 last:border-0 last:pb-0">
                       <span className="text-white/50 text-sm">{item.label}</span>
                       <span className="text-white font-semibold text-right text-sm sm:text-base">{item.value}</span>
                     </div>
@@ -370,7 +372,7 @@ export default function VentanaBatientePage() {
       <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto text-center">
           <ScrollReveal direction="up" className="mb-16">
-            <h3 className="bg-[#FACC15] text-[#110e08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
+            <h3 className="bg-[#F59E1B] text-[#140F08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
               BENEFICIOS
             </h3>
             <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900">
@@ -380,8 +382,8 @@ export default function VentanaBatientePage() {
           
           <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {VENTAJAS.map((v, idx) => (
-              <ScrollRevealItem key={idx} className="bg-[#16130c] border border-[#2a2415] rounded-3xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.12)] group hover:border-[#FACC15]/30 transition-colors">
-                <div className="w-14 h-14 bg-[#FACC15] text-[#110e08] rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+              <ScrollRevealItem key={idx} className="bg-[#1B150B] border border-[#2D2110] rounded-3xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.12)] group hover:border-[#F59E1B]/30 transition-colors">
+                <div className="w-14 h-14 bg-[#F59E1B] text-[#140F08] rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
                 <h4 className="text-xl font-bold text-white mb-4">{v.title}</h4>
@@ -408,7 +410,7 @@ export default function VentanaBatientePage() {
               <div className="space-y-6">
                 {APLICACIONES.map((app, idx) => (
                   <div key={idx} className="flex items-center gap-5">
-                    <div className="w-8 h-8 rounded-full bg-[#FACC15]/20 text-[#eab308] flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-[#F59E1B]/20 text-[#eab308] flex items-center justify-center shrink-0">
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
                     </div>
                     <span className="text-gray-800 font-semibold text-lg md:text-xl">{app}</span>
@@ -460,7 +462,7 @@ export default function VentanaBatientePage() {
                     <button
                       key={idx}
                       onClick={() => setActiveSlide(idx)}
-                      className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${activeSlide === idx ? 'bg-[#FACC15] w-6' : 'bg-white/50'}`}
+                      className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${activeSlide === idx ? 'bg-[#F59E1B] w-6' : 'bg-white/50'}`}
                       aria-label={`Ir al slide ${idx + 1}`}
                     />
                   ))}
@@ -468,8 +470,8 @@ export default function VentanaBatientePage() {
               </div>
 
               {/* Tarjeta de Garantía (Colocada ABAJO de la imagen, no flotante) */}
-              <div className="bg-[#110e08]/95 backdrop-blur-md border border-[#FACC15]/30 p-5 rounded-2xl flex items-center gap-4 shadow-xl w-full">
-                <div className="w-12 h-12 rounded-xl bg-[#FACC15]/10 flex items-center justify-center text-[#FACC15] shrink-0">
+              <div className="bg-[#140F08]/95 backdrop-blur-md border border-[#F59E1B]/30 p-5 rounded-2xl flex items-center gap-4 shadow-xl w-full">
+                <div className="w-12 h-12 rounded-xl bg-[#F59E1B]/10 flex items-center justify-center text-[#F59E1B] shrink-0">
                   <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                 </div>
                 <div>
@@ -483,20 +485,20 @@ export default function VentanaBatientePage() {
       </section>
 
       {/* Trabajos Realizados Section */}
-      <section className="py-24 px-6 bg-[#0c0a07] relative border-t border-[#2a2415]">
+      <section className="py-24 px-6 bg-[#0E0B06] relative border-t border-[#2D2110]">
         <div className="max-w-7xl mx-auto text-center">
           <ScrollReveal direction="up" className="mb-16">
-            <h3 className="bg-[#FACC15] text-[#110e08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
+            <h3 className="bg-[#F59E1B] text-[#140F08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
               GALERÍA
             </h3>
             <Heading level="h2" className="text-4xl md:text-5xl font-bold text-white">
-              Trabajos <span className="text-[#FACC15]">Realizados</span>
+              Trabajos <span className="text-[#F59E1B]">Realizados</span>
             </Heading>
           </ScrollReveal>
           
           <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {GALERIA.map((img, idx) => (
-              <ScrollRevealItem key={idx} className="aspect-square md:aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden group border border-[#2a2415] relative cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
+              <ScrollRevealItem key={idx} className="aspect-square md:aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden group border border-[#2D2110] relative cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
                 <img 
                   src={img} 
                   alt={`Proyecto de ventana batiente ${idx + 1}`} 
@@ -513,7 +515,7 @@ export default function VentanaBatientePage() {
       <section className="py-24 px-6 bg-[#FAFAFA] border-t border-gray-100">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal direction="up" className="mb-16">
-            <h3 className="bg-[#110e08] text-[#FACC15] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
+            <h3 className="bg-[#140F08] text-[#F59E1B] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
               FAQ
             </h3>
             <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900">
@@ -525,17 +527,17 @@ export default function VentanaBatientePage() {
             {FAQ.map((faq, idx) => (
               <ScrollRevealItem key={idx}>
                 <div 
-                  className={`bg-white border ${openFaq === idx ? 'border-[#FACC15] shadow-md' : 'border-gray-200 hover:border-[#FACC15]/50'} transition-all duration-300 rounded-2xl overflow-hidden`}
+                  className={`bg-white border ${openFaq === idx ? 'border-[#F59E1B] shadow-md' : 'border-gray-200 hover:border-[#F59E1B]/50'} transition-all duration-300 rounded-2xl overflow-hidden`}
                 >
                   <button 
                     onClick={() => toggleFaq(idx)}
                     className="w-full text-left p-6 flex items-center justify-between cursor-pointer group"
                   >
-                    <span className={`font-bold md:text-lg transition-colors pr-8 ${openFaq === idx ? 'text-[#110e08]' : 'text-gray-700 group-hover:text-gray-900'}`}>
+                    <span className={`font-bold md:text-lg transition-colors pr-8 ${openFaq === idx ? 'text-[#140F08]' : 'text-gray-700 group-hover:text-gray-900'}`}>
                       {faq.pregunta}
                     </span>
                     <svg 
-                      className={`w-5 h-5 text-[#FACC15] shrink-0 transition-transform duration-300 ${openFaq === idx ? 'rotate-180' : ''}`} 
+                      className={`w-5 h-5 text-[#F59E1B] shrink-0 transition-transform duration-300 ${openFaq === idx ? 'rotate-180' : ''}`} 
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"
@@ -558,23 +560,23 @@ export default function VentanaBatientePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-[#110e08] border-y border-[#2a2415] relative">
+      <section className="py-20 px-6 bg-[#140F08] border-y border-[#2D2110] relative">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10 mix-blend-overlay"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <ScrollReveal direction="up">
             <Heading level="h2" className="text-3xl md:text-5xl font-bold text-white mb-6">
-              ¿Listo para tu nueva <span className="text-[#FACC15]">Batiente</span>?
+              ¿Listo para tu nueva <span className="text-[#F59E1B]">Batiente</span>?
             </Heading>
             <p className="text-white/70 text-lg mb-10 leading-relaxed max-w-2xl mx-auto font-light">
               Solicita una cotización gratuita y sin ningún compromiso. Nuestro equipo de técnicos expertos te contactará en menos de 24 horas.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <a href="#contacto" className="bg-[#FACC15] text-[#110e08] px-8 py-3.5 rounded-full font-bold shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.5)] hover:-translate-y-1 transition-all flex items-center gap-2">
+              <a href="#contacto" className="bg-[#F59E1B] text-[#140F08] px-8 py-3.5 rounded-full font-bold shadow-[0_0_20px_rgba(245,158,27,0.3)] hover:shadow-[0_0_30px_rgba(245,158,27,0.5)] hover:-translate-y-1 transition-all flex items-center gap-2">
                 Cotizar Gratis
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
               </a>
-              <a href="tel:+51929765802" className="text-white border border-[#2a2415] hover:border-[#FACC15]/50 px-8 py-3.5 rounded-full font-medium hover:bg-white/5 transition-all flex items-center gap-2">
-                <svg className="w-5 h-5 text-[#FACC15]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <a href="tel:+51929765802" className="text-white border border-[#2D2110] hover:border-[#F59E1B]/50 px-8 py-3.5 rounded-full font-medium hover:bg-white/5 transition-all flex items-center gap-2">
+                <svg className="w-5 h-5 text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                 +51 929 765 802
               </a>
             </div>

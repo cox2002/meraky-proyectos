@@ -56,7 +56,8 @@ const TIPOS_VENTANAS = [
     tags: ["Ahorro de espacio", "Fácil operación", "Múltiples hojas"],
     materials: "3 materiales disponibles · Ver precios",
     image: "/images/ventanas/ventana-corrediza.png",
-    href: "/productos/ventanas/corrediza"
+    href: "/productos/ventanas/corrediza",
+    objectFit: "cover"
   },
   {
     title: "Ventana Proyectante",
@@ -65,7 +66,8 @@ const TIPOS_VENTANAS = [
     tags: ["Ventilación con lluvia", "Seguridad adicional", "Fácil limpieza"],
     materials: "2 materiales disponibles · Ver precios",
     image: "/images/ventanas/ventana-proyectante.png",
-    href: "/productos/ventanas/proyectante"
+    href: "/productos/ventanas/proyectante",
+    objectFit: "cover"
   },
   {
     title: "Ventana Batiente",
@@ -74,7 +76,8 @@ const TIPOS_VENTANAS = [
     tags: ["Máxima ventilación", "Fácil limpieza exterior", "Cierre multipunto"],
     materials: "2 materiales disponibles · Ver precios",
     image: "/images/ventanas/ventana-batiente.png",
-    href: "/productos/ventanas/batiente"
+    href: "/productos/ventanas/batiente",
+    objectFit: "cover"
   },
   {
     title: "Ventana Pivotante",
@@ -83,7 +86,8 @@ const TIPOS_VENTANAS = [
     tags: ["Diseño moderno", "Limpieza desde interior", "Giro 180°"],
     materials: "2 materiales disponibles · Ver precios",
     image: "/images/ventanas/ventana-pivotante.png",
-    href: "/productos/ventanas/pivotante"
+    href: "/productos/ventanas/pivotante",
+    objectFit: "cover"
   },
   {
     title: "Ventana Fija",
@@ -92,14 +96,15 @@ const TIPOS_VENTANAS = [
     tags: ["Máxima luminosidad", "Sin mantenimiento de herrajes", "Mayor aislamiento"],
     materials: "2 materiales disponibles · Ver precios",
     image: "/images/ventanas/ventana-fija.png",
-    href: "/productos/ventanas/fija"
+    href: "/productos/ventanas/fija",
+    objectFit: "cover"
   }
 ];
 
 const ESPECIFICACIONES = [
   {
     icon: (
-      <svg className="w-7 h-7 text-[#110e08]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-7 h-7 text-[#140F08]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
       </svg>
     ),
@@ -112,7 +117,7 @@ const ESPECIFICACIONES = [
   },
   {
     icon: (
-      <svg className="w-7 h-7 text-[#110e08]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-7 h-7 text-[#140F08]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
@@ -125,7 +130,7 @@ const ESPECIFICACIONES = [
   },
   {
     icon: (
-      <svg className="w-7 h-7 text-[#110e08]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-7 h-7 text-[#140F08]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
     ),
@@ -138,7 +143,7 @@ const ESPECIFICACIONES = [
   },
   {
     icon: (
-      <svg className="w-7 h-7 text-[#110e08]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-7 h-7 text-[#140F08]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
       </svg>
     ),
@@ -190,112 +195,117 @@ export default function VentanasPage() {
   };
 
   return (
-    <main className="min-h-screen w-full bg-[#0c0a07] overflow-hidden flex flex-col">
+    <main className="min-h-screen w-full bg-[#0E0B06] overflow-x-hidden flex flex-col">
       <Navigation />
 
-      {/* Hero Section para Ventanas */}
-      <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 px-6 flex-grow flex items-center min-h-screen">
+      {/* Hero Section para Ventanas (Diseño Mamparas Replicado) */}
+      <section className="relative pt-24 pb-12 md:pt-28 md:pb-16 px-4 sm:px-6 flex-grow flex items-center min-h-screen lg:min-h-screen">
         {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img 
-            src="/images/ventanas/ventana-hero-bg.png" 
-            alt="Fondo Ventanas" 
-            className="w-full h-full object-cover" 
+            src="/images/ventanas/ventana-hero-bg.jpg" 
+            alt="Fondo Ventanas de Lujo" 
+            className="w-full h-[104%] object-cover object-center absolute top-0" 
           />
-          {/* Fondo completo más visible con un overlay uniforme oscuro para resaltar el texto */}
-          <div className="absolute inset-0 bg-[#0c0a07]/70"></div>
+          <div className="absolute inset-0 bg-[#0E0B06]/40 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06]/95 via-[#0E0B06]/65 to-transparent z-10"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto w-full relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="max-w-7xl mx-auto w-full relative z-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             
             {/* Left Content */}
             <ScrollReveal staggerChildren={0.15} direction="left" className="flex flex-col items-start">
               <ScrollRevealItem>
-                <div className="inline-block px-4 py-1.5 rounded-full border border-[#FACC15]/30 bg-[#FACC15]/10 text-[#FACC15] text-xs md:text-sm font-medium mb-6 shadow-sm backdrop-blur-md">
+                <div className="inline-block px-4 py-1.5 rounded-full border border-[#F59E1B]/30 bg-[#2D2110]/50 text-[#F59E1B] text-xs md:text-sm font-sans font-bold mb-6 shadow-sm backdrop-blur-md">
                   Especialistas en Ventanas de Aluminio
                 </div>
               </ScrollRevealItem>
 
               <ScrollRevealItem>
-                <Heading level="h1" className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+                <Heading level="display" className="text-white drop-shadow-2xl font-display font-bold text-4xl sm:text-5xl lg:text-[54px] leading-[1.1] mb-6 tracking-tight">
                   Ventanas de <br className="hidden md:block"/>
-                  <span className="text-[#FACC15] drop-shadow-[0_0_15px_rgba(250,204,21,0.2)]">Aluminio</span> y Vidrio <br className="hidden md:block"/>
-                  de Alta Calidad
+                  <span className="text-[#F59E1B] drop-shadow-[0_0_15px_rgba(245,158,27,0.15)]">Aluminio</span> y Vidrio <br className="hidden md:block"/>
+                  de <span className="text-[#F59E1B] drop-shadow-[0_0_15px_rgba(245,158,27,0.15)]">Alta Calidad</span>
                 </Heading>
               </ScrollRevealItem>
 
               <ScrollRevealItem>
-                <p className="text-white/80 text-lg md:text-xl max-w-lg mb-8 leading-relaxed font-light">
+                <p className="font-sans font-normal text-white/95 text-sm sm:text-[15px] leading-relaxed max-w-[500px] mb-8">
                   Diseño, fabricación e instalación de ventanas con perfilería de aluminio arquitectónico. Soluciones térmicas y acústicas para tu confort.
                 </p>
               </ScrollRevealItem>
 
               {/* Feature List */}
-              <ScrollRevealItem className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-10 w-full">
-                <div className="flex items-center gap-2 text-white/90 text-sm font-medium">
-                  <svg className="w-5 h-5 text-[#FACC15]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/></svg>
+              <ScrollRevealItem className="grid grid-cols-2 gap-x-6 gap-y-3 mb-10 w-full max-w-md font-sans font-bold text-xs sm:text-[13px] text-white/90">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[#F59E1B] font-extrabold text-sm">✓</span>
                   Aluminio Arquitectónico
                 </div>
-                <div className="flex items-center gap-2 text-white/90 text-sm font-medium">
-                  <svg className="w-5 h-5 text-[#FACC15]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/></svg>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[#F59E1B] font-extrabold text-sm">✓</span>
                   Aislamiento Térmico
                 </div>
-                <div className="flex items-center gap-2 text-white/90 text-sm font-medium">
-                  <svg className="w-5 h-5 text-[#FACC15]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/></svg>
+                <div className="flex items-center gap-1.5 col-span-2">
+                  <span className="text-[#F59E1B] font-extrabold text-sm">✓</span>
                   Garantía 10 Años
                 </div>
               </ScrollRevealItem>
 
               {/* Buttons */}
-              <ScrollRevealItem className="flex flex-wrap items-center gap-4">
-                <a href="#contacto" className="bg-[#FACC15] text-[#110e08] px-8 py-3.5 rounded-full font-bold shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.5)] hover:-translate-y-1 transition-all flex items-center gap-2">
+              <ScrollRevealItem className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto font-sans">
+                <a href="#contacto" className="bg-[#F59E1B] hover:bg-[#E08B10] text-[#0E0B06] px-8 py-3.5 rounded-full font-bold transition-all duration-300 flex items-center justify-center gap-2 text-sm shadow-[0_4px_20px_rgba(245,158,27,0.25)] hover:scale-[1.02]">
                   Cotizar Gratis
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                  <span className="text-base font-bold">→</span>
                 </a>
-                <a href="#trabajos" className="bg-[#16130c]/80 text-white border border-[#2a2415] hover:border-[#FACC15]/50 px-8 py-3.5 rounded-full font-bold hover:bg-[#1f1a11] backdrop-blur-sm hover:-translate-y-1 transition-all">
+                <a href="#trabajos" className="bg-[#1C1712]/60 hover:bg-[#1C1712]/80 text-white border border-[#F59E1B]/20 hover:border-[#F59E1B]/40 px-8 py-3.5 rounded-full font-bold transition-all duration-300 text-sm backdrop-blur-sm hover:scale-[1.02] text-center">
                   Ver Trabajos
                 </a>
               </ScrollRevealItem>
             </ScrollReveal>
 
-            {/* Right Content: Image & Floating Card */}
-            <ScrollReveal direction="right" className="relative mt-8 lg:mt-0">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#2a2415] aspect-[4/3] group bg-[#16130c]">
-                {/* Overlay oscuro sutil */}
-                <div className="absolute inset-0 bg-[#110e08]/10 z-10 group-hover:bg-transparent transition-colors duration-500" />
-                <img 
-                  src="/images/ventanas/ventana-hero-card.png" 
-                  alt="Ventana de aluminio moderna" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                
-                {/* Floating Glass Card (Price details) */}
-                <div className="absolute bottom-6 left-6 right-6 z-20">
-                  <div className="bg-[#110e08]/80 backdrop-blur-md border border-[#FACC15]/20 p-5 rounded-2xl flex items-center justify-between shadow-2xl transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                    <div>
-                      <span className="text-white/50 text-xs font-bold uppercase tracking-widest block mb-1">Desde</span>
-                      <span className="text-white text-3xl font-extrabold tracking-tight">S/. 180</span>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-[#FACC15] text-xs font-bold uppercase tracking-widest block mb-1">Incluye</span>
-                      <span className="text-white/90 text-sm font-medium">Instalación + Garantía</span>
-                    </div>
-                  </div>
+            {/* Right Content — Mismo diseño separado con blur de fondo */}
+            <ScrollReveal direction="right" className="relative mt-8 lg:mt-0 font-sans w-full max-w-[440px] lg:max-w-[480px] mx-auto z-20">
+              
+              {/* Panel de Imagen */}
+              <div className="rounded-[1.5rem] overflow-hidden shadow-2xl border border-white/10 mb-4 transition-transform duration-700 hover:scale-[1.01]">
+                <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
+                  <img 
+                    src="/images/ventanas/ventana_madera_plegable.png" 
+                    alt="Ventana de aluminio moderna" 
+                    className="w-full h-full object-cover object-center"
+                  />
                 </div>
               </div>
+
+              {/* Panel de Precio — Opacidad al 50% con desenfoque de fondo */}
+              <div className="bg-[#1A1410]/50 backdrop-blur-lg px-7 py-5 flex items-center justify-between rounded-[1.5rem] border border-white/10 shadow-2xl select-none font-sans transition-all duration-300 hover:border-[#F59E1B]/30">
+                <div>
+                  <span className="text-white/40 text-[10px] font-bold uppercase tracking-widest block mb-1">Desde</span>
+                  <span className="text-white text-3xl font-extrabold tracking-tight">
+                    S/. 180
+                  </span>
+                </div>
+                <div className="text-right flex flex-col items-end">
+                  <span className="text-[#F59E1B] text-[10px] font-bold uppercase tracking-widest block mb-1">Incluye</span>
+                  <span className="text-white text-sm font-bold block leading-tight">
+                    Instalación + Garantía
+                  </span>
+                </div>
+              </div>
+
             </ScrollReveal>
-            
+
           </div>
         </div>
       </section>
 
       {/* Tipos de Ventanas */}
-      <section className="py-24 px-6 bg-[#FAFAFA] relative">
+      <section className="py-20 px-4 sm:px-6 bg-[#FAFAFA] relative">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal direction="up" className="text-center mb-16">
-            <h3 className="bg-[#FACC15] text-[#110e08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6">TIPOS DE VENTANAS</h3>
-            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h3 className="bg-[#F59E1B] text-[#140F08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6">TIPOS DE VENTANAS</h3>
+            <Heading level="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Encuentra la Ventana Perfecta
             </Heading>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">
@@ -306,10 +316,15 @@ export default function VentanasPage() {
           <ScrollReveal staggerChildren={0.15} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {TIPOS_VENTANAS.map((tipo, idx) => (
               <ScrollRevealItem key={idx} className={`bg-white border border-gray-100 rounded-[2rem] overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.12)]`}>
-                <div className="relative h-64 overflow-hidden shrink-0">
+                {/* Contenedor de imagen optimizado para rellenar de forma homogénea las tarjetas */}
+                <div className={`relative w-full aspect-[4/4] overflow-hidden shrink-0 ${tipo.objectFit === 'contain' ? 'bg-white' : 'bg-gray-100'}`}>
                   <div className="absolute inset-0 bg-black/5 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
-                  <img src={tipo.image} alt={tipo.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute top-4 right-4 z-20 bg-[#FACC15] text-[#110e08] px-4 py-1.5 rounded-full text-sm font-bold shadow-md">
+                  <img 
+                    src={tipo.image} 
+                    alt={tipo.title} 
+                    className={`w-full h-full ${tipo.objectFit === 'contain' ? 'object-contain' : 'object-cover'} object-center transition-transform duration-700 group-hover:scale-105`} 
+                  />
+                  <div className="absolute top-4 right-4 z-20 bg-[#F59E1B] text-[#140F08] px-4 py-1.5 rounded-full text-sm font-bold shadow-md">
                     {tipo.price}
                   </div>
                 </div>
@@ -319,13 +334,13 @@ export default function VentanasPage() {
                   
                   <div className="flex flex-wrap gap-2 mb-6">
                     {tipo.tags.map((tag, tIdx) => (
-                      <span key={tIdx} className="bg-[#FACC15] text-[#110e08] font-bold text-xs px-3 py-1.5 rounded-full">
+                      <span key={tIdx} className="bg-[#F59E1B] text-[#140F08] font-bold text-xs px-3 py-1.5 rounded-full">
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-2 text-[#110e08] font-bold text-sm mb-8">
+                  <div className="flex items-center gap-2 text-[#140F08] font-bold text-sm mb-8">
                     <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                     </svg>
@@ -333,13 +348,13 @@ export default function VentanasPage() {
                   </div>
 
                   <div className="flex items-center gap-3 mt-auto">
-                    <Link href={tipo.href || "#"} className="flex-1 bg-[#FACC15] text-[#110e08] hover:bg-[#eab308] py-3.5 rounded-full font-bold transition-colors flex items-center justify-center gap-2 shadow-md hover:shadow-lg">
+                    <Link href={tipo.href || "#"} className="flex-1 bg-[#F59E1B] text-[#140F08] hover:bg-[#eab308] py-3.5 rounded-full font-bold transition-colors flex items-center justify-center gap-2 shadow-md hover:shadow-lg">
                       Ver detalles
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </Link>
-                    <button className="w-12 h-12 shrink-0 flex items-center justify-center bg-[#FACC15] text-[#110e08] rounded-full hover:bg-[#eab308] transition-colors shadow-md">
+                    <button className="w-12 h-12 shrink-0 flex items-center justify-center bg-[#F59E1B] text-[#140F08] rounded-full hover:bg-[#eab308] transition-colors shadow-md">
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
                       </svg>
@@ -353,11 +368,11 @@ export default function VentanasPage() {
       </section>
 
       {/* Especificaciones Técnicas */}
-      <section className="py-24 px-6 bg-white relative">
+      <section className="py-20 px-4 sm:px-6 bg-white relative">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal direction="up" className="text-center mb-16">
-            <h3 className="bg-[#FACC15] text-[#110e08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6">ESPECIFICACIONES TÉCNICAS</h3>
-            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h3 className="bg-[#F59E1B] text-[#140F08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6">ESPECIFICACIONES TÉCNICAS</h3>
+            <Heading level="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Calidad Certificada
             </Heading>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">
@@ -368,7 +383,7 @@ export default function VentanasPage() {
           <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {ESPECIFICACIONES.map((spec, idx) => (
               <ScrollRevealItem key={idx} className="bg-white border border-gray-100 rounded-[2rem] p-8 hover:shadow-2xl transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-                <div className="w-14 h-14 bg-[#FACC15] rounded-2xl flex items-center justify-center mb-6 text-[#110e08] shadow-md">
+                <div className="w-14 h-14 bg-[#F59E1B] rounded-2xl flex items-center justify-center mb-6 text-[#140F08] shadow-md">
                   {spec.icon}
                 </div>
                 <h4 className="text-2xl font-bold text-gray-900 mb-6">{spec.title}</h4>
@@ -386,19 +401,19 @@ export default function VentanasPage() {
 
           {/* Banner Calidad */}
           <ScrollReveal direction="up">
-            <div className="bg-[#110e08] rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl mt-12 text-white border border-[#2a2415]">
+            <div className="bg-[#140F08] rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl mt-12 text-white border border-[#2D2110]">
               <div className="text-center md:text-left">
-                <div className="text-4xl md:text-5xl font-extrabold mb-2 text-[#FACC15]">45 dB</div>
+                <div className="text-4xl md:text-5xl font-extrabold mb-2 text-[#F59E1B]">45 dB</div>
                 <div className="font-semibold text-white/80 tracking-wider text-sm">Reducción de ruido máxima</div>
               </div>
-              <div className="hidden md:block w-px h-16 bg-[#FACC15]/20"></div>
+              <div className="hidden md:block w-px h-16 bg-[#F59E1B]/20"></div>
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-extrabold mb-2 text-[#FACC15]">70%</div>
+                <div className="text-4xl md:text-5xl font-extrabold mb-2 text-[#F59E1B]">70%</div>
                 <div className="font-semibold text-white/80 tracking-wider text-sm">Ahorro energético</div>
               </div>
-              <div className="hidden md:block w-px h-16 bg-[#FACC15]/20"></div>
+              <div className="hidden md:block w-px h-16 bg-[#F59E1B]/20"></div>
               <div className="text-center md:text-right">
-                <div className="text-4xl md:text-5xl font-extrabold mb-2 text-[#FACC15]">20+ años</div>
+                <div className="text-4xl md:text-5xl font-extrabold mb-2 text-[#F59E1B]">20+ años</div>
                 <div className="font-semibold text-white/80 tracking-wider text-sm">Vida útil garantizada</div>
               </div>
             </div>
@@ -407,12 +422,12 @@ export default function VentanasPage() {
       </section>
 
       {/* Proceso de Instalación */}
-      <section className="py-24 px-6 bg-[#0c0a07] relative">
+      <section className="py-20 px-4 sm:px-6 bg-[#0E0B06] relative">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal direction="up" className="text-center mb-20">
-            <h3 className="text-[#FACC15] text-sm font-bold tracking-[0.2em] uppercase mb-3">PROCESO DE TRABAJO</h3>
-            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-white mb-6">
-              ¿Cómo <span className="text-[#FACC15]">Trabajamos</span>?
+            <h3 className="text-[#F59E1B] text-sm font-bold tracking-[0.2em] uppercase mb-3">PROCESO DE TRABAJO</h3>
+            <Heading level="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+              ¿Cómo <span className="text-[#F59E1B]">Trabajamos</span>?
             </Heading>
             <p className="text-white/60 max-w-2xl mx-auto text-lg">
               Un proceso simple y transparente para que tengas tus ventanas perfectas
@@ -421,11 +436,11 @@ export default function VentanasPage() {
 
           <ScrollReveal staggerChildren={0.15} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
             {/* Connecting line for desktop */}
-            <div className="hidden lg:block absolute top-12 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-[#FACC15]/30 to-transparent z-0"></div>
+            <div className="hidden lg:block absolute top-12 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-[#F59E1B]/30 to-transparent z-0"></div>
             
             {PROCESO.map((step, idx) => (
-              <ScrollRevealItem key={idx} className="relative bg-[#16130c] border border-[#2a2415] rounded-3xl p-8 hover:shadow-[0_0_30px_rgba(250,204,21,0.1)] transition-all duration-300 group mt-12 lg:mt-0 z-10">
-                <div className="absolute -top-7 left-8 w-14 h-14 bg-[#FACC15] rounded-full flex items-center justify-center text-2xl font-bold text-[#110e08] shadow-lg group-hover:-translate-y-1 transition-transform duration-300">
+              <ScrollRevealItem key={idx} className="relative bg-[#1B150B] border border-[#2D2110] rounded-3xl p-8 hover:shadow-[0_0_30px_rgba(245,158,27,0.1)] transition-all duration-300 group mt-12 lg:mt-0 z-10">
+                <div className="absolute -top-7 left-8 w-14 h-14 bg-[#F59E1B] rounded-full flex items-center justify-center text-2xl font-bold text-[#140F08] shadow-lg group-hover:-translate-y-1 transition-transform duration-300">
                   {step.step}
                 </div>
                 <div className="mt-5">
@@ -433,7 +448,7 @@ export default function VentanasPage() {
                   <p className="text-white/60 text-base leading-relaxed mb-6">
                     {step.desc}
                   </p>
-                  <div className="inline-flex items-center justify-center bg-[#FACC15]/10 px-4 py-1.5 rounded-full border border-[#FACC15]/20 text-[#FACC15] text-sm font-bold">
+                  <div className="inline-flex items-center justify-center bg-[#F59E1B]/10 px-4 py-1.5 rounded-full border border-[#F59E1B]/20 text-[#F59E1B] text-sm font-bold">
                     {step.time}
                   </div>
                 </div>
@@ -444,20 +459,20 @@ export default function VentanasPage() {
       </section>
 
       {/* Trabajos Realizados (Portafolio) */}
-      <section className="py-24 px-6 bg-white relative">
+      <section id="trabajos" className="py-20 px-4 sm:px-6 bg-white relative">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal direction="up" className="text-center mb-12">
-            <h3 className="text-[#110e08] text-sm font-bold tracking-[0.2em] uppercase mb-3">Galería de Proyectos</h3>
-            <Heading level="h2" className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
-              Nuestros <span className="text-[#FACC15]">Trabajos</span>
+            <h3 className="text-[#140F08] text-sm font-bold tracking-[0.2em] uppercase mb-3">Galería de Proyectos</h3>
+            <Heading level="h2" className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+              Nuestros <span className="text-[#F59E1B]">Trabajos</span>
             </Heading>
           </ScrollReveal>
 
           {/* Filtros */}
           <ScrollReveal direction="up" className="flex flex-wrap justify-center gap-3 mb-12">
-            <button className="bg-[#FACC15] text-[#110e08] px-6 py-2 rounded-full text-sm font-bold shadow-md">Todos</button>
+            <button className="bg-[#F59E1B] text-[#140F08] px-6 py-2 rounded-full text-sm font-bold shadow-md">Todos</button>
             {['Corrediza', 'Proyectante', 'Batiente', 'Pivotante', 'Fija'].map((filtro, idx) => (
-              <button key={idx} className="bg-white border border-gray-200 text-gray-600 hover:text-[#110e08] hover:border-[#FACC15] px-6 py-2 rounded-full text-sm font-medium transition-colors shadow-sm">
+              <button key={idx} className="bg-white border border-gray-200 text-gray-600 hover:text-[#140F08] hover:border-[#F59E1B] px-6 py-2 rounded-full text-sm font-medium transition-colors shadow-sm">
                 {filtro}
               </button>
             ))}
@@ -479,12 +494,12 @@ export default function VentanasPage() {
       </section>
 
       {/* Preguntas Frecuentes (FAQ) */}
-      <section className="py-24 px-6 bg-[#FAFAFA] relative">
+      <section className="py-20 px-4 sm:px-6 bg-[#FAFAFA] relative">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal direction="up" className="text-center mb-16">
-            <h3 className="text-[#110e08] text-sm font-bold tracking-[0.2em] uppercase mb-3">Preguntas Frecuentes</h3>
-            <Heading level="h2" className="text-4xl md:text-5xl font-bold text-gray-900">
-              Resolvemos tus <span className="text-[#FACC15]">Dudas</span>
+            <h3 className="text-[#140F08] text-sm font-bold tracking-[0.2em] uppercase mb-3">Preguntas Frecuentes</h3>
+            <Heading level="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+              Resolvemos tus <span className="text-[#F59E1B]">Dudas</span>
             </Heading>
           </ScrollReveal>
 
@@ -492,17 +507,17 @@ export default function VentanasPage() {
             {FAQ_VENTANAS.map((faq, idx) => (
               <ScrollRevealItem key={idx}>
                 <div 
-                  className={`bg-white border ${openFaq === idx ? 'border-[#FACC15] shadow-md' : 'border-gray-200 hover:border-[#FACC15]/50'} transition-all duration-300 rounded-2xl overflow-hidden`}
+                  className={`bg-white border ${openFaq === idx ? 'border-[#F59E1B] shadow-md' : 'border-gray-200 hover:border-[#F59E1B]/50'} transition-all duration-300 rounded-2xl overflow-hidden`}
                 >
                   <button 
                     onClick={() => toggleFaq(idx)}
                     className="w-full text-left p-6 flex items-center justify-between cursor-pointer group"
                   >
-                    <span className={`font-bold md:text-lg transition-colors pr-8 ${openFaq === idx ? 'text-[#110e08]' : 'text-gray-700 group-hover:text-gray-900'}`}>
+                    <span className={`font-bold md:text-lg transition-colors pr-8 ${openFaq === idx ? 'text-[#140F08]' : 'text-gray-700 group-hover:text-gray-900'}`}>
                       {faq.pregunta}
                     </span>
                     <svg 
-                      className={`w-5 h-5 text-[#FACC15] shrink-0 transition-transform duration-300 ${openFaq === idx ? 'rotate-180' : ''}`} 
+                      className={`w-5 h-5 text-[#F59E1B] shrink-0 transition-transform duration-300 ${openFaq === idx ? 'rotate-180' : ''}`} 
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"

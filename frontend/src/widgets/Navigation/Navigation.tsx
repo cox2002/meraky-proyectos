@@ -38,6 +38,7 @@ export default function Navigation() {
     { label: 'Inicio', href: '/' },
     { label: 'Nosotros', href: '/#nosotros' },
     { label: 'Servicios', href: '/#servicios' },
+    { label: 'Galería', href: '/#galeria' },
     { 
       label: 'Productos', 
       isDropdown: true,
@@ -60,43 +61,43 @@ export default function Navigation() {
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-[#110e08]/95 backdrop-blur-md border-b border-white/10 shadow-lg' 
+          ? 'bg-[#140F08]/95 backdrop-blur-md border-b border-white/10 shadow-lg' 
           : 'bg-transparent border-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 xl:px-6 h-24 flex items-center justify-between">
         
         {/* Logo que redirige al inicio usando el componente <Link> */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="font-display font-bold text-3xl md:text-4xl tracking-tight text-[#FACC15]">
+        <Link href="/" className="flex items-center gap-1.5 group">
+          <span className="font-display font-bold text-2xl tracking-tight text-[#F59E1B] group-hover:opacity-90 transition-opacity">
             MERAKY
           </span>
-          <span className="font-sans text-sm tracking-widest text-white/80 mt-1 uppercase">
-            Proyectos
+          <span className="font-display font-semibold text-xs tracking-[0.2em] text-white/90 mt-1.5 uppercase">
+            PROYECTOS
           </span>
         </Link>
 
         {/* Navegación Desktop: Oculta en móviles (hidden), visible en pantallas medianas (md:flex) */}
-        <nav className="hidden lg:flex items-center gap-8 -mt-1">
-          {/* Iteramos sobre el arreglo navLinks. 'key' es requerido por React para optimizar listas. */}
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-7">
+          {/* Iteramos sobre el arreglo navLinks. */}
           {navLinks.map((link) => {
             if (link.isDropdown) {
               return (
                 <div key={link.label} className="relative group">
-                  <button className="flex items-center gap-1 text-base font-medium text-white/90 hover:text-[#FACC15] drop-shadow-sm transition-colors py-4">
+                  <button className="flex items-center gap-1 text-xs xl:text-[13px] font-sans font-bold tracking-wider text-white hover:text-[#F59E1B] drop-shadow-sm transition-colors py-4 uppercase cursor-pointer">
                     {link.label}
-                    <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180 text-white/80 group-hover:text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
                   </button>
                   {/* Menú Desplegable (Dropdown) */}
-                  <div className="absolute left-0 top-full mt-0 w-80 bg-white rounded-3xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 p-4 flex flex-col gap-1">
+                  <div className="absolute left-0 top-full mt-0 w-80 bg-[#140F08]/95 backdrop-blur-md rounded-3xl shadow-2xl border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 p-4 flex flex-col gap-1 z-50">
                     {link.items?.map((item, idx) => (
                       <Link 
                         key={idx} 
                         href={item.href}
-                        className="flex flex-col px-4 py-3 hover:bg-gray-50 rounded-2xl transition-colors"
+                        className="flex flex-col px-4 py-3 hover:bg-white/5 rounded-2xl transition-colors"
                       >
-                        <span className="text-gray-900 font-bold text-base">{item.label}</span>
-                        <span className="text-gray-500 text-sm mt-0.5">{item.desc}</span>
+                        <span className="text-[#F59E1B] font-bold text-sm">{item.label}</span>
+                        <span className="text-white/60 text-xs mt-0.5">{item.desc}</span>
                       </Link>
                     ))}
                   </div>
@@ -108,7 +109,7 @@ export default function Navigation() {
               <Link 
                 key={link.label} 
                 href={link.href || '#'}
-                className="text-base font-medium text-white/90 hover:text-[#FACC15] drop-shadow-sm transition-colors py-4"
+                className="text-xs xl:text-[13px] font-sans font-bold tracking-wider text-white hover:text-[#F59E1B] drop-shadow-sm transition-colors py-4 uppercase"
               >
                 {link.label}
               </Link>
@@ -117,18 +118,18 @@ export default function Navigation() {
         </nav>
 
         {/* Botón de Llamada a la Acción (CTA - Call To Action) */}
-        <div className="hidden md:block">
-          <GlassButton 
-            variant="primary" 
+        <div className="hidden lg:block">
+          <Link 
             href="/#contacto"
+            className="inline-flex items-center justify-center bg-[#2D2110]/55 hover:bg-[#3D2D18]/75 text-[#F59E1B] hover:text-[#ffb763] border border-[#F59E1B]/30 hover:border-[#F59E1B]/60 px-4 xl:px-6 py-2.5 rounded-full text-[10px] xl:text-xs font-bold tracking-wider uppercase transition-all duration-300 backdrop-blur-sm shadow-sm"
           >
             Cotizar Proyecto
-          </GlassButton>
+          </Link>
         </div>
 
         {/* Botón de menú hamburguesa (Móviles): Solo se ve en pantallas pequeñas. */}
         <button 
-          className="lg:hidden text-white hover:text-[#FACC15] p-2 transition-colors"
+          className="lg:hidden text-white hover:text-[#F59E1B] p-2 transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -144,7 +145,7 @@ export default function Navigation() {
 
       {/* Menú Móvil */}
       <div 
-        className={`lg:hidden absolute top-full left-0 w-full bg-[#110e08]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-300 overflow-hidden ${
+        className={`lg:hidden absolute top-full left-0 w-full bg-[#140F08]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-300 overflow-hidden ${
           isMobileMenuOpen ? 'max-h-[85vh] py-6 opacity-100' : 'max-h-0 py-0 opacity-0'
         }`}
       >
@@ -153,7 +154,7 @@ export default function Navigation() {
             <div key={link.label} className="flex flex-col w-full">
               {link.isDropdown ? (
                 <>
-                  <div className="text-lg font-bold text-[#FACC15] py-2 border-b border-white/10">{link.label}</div>
+                  <div className="text-lg font-bold text-[#F59E1B] py-2 border-b border-white/10">{link.label}</div>
                   <div className="flex flex-col gap-4 pl-4 pt-4 pb-2">
                     {link.items?.map((item, idx) => (
                       <Link 
@@ -170,7 +171,7 @@ export default function Navigation() {
               ) : (
                 <Link 
                   href={link.href || '#'}
-                  className="text-lg font-medium text-white/90 hover:text-[#FACC15] py-2 border-b border-white/5 transition-colors"
+                  className="text-lg font-medium text-white/90 hover:text-[#F59E1B] py-2 border-b border-white/5 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}

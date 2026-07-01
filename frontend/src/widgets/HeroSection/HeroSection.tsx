@@ -84,7 +84,7 @@ export default function HeroSection() {
       </div>
 
       {/* Controles del Slider Manuales (Puntos y Flechas) capa intermedia (z-30) */}
-      <div className="absolute bottom-12 left-0 right-0 z-30 flex justify-between items-center px-12 md:px-24">
+      <div className="absolute bottom-8 sm:bottom-12 left-0 right-0 z-30 flex justify-between items-center px-4 sm:px-8 md:px-12 lg:px-24">
         {/* Indicadores de página (Puntos) */}
         <div className="flex items-center gap-3">
           {slides.map((_, idx) => (
@@ -93,8 +93,8 @@ export default function HeroSection() {
               onClick={() => setCurrentSlide(idx)}
               className={`transition-all duration-300 rounded-full ${
                 idx === currentSlide 
-                  ? 'w-8 h-2 bg-[#FACC15]' 
-                  : 'w-2 h-2 bg-white/50 hover:bg-[#FACC15]/80'
+                  ? 'w-8 h-2 bg-[#F59E1B]' 
+                  : 'w-2 h-2 bg-white/50 hover:bg-[#F59E1B]/80'
               }`}
               aria-label={`Go to slide ${idx + 1}`}
             />
@@ -124,26 +124,26 @@ export default function HeroSection() {
         al cambiar la 'key', React destruye y vuelve a crear el elemento, forzando que se reinicien las animaciones
         'animate-fade-in-up' cada vez que cambia el slide.
       */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-20 md:py-32 flex flex-col justify-center h-full -translate-y-8 md:-translate-y-16">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-32 flex flex-col justify-center h-full -translate-y-4 sm:-translate-y-8 md:-translate-y-16">
         
         <ScrollReveal key={currentSlide} staggerChildren={0.15} className="flex flex-col items-start gap-8 max-w-5xl">
           {/* Badge o Etiqueta */}
           <ScrollRevealItem direction="up">
-            <span className="inline-block px-5 py-2.5 rounded-full bg-[#110e08]/80 text-[#FACC15] text-sm md:text-base font-medium backdrop-blur-md shadow-lg shadow-black/20">
+            <span className="inline-block px-5 py-2.5 rounded-full bg-[#140F08]/80 text-[#F59E1B] text-sm md:text-base font-medium backdrop-blur-md shadow-lg shadow-black/20">
               {slides[currentSlide].badge}
             </span>
           </ScrollRevealItem>
           
           {/* Título Principal usando el componente Heading */}
           <ScrollRevealItem direction="up">
-            <Heading level="display" className="text-white drop-shadow-2xl font-bold text-5xl md:text-6xl lg:text-[5rem] leading-[1.1] md:leading-[1.1]">
+            <Heading level="display" className="text-white drop-shadow-2xl font-bold text-3xl sm:text-4xl md:text-6xl lg:text-[5rem] leading-[1.1]">
               {slides[currentSlide].title}
             </Heading>
           </ScrollRevealItem>
           
           {/* Subtítulo */}
           <ScrollRevealItem direction="up">
-            <p className="font-sans text-lg md:text-2xl text-white/90 leading-relaxed drop-shadow-lg max-w-3xl font-medium">
+            <p className="font-sans text-base sm:text-lg md:text-2xl text-white/90 leading-relaxed drop-shadow-lg max-w-3xl font-medium">
               {slides[currentSlide].subtitle}
             </p>
           </ScrollRevealItem>

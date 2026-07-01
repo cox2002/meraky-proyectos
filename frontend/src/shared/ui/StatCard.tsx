@@ -37,15 +37,15 @@ export default function StatCard({ icon, endValue, suffix = '', label }: StatCar
   return (
     <div 
       ref={ref}
-      className="flex flex-col items-center justify-center p-10 rounded-2xl bg-[#110e08] hover:bg-[#1a1711] transition-all duration-500 hover:-translate-y-1 shadow-lg"
+      className="flex flex-col items-center justify-center p-6 md:p-10 rounded-2xl bg-[#140F08] hover:bg-[#1a1711] transition-all duration-500 hover:-translate-y-1 shadow-lg h-full"
     >
       {/* Icono con color de acento amarillo */}
-      <div className="mb-4 text-[#FACC15]">
+      <div className="mb-4 text-[#F59E1B]">
         {icon}
       </div>
       
       {/* Número y sufijo usando fuente display grande y llamativa */}
-      <div className="font-display font-bold text-5xl md:text-6xl text-white mb-3 tracking-tight">
+      <div className="font-display font-bold text-4xl sm:text-5xl md:text-6xl text-white mb-3 tracking-tight">
         {currentValue}{suffix}
       </div>
       

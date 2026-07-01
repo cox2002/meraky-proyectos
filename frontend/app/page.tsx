@@ -8,8 +8,8 @@ import HeroSection from '@/src/widgets/HeroSection/HeroSection';
 import StatsBanner from '@/src/widgets/StatsBanner/StatsBanner';
 import AboutSection from '@/src/widgets/AboutSection/AboutSection';
 import ServicesSection from '@/src/widgets/ServicesSection/ServicesSection';
-import PortfolioSection from '@/src/widgets/PortfolioSection/PortfolioSection';
 import ContactSection from '@/src/widgets/ContactSection/ContactSection';
+import GallerySection from '@/src/widgets/GallerySection/GallerySection';
 import Footer from '@/src/widgets/Footer/Footer';
 
 // --- Página Principal (Home) ---
@@ -20,7 +20,7 @@ export default function HomePage() {
   return (
     // 'min-h-screen' asegura que la página ocupe al menos la altura completa del monitor.
     // 'overflow-hidden' previene barras de desplazamiento horizontales accidentales.
-    <main className="min-h-screen w-full bg-surface overflow-hidden">
+    <main className="min-h-screen w-full bg-surface overflow-x-hidden">
       {/* 
         Composición de la Interfaz:
         La página es simplemente un contenedor vacío que apila secuencialmente
@@ -32,7 +32,7 @@ export default function HomePage() {
       <StatsBanner />
       <AboutSection />
       <ServicesSection />
-      <PortfolioSection />
+      <GallerySection />
       <ContactSection />
       <Footer />
     </main>
