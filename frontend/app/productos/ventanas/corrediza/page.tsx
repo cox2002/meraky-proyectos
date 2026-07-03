@@ -18,80 +18,80 @@ const INCLUYE = [
 ];
 
 const VENTAJAS = [
-  { 
-    title: "Ahorra Espacio", 
-    desc: "Al deslizarse horizontalmente no necesita espacio de barrido, ideal para ambientes de espacio limitado." 
+  {
+    title: "Ahorra Espacio",
+    desc: "Al deslizarse horizontalmente no necesita espacio de barrido, ideal para ambientes de espacio limitado."
   },
-  { 
-    title: "Fácil Operación", 
-    desc: "Los rodamientos de alta calidad permiten un deslizamiento suave y silencioso con mínimo esfuerzo." 
+  {
+    title: "Fácil Operación",
+    desc: "Los rodamientos de alta calidad permiten un deslizamiento suave y silencioso con mínimo esfuerzo."
   },
-  { 
-    title: "Múltiples Hojas", 
-    desc: "Disponible en configuraciones de 2, 3 o 4 hojas para adaptarse perfectamente a cualquier ancho de vano." 
+  {
+    title: "Múltiples Hojas",
+    desc: "Disponible en configuraciones de 2, 3 o 4 hojas para adaptarse perfectamente a cualquier ancho de vano."
   },
-  { 
-    title: "Larga Durabilidad", 
-    desc: "Perfilería de aluminio anodizado de alta resistencia a la corrosión y el desgaste por el sol y la lluvia." 
+  {
+    title: "Larga Durabilidad",
+    desc: "Perfilería de aluminio anodizado de alta resistencia a la corrosión y el desgaste por el sol y la lluvia."
   }
 ];
 
 const DATOS = [
-  { 
-    title: "Dimensiones", 
+  {
+    title: "Dimensiones",
     icon: (
       <svg className="w-6 h-6 text-[#F59E1B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
       </svg>
     ),
     items: [
-      { label: "Ancho de vano", value: "60 – 300 cm" }, 
-      { label: "Alto de vano", value: "100 – 250 cm" }, 
-      { label: "Hojas disponibles", value: "2, 3 o 4 hojas" }, 
+      { label: "Ancho de vano", value: "60 – 300 cm" },
+      { label: "Alto de vano", value: "100 – 250 cm" },
+      { label: "Hojas disponibles", value: "2, 3 o 4 hojas" },
       { label: "Espesor de vidrio", value: "6mm / 8mm" }
-    ] 
+    ]
   },
-  { 
-    title: "Perfilería", 
+  {
+    title: "Perfilería",
     icon: (
       <svg className="w-6 h-6 text-[#F59E1B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
     items: [
-      { label: "Material principal", value: "Aluminio arquitectónico" }, 
-      { label: "Espesor de perfil", value: "1.2 – 2.0 mm" }, 
-      { label: "Acabados disponibles", value: "Natural / Champagne / Negro" }, 
+      { label: "Material principal", value: "Aluminio arquitectónico" },
+      { label: "Espesor de perfil", value: "1.2 – 2.0 mm" },
+      { label: "Acabados disponibles", value: "Natural / Champagne / Negro" },
       { label: "Riel superior", value: "Doble canal anti-vibración" }
-    ] 
+    ]
   },
-  { 
-    title: "Vidrio", 
+  {
+    title: "Vidrio",
     icon: (
       <svg className="w-6 h-6 text-[#F59E1B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
       </svg>
     ),
     items: [
-      { label: "Tipo de cristal", value: "Templado o Crudo de seguridad" }, 
-      { label: "Espesor estándar", value: "6mm / 8mm" }, 
-      { label: "Estilos estéticos", value: "Transparente / Pavonado" }, 
+      { label: "Tipo de cristal", value: "Templado o Crudo de seguridad" },
+      { label: "Espesor estándar", value: "6mm / 8mm" },
+      { label: "Estilos estéticos", value: "Transparente / Pavonado" },
       { label: "Tratamiento extra", value: "Easy Clean disponible" }
-    ] 
+    ]
   },
-  { 
-    title: "Rendimiento", 
+  {
+    title: "Rendimiento",
     icon: (
       <svg className="w-6 h-6 text-[#F59E1B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
     items: [
-      { label: "Ciclos garantizados", value: "+100,000 deslizamientos" }, 
-      { label: "Hermeticidad", value: "Burlete perimetral doble" }, 
-      { label: "Mantenimiento", value: "Mínimo semestral" }, 
+      { label: "Ciclos garantizados", value: "+100,000 deslizamientos" },
+      { label: "Hermeticidad", value: "Burlete perimetral doble" },
+      { label: "Mantenimiento", value: "Mínimo semestral" },
       { label: "Garantía de perfil", value: "10 años Meraky" }
-    ] 
+    ]
   }
 ];
 
@@ -111,17 +111,17 @@ const APLICACIONES = [
 ];
 
 const FAQ = [
-  { 
-    pregunta: "¿Cuántas hojas necesito para mi ventana?", 
-    respuesta: "Depende directamente del ancho de tu vano. Para vanos de hasta 120 cm recomendamos un sistema de 2 hojas. Para vanos de 120 cm a 200 cm es ideal usar 3 hojas, y para medidas superiores a 200 cm sugerimos 4 hojas. Nuestro equipo técnico evaluará tu espacio en la visita previa." 
+  {
+    pregunta: "¿Cuántas hojas necesito para mi ventana?",
+    respuesta: "Depende directamente del ancho de tu vano. Para vanos de hasta 120 cm recomendamos un sistema de 2 hojas. Para vanos de 120 cm a 200 cm es ideal usar 3 hojas, y para medidas superiores a 200 cm sugerimos 4 hojas. Nuestro equipo técnico evaluará tu espacio en la visita previa."
   },
-  { 
-    pregunta: "¿Se puede instalar en cualquier pared o vano?", 
-    respuesta: "Sí, siempre que el vano se encuentre correctamente nivelado y preparado. Realizamos una visita técnica sin costo para evaluar la estabilidad de la estructura y garantizar que los rieles y marcos encajen herméticamente." 
+  {
+    pregunta: "¿Se puede instalar en cualquier pared o vano?",
+    respuesta: "Sí, siempre que el vano se encuentre correctamente nivelado y preparado. Realizamos una visita técnica sin costo para evaluar la estabilidad de la estructura y garantizar que los rieles y marcos encajen herméticamente."
   },
-  { 
-    pregunta: "¿Cómo se realiza el mantenimiento de la corrediza?", 
-    respuesta: "El mantenimiento es sumamente sencillo. Se recomienda limpiar los rieles periódicamente con una aspiradora o cepillo suave para evitar que se acumule polvo o arena que pueda obstruir las ruedas. Los vidrios y perfiles se pueden limpiar con un paño suave húmedo." 
+  {
+    pregunta: "¿Cómo se realiza el mantenimiento de la corrediza?",
+    respuesta: "El mantenimiento es sumamente sencillo. Se recomienda limpiar los rieles periódicamente con una aspiradora o cepillo suave para evitar que se acumule polvo o arena que pueda obstruir las ruedas. Los vidrios y perfiles se pueden limpiar con un paño suave húmedo."
   }
 ];
 
@@ -140,14 +140,14 @@ export default function VentanaCorredizaPage() {
   const [activeCard, setActiveCard] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const cards = [
-    { img: "/ventana-corrediza-hero.jpg", alt: "Diseño Elegante Blanco" },
+    { img: "/images/ventanas/ventana-corrediza.1.png", alt: "Diseño Elegante Blanco" },
     { img: GALERIA[1], alt: "Diseño Minimalista Negro" },
     { img: GALERIA[2], alt: "Diseño Rústico Madera" }
   ];
 
   const getCardStyle = (idx: number) => {
     const diff = (idx - activeCard + 3) % 3;
-    
+
     // Base styles for the normal state
     let zIndex = 10;
     let transform = 'translate3d(-74%, -68%, 0) scale(0.88) rotate(3deg)';
@@ -194,19 +194,20 @@ export default function VentanaCorredizaPage() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 px-6 flex items-center min-h-screen">
-        <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Contenedor de fondo fluido */}
+        <div className="absolute inset-0 z-0 overflow-hidden bg-[#0E0B06]">
           <img 
-            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2000&auto=format&fit=crop" 
+            src="/images/ventanas/ventana-corrediza-fondo.png" 
             alt="Ventana Corrediza de Aluminio" 
-            className="w-full h-[104%] object-cover absolute top-0" 
+            className="w-[90%] h-[78%] object-cover object-right ml-auto opacity-40 lg:opacity-50"
+
           />
-          <div className="absolute inset-0 bg-[#0E0B06]/40 z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06]/95 via-[#0E0B06]/65 to-transparent z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0E0B06] via-transparent to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-[#0E0B06]/35 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06] via-[#0E0B06]/85 to-transparent z-10"></div>
         </div>
         <div className="max-w-7xl mx-auto w-full relative z-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            
+
             {/* Left Content */}
             <ScrollReveal staggerChildren={0.15} direction="left" className="flex flex-col items-start">
               <ScrollRevealItem>
@@ -223,7 +224,7 @@ export default function VentanaCorredizaPage() {
 
               <ScrollRevealItem>
                 <Heading level="h1" className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
-                  Ventana <br className="hidden md:block"/>
+                  Ventana <br className="hidden md:block" />
                   <span className="text-[#F59E1B] drop-shadow-[0_0_15px_rgba(245,158,27,0.2)]">Corrediza</span>
                 </Heading>
               </ScrollRevealItem>
@@ -237,15 +238,15 @@ export default function VentanaCorredizaPage() {
               {/* Feature List */}
               <ScrollRevealItem className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-10 w-full">
                 <div className="flex items-center gap-2 text-white/90 text-sm font-medium">
-                  <svg className="w-5 h-5 text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/></svg>
+                  <svg className="w-5 h-5 text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
                   Instalación 1-2 días
                 </div>
                 <div className="flex items-center gap-2 text-white/90 text-sm font-medium">
-                  <svg className="w-5 h-5 text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/></svg>
+                  <svg className="w-5 h-5 text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
                   Garantía 10 Años
                 </div>
                 <div className="flex items-center gap-2 text-white/90 text-sm font-medium">
-                  <svg className="w-5 h-5 text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7"/></svg>
+                  <svg className="w-5 h-5 text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
                   Aluminio Anodizado
                 </div>
               </ScrollRevealItem>
@@ -254,7 +255,7 @@ export default function VentanaCorredizaPage() {
               <ScrollRevealItem className="flex flex-wrap items-center gap-4">
                 <a href="#contacto" className="bg-[#F59E1B] text-[#140F08] px-8 py-3.5 rounded-full font-bold shadow-[0_0_20px_rgba(245,158,27,0.3)] hover:shadow-[0_0_30px_rgba(245,158,27,0.5)] hover:-translate-y-1 transition-all flex items-center gap-2">
                   Cotizar Ahora
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                 </a>
                 <a href="tel:+51929765802" className="bg-[#1B150B]/80 text-white border border-[#2D2110] hover:border-[#F59E1B]/50 px-8 py-3.5 rounded-full font-bold hover:bg-[#1f1a11] backdrop-blur-sm hover:-translate-y-1 transition-all">
                   +51 929 765 802
@@ -278,16 +279,16 @@ export default function VentanaCorredizaPage() {
                     >
                       {/* Dark overlay for background cards, fades on hover */}
                       <div className={`absolute inset-0 bg-[#140F08] z-10 transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-40 group-hover:opacity-10'}`} />
-                      <img 
-                        src={card.img} 
-                        alt={card.alt} 
+                      <img
+                        src={card.img}
+                        alt={card.alt}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     </div>
                   );
                 })}
               </div>
-              
+
               {/* Pricing Card below the image stack */}
               <div className="mt-8 bg-[#140F08]/90 backdrop-blur-md border border-[#F59E1B]/30 p-5 rounded-2xl flex items-center justify-between shadow-2xl w-[85%] max-w-md mx-auto">
                 <div>
@@ -316,12 +317,12 @@ export default function VentanaCorredizaPage() {
               Lo que incluye tu <span className="text-[#eab308]">Corrediza</span>
             </Heading>
           </ScrollReveal>
-          
+
           <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {INCLUYE.map((item, idx) => (
               <ScrollRevealItem key={idx} className="bg-white border border-gray-100 rounded-2xl p-6 flex items-center gap-4 shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-lg transition-all text-left">
                 <div className="w-10 h-10 shrink-0 bg-[#F59E1B] rounded-xl flex items-center justify-center text-[#140F08]">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/></svg>
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
                 </div>
                 <span className="text-gray-800 font-semibold text-base">{item}</span>
               </ScrollRevealItem>
@@ -344,7 +345,7 @@ export default function VentanaCorredizaPage() {
               Información detallada sobre materiales, dimensiones y características estructurales del sistema corredizo.
             </p>
           </ScrollReveal>
-          
+
           <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {DATOS.map((seccion, idx) => (
               <ScrollRevealItem key={idx} className="bg-[#1B150B] border border-[#2D2110] rounded-3xl p-8 hover:border-[#F59E1B]/30 transition-colors text-left shadow-[0_8px_30px_rgba(0,0,0,0.02)]">
@@ -379,7 +380,7 @@ export default function VentanaCorredizaPage() {
               Ventajas de elegir <span className="text-[#eab308]">Corrediza</span>
             </Heading>
           </ScrollReveal>
-          
+
           <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {VENTAJAS.map((v, idx) => (
               <ScrollRevealItem key={idx} className="bg-[#1B150B] border border-[#2D2110] rounded-3xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.12)] group hover:border-[#F59E1B]/30 transition-colors">
@@ -422,17 +423,17 @@ export default function VentanaCorredizaPage() {
             {/* Slider de Imágenes del Producto */}
             <ScrollReveal direction="right" className="flex flex-col gap-6 mt-8 lg:mt-0">
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3] sm:aspect-[4/3] md:aspect-[16/10] lg:aspect-[3/4] border border-gray-200 group shadow-lg">
-                
+
                 {/* Contenedor de Imágenes con Transición Suave */}
-                <div 
-                  className="absolute inset-0 w-full h-full flex transition-transform duration-500 ease-in-out" 
+                <div
+                  className="absolute inset-0 w-full h-full flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${activeSlide * 100}%)` }}
                 >
                   {GALERIA.map((img, idx) => (
                     <div key={idx} className="w-full h-full shrink-0 relative">
-                      <img 
-                        src={img} 
-                        alt={`Vista de producto ${idx + 1}`} 
+                      <img
+                        src={img}
+                        alt={`Vista de producto ${idx + 1}`}
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-black/10 z-10" />
@@ -441,14 +442,14 @@ export default function VentanaCorredizaPage() {
                 </div>
 
                 {/* Flechas de Navegación */}
-                <button 
+                <button
                   onClick={prevSlide}
                   className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md text-white flex items-center justify-center transition-all cursor-pointer opacity-0 group-hover:opacity-100 shadow-md"
                   aria-label="Anterior"
                 >
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" /></svg>
                 </button>
-                <button 
+                <button
                   onClick={nextSlide}
                   className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md text-white flex items-center justify-center transition-all cursor-pointer opacity-0 group-hover:opacity-100 shadow-md"
                   aria-label="Siguiente"
@@ -495,14 +496,14 @@ export default function VentanaCorredizaPage() {
               Trabajos <span className="text-[#F59E1B]">Realizados</span>
             </Heading>
           </ScrollReveal>
-          
+
           <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {GALERIA.map((img, idx) => (
               <ScrollRevealItem key={idx} className="aspect-square md:aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden group border border-[#2D2110] relative cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
-                <img 
-                  src={img} 
-                  alt={`Proyecto de ventana corrediza ${idx + 1}`} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                <img
+                  src={img}
+                  alt={`Proyecto de ventana corrediza ${idx + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
               </ScrollRevealItem>
@@ -522,30 +523,30 @@ export default function VentanaCorredizaPage() {
               Preguntas <span className="text-[#eab308]">Frecuentes</span>
             </Heading>
           </ScrollReveal>
-          
+
           <ScrollReveal staggerChildren={0.1} direction="up" className="space-y-4 text-left">
             {FAQ.map((faq, idx) => (
               <ScrollRevealItem key={idx}>
-                <div 
+                <div
                   className={`bg-white border ${openFaq === idx ? 'border-[#F59E1B] shadow-md' : 'border-gray-200 hover:border-[#F59E1B]/50'} transition-all duration-300 rounded-2xl overflow-hidden`}
                 >
-                  <button 
+                  <button
                     onClick={() => toggleFaq(idx)}
                     className="w-full text-left p-6 flex items-center justify-between cursor-pointer group"
                   >
                     <span className={`font-bold md:text-lg transition-colors pr-8 ${openFaq === idx ? 'text-[#140F08]' : 'text-gray-700 group-hover:text-gray-900'}`}>
                       {faq.pregunta}
                     </span>
-                    <svg 
-                      className={`w-5 h-5 text-[#F59E1B] shrink-0 transition-transform duration-300 ${openFaq === idx ? 'rotate-180' : ''}`} 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
+                    <svg
+                      className={`w-5 h-5 text-[#F59E1B] shrink-0 transition-transform duration-300 ${openFaq === idx ? 'rotate-180' : ''}`}
+                      fill="none"
+                      viewBox="0 0 24 24"
                       stroke="currentColor"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  <div 
+                  <div
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${openFaq === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                   >
                     <p className="p-6 pt-0 text-gray-600 leading-relaxed font-light">
@@ -573,10 +574,10 @@ export default function VentanaCorredizaPage() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a href="#contacto" className="bg-[#F59E1B] text-[#140F08] px-8 py-3.5 rounded-full font-bold shadow-[0_0_20px_rgba(245,158,27,0.3)] hover:shadow-[0_0_30px_rgba(245,158,27,0.5)] hover:-translate-y-1 transition-all flex items-center gap-2">
                 Cotizar Gratis
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
               </a>
               <a href="tel:+51929765802" className="text-white border border-[#2D2110] hover:border-[#F59E1B]/50 px-8 py-3.5 rounded-full font-medium hover:bg-white/5 transition-all flex items-center gap-2">
-                <svg className="w-5 h-5 text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <svg className="w-5 h-5 text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                 +51 929 765 802
               </a>
             </div>

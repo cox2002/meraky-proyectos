@@ -189,15 +189,18 @@ export default function MamparaFijaPage() {
       {/* Hero Section Premium para Mampara Fija */}
       <section className="relative pt-24 pb-12 md:pt-28 md:pb-16 px-4 sm:px-6 flex-grow flex items-center min-h-screen lg:min-h-screen bg-[#0E0B06]">
         
-        {/* Contenedor de fondo fluido */}
-        <div className="absolute inset-0 z-0 overflow-hidden bg-[#0E0B06] flex justify-end">
+        {/* Contenedor de fondo fluido - REPARADO CON ESTILO FLUIDO E IDÉNTICO */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img
-            src="/images/mamparas/mampara-fija-galeria-2.png"
+            src="/images/mamparas/mampara-fija-fondo.png"
             alt="Fondo Mampara Fija Completa"
-            className="w-full lg:w-[65%] h-full object-cover object-right md:object-right-top absolute right-0 top-0 opacity-85 lg:opacity-100"
+            className="w-[89%] h-[89%] object-cover object-right ml-auto opacity-40 lg:opacity-50"
           />
-          <div className="absolute inset-0 bg-[#0E0B06]/35 z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06] via-[#0E0B06]/85 to-[#0E0B06]/10 lg:to-transparent z-10"></div>
+          {/* Degradado premium fluido de izquierda a derecha idéntico a corrediza */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06] via-[#0E0B06]/89 to-transparent z-10"></div>
+          
+          {/* Capa de soporte extra para pantallas móviles muy brillantes */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0E0B06]/30 via-transparent to-[#0E0B06] z-10 lg:hidden"></div>
         </div>
 
         <div className="max-w-7xl mx-auto w-full relative z-20">
@@ -371,7 +374,7 @@ export default function MamparaFijaPage() {
             <Heading level="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Datos <span className="text-[#F59E1B]">Técnicos</span>
             </Heading>
-            <p className="text-gray-500 max-w-xl mx-auto">Información detallada de ingeniería sobre materiales, dimensiones y soportes estructurales.</p>
+            <p className="text-gray-500 max-w-xl mx-auto">Información detallada de ingeniería sobre materiales, dimensions y soportes estructurales.</p>
           </ScrollReveal>
 
           <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">

@@ -123,7 +123,7 @@ const GALERIA = [
   "/images/mamparas/mampara-corrediza-usuario-galeria-1.png",
   "/images/mamparas/mampara-corrediza-usuario-galeria-2.png",
   "/images/mamparas/mampara-corrediza-usuario-galeria-3.png",
-  "/images/mamparas/mampara-corrediza-usuario-nueva.jpg",
+  "/images/mamparas/mampara-corrediza-usuario.png",
   "/images/mamparas/mampara-corrediza-usuario-galeria-4.png",
   "/images/mamparas/mampara-corrediza-usuario-galeria-5.png",
   "/images/mamparas/mampara-corrediza-usuario-galeria-6.png",
@@ -191,15 +191,18 @@ export default function MamparaCorredizaPage() {
       {/* Hero Section Premium para Mampara Corrediza */}
       <section className="relative pt-24 pb-12 md:pt-28 md:pb-16 px-4 sm:px-6 flex-grow flex items-center min-h-screen lg:min-h-screen bg-[#0E0B06]">
         
-        {/* Contenedor de fondo fluido */}
-        <div className="absolute inset-0 z-0 overflow-hidden bg-[#0E0B06] flex justify-end">
+        {/* Contenedor de fondo fluido - REPARADO PARA 100% PANTALLA */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img
-            src="/images/mamparas/mampara-corrediza-usuario-nueva.jpg"
+            src="/images/mamparas/mampara-corrediza-fondo.png"
             alt="Fondo Mampara Corrediza Completa"
-            className="w-full lg:w-[65%] h-full object-contain object-right md:object-right-top absolute right-0 top-0 opacity-85 lg:opacity-100"
+            className="w-[89%] h-[89%] object-cover object-right ml-auto opacity-40 lg:opacity-50"
           />
-          <div className="absolute inset-0 bg-[#0E0B06]/35 z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06] via-[#0E0B06]/85 to-[#0E0B06]/10 lg:to-transparent z-10"></div>
+          {/* Degradado premium de izquierda a derecha para legibilidad del contenido */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06] via-[#0E0B06]/89 to-transparent z-10"></div>
+          
+          {/* Capa de soporte extra para pantallas móviles muy brillantes */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0E0B06]/30 via-transparent to-[#0E0B06] z-10 lg:hidden"></div>
         </div>
 
         <div className="max-w-7xl mx-auto w-full relative z-20">
@@ -224,7 +227,7 @@ export default function MamparaCorredizaPage() {
                 <Heading level="display" className="text-white drop-shadow-2xl font-display font-bold text-4xl sm:text-5xl lg:text-[54px] leading-[1.1] mb-6 tracking-tight">
                   Mampara <span className="text-[#F59E1B] drop-shadow-[0_0_15px_rgba(245,158,27,0.15)]">Corrediza</span> <br className="hidden md:block" />
                   <span className="text-white/90 text-2xl sm:text-3xl lg:text-[32px] font-sans font-medium block mt-3 leading-tight">
-                    La solución perfecta para espacios reducidos
+                    La solución perfecta para spaces reducidos
                   </span>
                 </Heading>
               </ScrollRevealItem>
@@ -264,12 +267,12 @@ export default function MamparaCorredizaPage() {
               </ScrollRevealItem>
             </ScrollReveal>
 
-            {/* Columna Derecha: ARREGLADO SIN FONDO NI BORDES NEGROS DETRÁS DE LA FOTO */}
+            {/* Columna Derecha: Imagen Flotante del Producto */}
             <ScrollReveal direction="right" className="relative mt-8 lg:mt-0 font-sans w-full max-w-[440px] lg:max-w-[480px] mx-auto z-20">
               
               <div className="mb-4 transition-transform duration-700 hover:scale-[1.01]">
                 <img
-                  src="/images/mamparas/mampara-corrediza-usuario-nueva.jpg"
+                  src="/images/mamparas/mampara-corrediza-usuario-galeria-1.png"
                   alt="Instalación original completa de mampara"
                   className="w-full h-auto object-contain block mx-auto rounded-[1.5rem] shadow-2xl border border-white/5"
                 />
@@ -522,7 +525,7 @@ export default function MamparaCorredizaPage() {
                 </div>
               </div>
 
-              {/* Tarjeta de Garantía (Colocada ABAJO de la imagen, no flotante) */}
+              {/* Tarjeta de Garantía */}
               <div className="bg-[#140F08]/90 backdrop-blur-md border border-[#F59E1B]/30 p-5 rounded-2xl flex items-center gap-4 shadow-xl w-full">
                 <div className="w-12 h-12 rounded-xl bg-[#F59E1B]/10 flex items-center justify-center text-[#F59E1B] shrink-0 shadow-md">
                   <svg className="w-8 h-8 text-[#F59E1B] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">

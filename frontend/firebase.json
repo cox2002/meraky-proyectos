@@ -29,10 +29,6 @@
         "destination": "/productos/mamparas/batiente/index.html"
       },
       {
-        "source": "/productos/mamparas/ducha",
-        "destination": "/productos/mamparas/ducha/index.html"
-      },
-      {
         "source": "/productos/mamparas/fija",
         "destination": "/productos/mamparas/fija/index.html"
       },

@@ -125,14 +125,14 @@ const GALERIA = [
   "/images/mamparas/mampara-plegable-usuario.png",
   "/images/mamparas/mampara-plegable-abierta.png",
   "/images/mamparas/mampara-plegable-detalle.png",
-  "/images/mamparas/mampara-plegable-fondo.jpg"
+  "/images/mamparas/mampara-plegable-fondo.png"
 ];
 
 const GALERIA_PRODUCTO = [
   "/images/mamparas/mampara-plegable-usuario.png",
   "/images/mamparas/mampara-plegable-abierta.png",
   "/images/mamparas/mampara-plegable-detalle.png",
-  "/images/mamparas/mampara-plegable-fondo.jpg"
+  "/images/mamparas/mampara-plegable-fondo.png"
 ];
 
 const FAQ = [
@@ -190,15 +190,16 @@ export default function MamparaPlegablePage() {
       {/* Hero Section Premium para Mampara Plegable */}
       <section className="relative pt-24 pb-12 md:pt-28 md:pb-16 px-4 sm:px-6 flex-grow flex items-center min-h-screen lg:min-h-screen bg-[#0E0B06]">
         
-        {/* Contenedor de fondo fluido */}
-        <div className="absolute inset-0 z-0 overflow-hidden bg-[#0E0B06] flex justify-end">
+        {/* MODIFICADO: Cambiado absolute por fixed para ocupar el 100% real de la pantalla */}
+        <div className="fixed inset-0 w-screen h-screen z-0 overflow-hidden pointer-events-none">
           <img
-            src="/images/mamparas/mampara-plegable-fondo.jpg"
+            src="/images/mamparas/mampara-plegable-fondo.png"
             alt="Fondo Mampara Plegable Completa"
-            className="w-full lg:w-[65%] h-full object-cover object-right md:object-right-top absolute right-0 top-0 opacity-85 lg:opacity-100"
+            className="w-[89%] h-[100%] object-cover object-right ml-auto opacity-40 lg:opacity-50"
           />
-          <div className="absolute inset-0 bg-[#0E0B06]/35 z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06] via-[#0E0B06]/85 to-[#0E0B06]/10 lg:to-transparent z-10"></div>
+          {/* Degradados premium para mantener legible el texto */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06] via-[#0E0B06]/85 to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0E0B06]/30 via-transparent to-[#0E0B06] z-10 lg:hidden"></div>
         </div>
 
         <div className="max-w-7xl mx-auto w-full relative z-20">

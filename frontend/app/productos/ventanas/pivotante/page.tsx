@@ -140,7 +140,7 @@ export default function VentanaPivotantePage() {
   const [activeCard, setActiveCard] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const cards = [
-    { img: GALERIA[0], alt: "Diseño Elegante" },
+    { img: "/images/ventanas/ventana-pivotante.png", alt: "Diseño Elegante" },
     { img: GALERIA[1], alt: "Diseño Minimalista" },
     { img: GALERIA[2], alt: "Diseño Rústico" }
   ];
@@ -194,15 +194,15 @@ export default function VentanaPivotantePage() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 px-6 flex items-center min-h-screen">
-        <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Contenedor de fondo fluido */}
+        <div className="absolute inset-0 z-0 overflow-hidden bg-[#0E0B06]">
           <img 
-            src="https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=2000&auto=format&fit=crop" 
+            src="/images/ventanas/ventana-pivotante.png" 
             alt="Ventana Pivotante de Aluminio" 
-            className="w-full h-[104%] object-cover absolute top-0" 
+            className="w-full h-[104%] object-cover absolute top-0 opacity-85 lg:opacity-100" 
           />
-          <div className="absolute inset-0 bg-[#0E0B06]/40 z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06]/95 via-[#0E0B06]/65 to-transparent z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0E0B06] via-transparent to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-[#0E0B06]/35 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06] via-[#0E0B06]/85 to-transparent z-10"></div>
         </div>
         <div className="max-w-7xl mx-auto w-full relative z-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">

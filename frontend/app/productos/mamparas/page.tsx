@@ -71,7 +71,7 @@ const TIPOS_MAMPARAS = [
   },
   {
     title: "Mampara Plegable",
-    desc: "Paneles que se pliegan como un accordion. Perfecta para duchas amplias y bañeras.",
+    desc: "Paneles que se pliegan como un acordeón. Perfecta para duchas amplias y bañeras.",
     price: "Desde S/ 1,200",
     tags: ["Diseño versátil", "Acceso amplio", "Ideal para bañeras"],
     materials: "3 materiales disponibles · Ver precios",
@@ -87,16 +87,6 @@ const TIPOS_MAMPARAS = [
     materials: "2 materiales disponibles · Ver precios",
     image: "/images/mamparas/mampara-fija-usuario.png",
     href: "/productos/mamparas/fija",
-    objectFit: "cover"
-  },
-  {
-    title: "Mampara de Ducha",
-    desc: "Solución completa para duchas con diseño integral. Combina funcionalidad y estética para un baño moderno.",
-    price: "Desde S/ 335",
-    tags: ["Diseño integral", "Múltiples configuraciones", "Perfiles de alta calidad"],
-    materials: "3 materiales disponibles · Ver precios",
-    image: "/images/mamparas/mampara-ducha.png",
-    href: "/productos/mamparas/ducha",
     objectFit: "cover"
   }
 ];
@@ -166,7 +156,7 @@ const PROCESO = [
   {
     step: "2",
     title: "Diseño y Cotización",
-    desc: "Elaboramos un design personalizado con renders 3D y te enviamos una cotización detallada.",
+    desc: "Elaboramos un diseño personalizado con renders 3D y te enviamos una cotización detallada.",
     time: "24-48 horas"
   },
   {
@@ -198,16 +188,21 @@ export default function MamparasPage() {
     <main className="min-h-screen w-full bg-[#0E0B06] overflow-x-hidden flex flex-col">
       <Navigation />
 
-      {/* Hero Section para Mamparas */}
-      <section className="relative pt-24 pb-12 md:pt-28 md:pb-16 px-4 sm:px-6 flex-grow flex items-center min-h-screen lg:min-h-screen">
+      {/* Hero Section para Mamparas - REPARADO PARA 100% PANTALLA */}
+      <section className="relative pt-24 pb-12 md:pt-28 md:pb-16 px-4 sm:px-6 flex-grow flex items-center min-h-screen lg:min-h-screen bg-[#0E0B06]">
+        
+        {/* Contenedor de fondo fluido sin cortes rígidos */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/images/mamparas/mampara-fondo.jpg"
             alt="Fondo Mampara Interior de Lujo"
-            className="w-full h-[104%] object-cover object-center absolute top-0"
+            className="w-full h-full object-cover object-center absolute inset-0 opacity-40 lg:opacity-50"
           />
-          <div className="absolute inset-0 bg-[#0E0B06]/40 z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06]/95 via-[#0E0B06]/65 to-transparent z-10"></div>
+          {/* Degradado premium integrado de izquierda a derecha */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06] via-[#0E0B06]/85 to-transparent z-10"></div>
+          
+          {/* Capa inferior de soporte para dispositivos móviles */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0E0B06]/30 via-transparent to-[#0E0B06] z-10 lg:hidden"></div>
         </div>
 
         <div className="max-w-7xl mx-auto w-full relative z-20">
@@ -310,17 +305,16 @@ export default function MamparasPage() {
 
           <ScrollReveal staggerChildren={0.15} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {TIPOS_MAMPARAS.map((tipo, idx) => (
-              <ScrollRevealItem key={idx} className={`bg-white border border-gray-100 rounded-[2rem] overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.12)] ${idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
+              <ScrollRevealItem key={idx} className="bg-white border border-gray-100 rounded-[2rem] overflow-hidden hover:shadow-2xl transition-all duration-300 group flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
                 
                 {/* Contenedor de imagen optimizado para rellenar de forma homogénea las tarjetas */}
-                {/* CAMBIO: h-80 -> aspect-[3/4] para evitar recorte y bg color condicional */}
                 <div className={`relative w-full aspect-[4/4] overflow-hidden shrink-0 ${tipo.objectFit === 'contain' ? 'bg-white' : 'bg-gray-100'}`}>
                   <div className="absolute inset-0 bg-black/5 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
-                  {/* CAMBIO: objectFit condicional y eliminación de p-2 para mayor nitidez si es contain */}
                   <img 
                     src={tipo.image} 
                     alt={tipo.title} 
                     className={`w-full h-full ${tipo.objectFit === 'contain' ? 'object-contain' : 'object-cover'} object-center transition-transform duration-700 group-hover:scale-105`} 
+                    
                   />
                   <div className="absolute top-4 right-4 z-20 bg-[#F59E1B] text-[#140F08] px-4 py-1.5 rounded-full text-sm font-bold shadow-md">
                     {tipo.price}
@@ -457,7 +451,7 @@ export default function MamparasPage() {
 
             <div className="flex flex-wrap justify-center gap-3 mb-12">
               <button className="bg-[#F59E1B] text-[#140F08] px-6 py-2 rounded-full text-sm font-bold shadow-md">Todos</button>
-              {['Corrediza', 'Batiente', 'Plegable', 'Fija', 'Semicircular', 'De ducha'].map((filtro, idx) => (
+              {['Corrediza', 'Batiente', 'Plegable', 'Fija', 'Semicircular'].map((filtro, idx) => (
                 <button key={idx} className="bg-white border border-gray-200 text-gray-600 hover:text-[#140F08] hover:border-[#F59E1B] px-6 py-2 rounded-full text-sm font-medium transition-colors shadow-sm">
                   {filtro}
                 </button>

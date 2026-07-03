@@ -192,15 +192,19 @@ export default function MamparaBatientePage() {
       {/* Hero Section Premium para Mampara Batiente */}
       <section className="relative pt-24 pb-12 md:pt-28 md:pb-16 px-4 sm:px-6 flex-grow flex items-center min-h-screen lg:min-h-screen bg-[#0E0B06]">
         
-        {/* Contenedor de fondo fluido */}
-        <div className="absolute inset-0 z-0 overflow-hidden bg-[#0E0B06] flex justify-end">
+        {/* Contenedor de fondo fluido - AJUSTADO AL 100% */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/images/mamparas/mampara-batiente-fondo.png"
             alt="Fondo Mampara Batiente Completa"
-            className="w-full lg:w-[65%] h-full object-cover object-right md:object-right-top absolute right-0 top-0 opacity-85 lg:opacity-100"
+            className="w-[89%] h-[90%]  object-cover object-right ml-auto opacity-40 lg:opacity-50"
+          
           />
-          <div className="absolute inset-0 bg-[#0E0B06]/35 z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06] via-[#0E0B06]/85 to-[#0E0B06]/10 lg:to-transparent z-10"></div>
+          {/* Degradado para fundir los textos del lado izquierdo sobre el fondo completo */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0E0B06] via-[#0E0B06]/87 to-transparent z-10"></div>
+          
+          {/* Capa inferior de soporte para dispositivos móviles */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0E0B06]/30 via-transparent to-[#0E0B06] z-10 lg:hidden"></div>
         </div>
 
         <div className="max-w-7xl mx-auto w-full relative z-20">
@@ -232,7 +236,7 @@ export default function MamparaBatientePage() {
 
               <ScrollRevealItem>
                 <p className="font-sans font-normal text-white/95 text-sm sm:text-[15px] leading-relaxed max-w-[500px] mb-8">
-                  Las mamparas batientes representan la opción más elegante y clásica para tu baño. Con su sistema de bisagras de acero inoxidable, ofrecen una apertura completa de hasta 180° que facilita el acceso y la limpieza. El cierre magnético garantiza un sellado perfecto, evitando salpicaduras.
+                  Las mamparas batientes representan la option más elegante y clásica para tu baño. Con su sistema de bisagras de acero inoxidable, ofrecen una apertura completa de hasta 180° que facilita el acceso y la limpieza. El cierre magnético garantiza un sellado perfecto, evitando salpicaduras.
                 </p>
               </ScrollRevealItem>
 
@@ -265,7 +269,7 @@ export default function MamparaBatientePage() {
               </ScrollRevealItem>
             </ScrollReveal>
 
-            {/* Columna Derecha: Cuadro con la foto y el precio */}
+            {/* Columna Derecha: Foto del Producto Flotante */}
             <ScrollReveal direction="right" className="relative mt-8 lg:mt-0 font-sans w-full max-w-[440px] lg:max-w-[480px] mx-auto z-20">
               
               <div className="mb-4 transition-transform duration-700 hover:scale-[1.01]">
