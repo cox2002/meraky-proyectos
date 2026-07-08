@@ -8,7 +8,7 @@ export default function AboutSection() {
   const images = [
     "/images/nosotros/nosotros-1.jpg",
     "/images/nosotros/nosotros-2.jpg",
-    "/images/nosotros/nosotros-3.jpg",
+    "/images/nosotros/nosotros-3.png",
     "/images/nosotros/nosotros-4.jpg"
   ];
 
@@ -63,7 +63,7 @@ export default function AboutSection() {
           
           <ScrollRevealItem className="font-inter font-normal text-[#4A5568] leading-[1.6] text-sm sm:text-[15.5px] mb-8 flex flex-col gap-5 w-full">
             <p>
-              En <strong className="text-[#F59E1B] font-bold">MERAKY PROYECTOS</strong>, fusionamos la precisión técnica con el diseño contemporáneo. Con más de 3 años de experiencia, nos dedicamos a transformar espacios mediante soluciones innovadoras.
+              En <strong className="text-[#F59E1B] font-bold">MERAKI PROYECTOS</strong>, fusionamos la precisión técnica con el diseño contemporáneo. Con más de 3 años de experiencia, nos dedicamos a transformar espacios mediante soluciones innovadoras.
             </p>
             <p>
               Nuestro compromiso va más allá de la instalación: creamos ambientes luminosos, seguros y elegantes que elevan la calidad de vida de nuestros clientes.

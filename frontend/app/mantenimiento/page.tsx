@@ -164,7 +164,7 @@ const FAQ = [
   },
   {
     pregunta: "¿Ofrecen garantía por el servicio?",
-    respuesta: "Sí, todos nuestros servicios profesionales de mantenimiento correctivo y preventivo cuentan con garantía Meraky, respaldando tanto la mano de obra como la calidad de los repuestos instalados."
+    respuesta: "Sí, todos nuestros servicios profesionales de mantenimiento correctivo y preventivo cuentan con garantía Meraki, respaldando tanto la mano de obra como la calidad de los repuestos instalados."
   },
   {
     pregunta: "¿Atienden emergencias de vidrios fuera del horario comercial?",
@@ -178,8 +178,8 @@ export default function MantenimientoPage() {
 
   const handleWhatsApp = (serviceTitle?: string) => {
     const text = serviceTitle 
-      ? `Hola Meraky Proyectos, estoy interesado en el servicio de: Mantenimiento de ${serviceTitle}. Me gustaría agendar un diagnóstico gratuito.`
-      : `Hola Meraky Proyectos, me gustaría agendar un diagnóstico técnico gratuito para el mantenimiento de mis vidrios y mamparas.`;
+      ? `Hola Meraki Proyectos, estoy interesado en el servicio de: Mantenimiento de ${serviceTitle}. Me gustaría agendar un diagnóstico gratuito.`
+      : `Hola Meraki Proyectos, me gustaría agendar un diagnóstico técnico gratuito para el mantenimiento de mis vidrios y mamparas.`;
     window.open(`https://wa.me/51929765802?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -264,7 +264,7 @@ export default function MantenimientoPage() {
                 {/* Tech image */}
                 <img 
                   src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop" 
-                  alt="Técnico Especialista de Vidrios Meraky" 
+                  alt="Técnico Especialista de Vidrios Meraki" 
                   className="w-full aspect-[4/3] object-cover filter brightness-[0.85]"
                 />
 

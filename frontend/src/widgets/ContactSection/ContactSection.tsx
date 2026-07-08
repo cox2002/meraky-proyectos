@@ -53,7 +53,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <span className="block text-xs text-white/50 uppercase tracking-widest font-bold mb-1">Email</span>
-                <span className="text-white font-semibold break-all">cotizaciones@merakyproyectos.com</span>
+                <span className="text-white font-semibold break-all">cotizaciones@merakiproyectos.com</span>
               </div>
             </ScrollRevealItem>
 

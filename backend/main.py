@@ -12,7 +12,7 @@ models.Base.metadata.create_all(bind=engine)
 
 # Inicializamos la aplicación FastAPI. 'app' es la instancia principal que 
 # manejará todas nuestras rutas (endpoints).
-app = FastAPI(title="Vidriería Meraky API", description="API para el manejo de servicios y proyectos")
+app = FastAPI(title="Vidriería Meraki API", description="API para el manejo de servicios y proyectos")
 
 # --- Configuración de CORS (Cross-Origin Resource Sharing) ---
 # CORS es una medida de seguridad de los navegadores. Si nuestro frontend está en el puerto 3000
@@ -41,7 +41,7 @@ app.add_middleware(
 @app.get("/")
 def inicio():
     """Ruta raíz de prueba para verificar que la API está viva."""
-    return {"mensaje": "Bienvenido a la API de Meraky Proyectos"}
+    return {"mensaje": "Bienvenido a la API de Meraki Proyectos"}
 
 @app.get("/test-db")
 def probar_conexion(db: Session = Depends(get_db)):
@@ -50,7 +50,7 @@ def probar_conexion(db: Session = Depends(get_db)):
     'Depends(get_db)' es inyección de dependencias: FastAPI se encarga de abrir
     una sesión de base de datos antes de ejecutar la función, y cerrarla al terminar.
     """
-    return {"estado": "Conexión exitosa a meraky_db"}
+    return {"estado": "Conexión exitosa a meraki_db"}
 
 @app.post("/servicios/", response_model=schemas.Servicio)
 def crear_servicio(servicio: schemas.ServicioCreate, db: Session = Depends(get_db)):

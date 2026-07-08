@@ -14,7 +14,7 @@ export default function ServiceCatalog() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p className="text-center py-10">Cargando catálogo de Meraky...</p>;
+  if (loading) return <p className="text-center py-10">Cargando catálogo de Meraki...</p>;
 
   return (
     <section id="servicios" className="py-20 px-8 bg-slate-50">

@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <nav className="flex items-center justify-between px-8 py-4 bg-white border-b border-slate-100 sticky top-0 z-50">
       <div className="text-xl font-bold text-slate-900">
-        MERAKY <span className="text-blue-600">PROYECTOS</span>
+        MERAKI <span className="text-blue-600">PROYECTOS</span>
       </div>
       
       <div className="hidden md:flex space-x-6 text-sm font-medium text-slate-600">

@@ -90,7 +90,7 @@ const DATOS = [
       { label: "Ciclos garantizados", value: "+50,000 rotaciones libres" }, 
       { label: "Ajuste hermético", value: "Burlete perimetral doble" }, 
       { label: "Bloqueo de seguridad", value: "Posición fija en apertura y cierre" }, 
-      { label: "Garantía de perfil", value: "10 años Meraky" }
+      { label: "Garantía de perfil", value: "10 años Meraki" }
     ] 
   }
 ];
@@ -476,7 +476,7 @@ export default function VentanaPivotantePage() {
                 </div>
                 <div>
                   <div className="text-white font-bold text-base">Garantía de 10 Años</div>
-                  <div className="text-white/60 text-sm">En perfilería de aluminio y herrajes Meraky</div>
+                  <div className="text-white/60 text-sm">En perfilería de aluminio y herrajes Meraki</div>
                 </div>
               </div>
             </ScrollReveal>

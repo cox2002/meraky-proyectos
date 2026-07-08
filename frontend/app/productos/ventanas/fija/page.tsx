@@ -90,7 +90,7 @@ const DATOS = [
       { label: "Eficiencia de sellado", value: "Máximo nivel hermético" }, 
       { label: "Método de fijación", value: "Silicona estructural de alta adherencia" }, 
       { label: "Vida útil estimada", value: "+25 años de servicio continuo" }, 
-      { label: "Garantía de perfiles", value: "10 años Meraky" }
+      { label: "Garantía de perfiles", value: "10 años Meraki" }
     ] 
   }
 ];
@@ -476,7 +476,7 @@ export default function VentanaFijaPage() {
                 </div>
                 <div>
                   <div className="text-white font-bold text-base">Garantía de 10 Años</div>
-                  <div className="text-white/60 text-sm">En perfilería de aluminio y herrajes Meraky</div>
+                  <div className="text-white/60 text-sm">En perfilería de aluminio y herrajes Meraki</div>
                 </div>
               </div>
             </ScrollReveal>

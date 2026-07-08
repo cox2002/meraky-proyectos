@@ -90,7 +90,7 @@ const DATOS = [
       { label: "Sistema de anclaje", value: "Cierre multipunto" }, 
       { label: "Puntos de cierre", value: "3 – 5 puntos perimetrales" }, 
       { label: "Material de sellado", value: "Burlete de caucho EPDM" }, 
-      { label: "Garantía de perfil", value: "10 años Meraky" }
+      { label: "Garantía de perfil", value: "10 años Meraki" }
     ] 
   }
 ];
@@ -476,7 +476,7 @@ export default function VentanaBatientePage() {
                 </div>
                 <div>
                   <div className="text-white font-bold text-base">Garantía de 10 Años</div>
-                  <div className="text-white/60 text-sm">En perfilería de aluminio y herrajes Meraky</div>
+                  <div className="text-white/60 text-sm">En perfilería de aluminio y herrajes Meraki</div>
                 </div>
               </div>
             </ScrollReveal>

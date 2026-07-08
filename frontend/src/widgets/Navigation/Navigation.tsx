@@ -70,7 +70,7 @@ export default function Navigation() {
         {/* Logo que redirige al inicio usando el componente <Link> */}
         <Link href="/" className="flex items-center gap-1.5 group">
           <span className="font-display font-bold text-2xl tracking-tight text-[#F59E1B] group-hover:opacity-90 transition-opacity">
-            MERAKY
+            MERAKI
           </span>
           <span className="font-display font-semibold text-xs tracking-[0.2em] text-white/90 mt-1.5 uppercase">
             PROYECTOS

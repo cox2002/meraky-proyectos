@@ -30,7 +30,7 @@ const inter = Inter({
 // Esta información se inyecta en el <head> del HTML.
 // Ayuda a que los buscadores (Google) y redes sociales entiendan de qué trata la página.
 export const metadata: Metadata = {
-  title: "Meraky Proyectos",
+  title: "Meraki Proyectos",
   description: "Soluciones integrales en vidriería, carpintería de aluminio y gestión de proyectos técnicos.",
   keywords: ["vidriería", "aluminio", "proyectos", "construcción", "espejos", "mamparas"],
 };

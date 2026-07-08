@@ -90,7 +90,7 @@ const DATOS = [
       { label: "Brazo limitador", value: "Incluido (con ajuste de resistencia)" },
       { label: "Material de empaque", value: "Burlete de caucho EPDM" },
       { label: "Mantenimiento", value: "Mínimo anual" },
-      { label: "Garantía de perfil", value: "10 años Meraky" }
+      { label: "Garantía de perfil", value: "10 años Meraki" }
     ]
   }
 ];
@@ -472,7 +472,7 @@ export default function VentanaProyectantePage() {
                 </div>
                 <div>
                   <div className="text-white font-bold text-base">Garantía de 10 Años</div>
-                  <div className="text-white/60 text-sm">En perfilería de aluminio y herrajes Meraky</div>
+                  <div className="text-white/60 text-sm">En perfilería de aluminio y herrajes Meraki</div>
                 </div>
               </div>
             </ScrollReveal>

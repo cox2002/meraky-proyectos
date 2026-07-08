@@ -8,11 +8,7 @@ import Heading from '@/src/shared/ui/Heading';
 import ScrollReveal, { ScrollRevealItem } from '@/src/shared/ui/ScrollReveal';
 import Link from 'next/link';
 
-const PRECIOS = [
-  { material: "Moduglas Plegable", precio: "S/ 1,200.00", badge: "DESDE" },
-  { material: "Serie 25 Plegable", precio: "S/ 1,450.00" },
-  { material: "Premium Plegable", precio: "S/ 1,850.00" },
-];
+
 
 const INCLUYE = [
   "Diseño versátil",
@@ -292,51 +288,6 @@ export default function MamparaPlegablePage() {
             </ScrollReveal>
 
           </div>
-        </div>
-      </section>
-
-      {/* Precios por Material */}
-      <section id="precios" className="py-20 px-4 sm:px-6 bg-[#FAFAFA] relative">
-        <div className="max-w-4xl mx-auto">
-          <ScrollReveal direction="up" className="text-center mb-16">
-            <h3 className="bg-[#F59E1B] text-[#140F08] inline-block px-5 py-2 rounded-full text-sm font-bold tracking-[0.2em] uppercase mb-6">Inversión</h3>
-            <Heading level="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Precios por <span className="text-[#F59E1B]">Material</span>
-            </Heading>
-            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-gray-600 text-sm mb-4 shadow-sm">
-              <svg className="w-4 h-4 text-[#F59E1B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-              </svg>
-              Medida de referencia estándar: 2.50m × 2.40m
-            </div>
-            <p className="text-gray-500 max-w-xl mx-auto text-sm">
-              Precios referenciales basados en las dimensiones indicadas. Solicita una visita técnica para calcular tu presupuesto exacto.
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal staggerChildren={0.1} direction="up" className="space-y-4">
-            {PRECIOS.map((item, idx) => (
-              <ScrollRevealItem key={idx}>
-                <div className={`bg-white border ${item.badge ? 'border-[#F59E1B] shadow-[0_8px_30px_rgba(245,158,27,0.08)]' : 'border-gray-100 hover:border-[#F59E1B]/40'} transition-all duration-300 rounded-2xl p-6 flex items-center justify-between shadow-sm`}>
-                  <div className="flex items-center gap-4">
-                    {item.badge && (
-                      <span className="bg-[#F59E1B] text-[#140F08] text-xs font-bold px-2.5 py-1 rounded-md">
-                        {item.badge}
-                      </span>
-                    )}
-                    <span className="text-gray-800 font-bold text-lg">{item.material}</span>
-                  </div>
-                  <span className={`text-xl font-extrabold ${item.badge ? 'text-[#F59E1B]' : 'text-gray-900'}`}>
-                    {item.precio}
-                  </span>
-                </div>
-              </ScrollRevealItem>
-            ))}
-          </ScrollReveal>
-
-          <p className="text-center text-gray-400 text-xs mt-8">
-            * Los precios incluyen materiales base e instalación profesional. Pueden variar según las especificaciones finales de obra.
-          </p>
         </div>
       </section>
 

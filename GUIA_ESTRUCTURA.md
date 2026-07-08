@@ -1,4 +1,4 @@
-# Guía de Arquitectura: Meraky Proyectos
+# Guía de Arquitectura: Meraki Proyectos
 
 ¡Hola! Esta guía está diseñada para que entiendas rápidamente cómo está construido este proyecto, dónde encontrar cada cosa y cómo se comunican todas las partes. Piensa en esto como el mapa de tu nueva casa.
 
@@ -56,7 +56,7 @@ Ubicación: `backend/main.py`.
 
 ### B. El Fetch de la API
 Ubicación: `frontend/services/serviceApi.ts`
-Aquí está la URL `http://192.168.7.139:8000`. Si despliegas (subes a internet) el proyecto, tendrás que cambiar esta IP por tu dominio real (ej. `https://api.meraky.com`).
+Aquí está la URL `http://192.168.7.139:8000`. Si despliegas (subes a internet) el proyecto, tendrás que cambiar esta IP por tu dominio real (ej. `https://api.meraki.com`).
 
 ### C. La Conexión a la Base de Datos
 Ubicación: El archivo `.env` en el backend (y `database.py`).
