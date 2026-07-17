@@ -95,11 +95,20 @@ const DATOS = [
   }
 ];
 
+const GALERIA_PRODUCTO = [
+
+  "/images/ventanas/ventana-proyectante1.png",
+  "/images/ventanas/ventana-proyectante2.png",
+  "/images/ventanas/ventana-proyectante3.png"
+];
+
 const GALERIA = [
-  "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop"
+  "/images/ventanas/ventana-proyectante1.png",
+  "/images/ventanas/ventana-proyectante2.png",
+  "/images/ventanas/ventana-proyectante3.png",
+  "/images/ventanas/ventana-proyectante4.png",
+  "/images/ventanas/ventana-proyectante5.png"
+
 ];
 
 const APLICACIONES = [
@@ -131,22 +140,36 @@ export default function VentanaProyectantePage() {
 
   const [activeSlide, setActiveSlide] = useState(0);
   const nextSlide = () => {
-    setActiveSlide((prev) => (prev + 1) % GALERIA.length);
+    setActiveSlide((prev) => (prev + 1) % GALERIA_PRODUCTO.length);
   };
   const prevSlide = () => {
-    setActiveSlide((prev) => (prev - 1 + GALERIA.length) % GALERIA.length);
+    setActiveSlide((prev) => (prev - 1 + GALERIA_PRODUCTO.length) % GALERIA_PRODUCTO.length);
+  };
+
+  const [selectedImageIdx, setSelectedImageIdx] = useState<number | null>(null);
+  const nextImage = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (selectedImageIdx !== null) {
+      setSelectedImageIdx((prev) => (prev! + 1) % GALERIA.length);
+    }
+  };
+  const prevImage = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (selectedImageIdx !== null) {
+      setSelectedImageIdx((prev) => (prev! - 1 + GALERIA.length) % GALERIA.length);
+    }
   };
 
   const [activeCard, setActiveCard] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const cards = [
-    { img: "/images/ventanas/ventana-proyectante-bg.png", alt: "Diseño Elegante Negro" },
-    { img: GALERIA[1], alt: "Diseño Iluminado Blanco" },
-    { img: GALERIA[2], alt: "Diseño Rústico Madera" }
+    { img: "/images/ventanas/ventana-proyectante1.png", alt: "Diseño Ventana Cerrada" },
+    { img: "/images/ventanas/ventana-proyectante2.png", alt: "Diseño Ventana Abierta" },
+    { img: "/images/ventanas/ventana-proyectante3.png", alt: "Manija Ventana Proyectante" }
   ];
 
   const getCardStyle = (idx: number) => {
-    const diff = (idx - activeCard + 3) % 3;
+    const diff = (idx - activeCard + 4) % 4;
 
     let zIndex = 10;
     let transform = 'translate3d(-74%, -68%, 0) scale(0.88) rotate(3deg)';
@@ -154,15 +177,20 @@ export default function VentanaProyectantePage() {
     let boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.2)';
 
     if (diff === 0) {
-      zIndex = 30;
+      zIndex = 40;
       transform = 'translate3d(-40%, -40%, 0) scale(1) rotate(4deg)';
       opacity = 1;
       boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.5)';
     } else if (diff === 1) {
-      zIndex = 20;
-      transform = 'translate3d(-60%, -56%, 0) scale(0.95) rotate(-6deg)';
+      zIndex = 30;
+      transform = 'translate3d(-55%, -52%, 0) scale(0.95) rotate(-6deg)';
       opacity = 0.8;
       boxShadow = '0 15px 20px -5px rgba(0, 0, 0, 0.3)';
+    } else if (diff === 2) {
+      zIndex = 20;
+      transform = 'translate3d(-68%, -62%, 0) scale(0.90) rotate(3deg)';
+      opacity = 0.7;
+      boxShadow = '0 12px 18px -4px rgba(0, 0, 0, 0.25)';
     }
 
     if (hoveredCard === idx) {
@@ -172,9 +200,11 @@ export default function VentanaProyectantePage() {
       if (diff === 0) {
         transform = 'translate3d(-40%, -40%, 0) scale(1.1) rotate(2deg)';
       } else if (diff === 1) {
-        transform = 'translate3d(-60%, -56%, 0) scale(1.06) rotate(-3deg)';
+        transform = 'translate3d(-55%, -52%, 0) scale(1.06) rotate(-3deg)';
+      } else if (diff === 2) {
+        transform = 'translate3d(-68%, -62%, 0) scale(1.02) rotate(1deg)';
       } else {
-        transform = 'translate3d(-74%, -68%, 0) scale(1.0) rotate(1deg)';
+        transform = 'translate3d(-74%, -68%, 0) scale(0.98) rotate(-1deg)';
       }
     }
 
@@ -275,7 +305,7 @@ export default function VentanaProyectantePage() {
                       onMouseEnter={() => setHoveredCard(idx)}
                       onMouseLeave={() => setHoveredCard(null)}
                       style={getCardStyle(idx)}
-                      className="absolute top-1/2 left-1/2 w-[80%] h-[85%] rounded-[2rem] overflow-hidden border border-[#2D2110]/60 transition-all duration-500 ease-in-out cursor-pointer group bg-[#1B150B]"
+                      className="absolute top-[40%] left-1/2 w-[65%] h-[100%] rounded-[2rem] overflow-hidden border border-[#2D2110]/60 transition-all duration-500 ease-in-out cursor-pointer group bg-[#1B150B]"
                     >
                       <div className={`absolute inset-0 bg-[#140F08] z-10 transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-40 group-hover:opacity-10'}`} />
                       <img
@@ -426,7 +456,7 @@ export default function VentanaProyectantePage() {
                   className="absolute inset-0 w-full h-full flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${activeSlide * 100}%)` }}
                 >
-                  {GALERIA.map((img, idx) => (
+                  {GALERIA_PRODUCTO.map((img, idx) => (
                     <div key={idx} className="w-full h-full shrink-0 relative">
                       <img
                         src={img}
@@ -454,7 +484,7 @@ export default function VentanaProyectantePage() {
                 </button>
 
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-                  {GALERIA.map((_, idx) => (
+                  {GALERIA_PRODUCTO.map((_, idx) => (
                     <button
                       key={idx}
                       onClick={() => setActiveSlide(idx)}
@@ -494,7 +524,11 @@ export default function VentanaProyectantePage() {
 
           <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {GALERIA.map((img, idx) => (
-              <ScrollRevealItem key={idx} className="aspect-square md:aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden group border border-[#2D2110] relative cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
+              <ScrollRevealItem 
+                key={idx} 
+                onClick={() => setSelectedImageIdx(idx)}
+                className="aspect-square md:aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden group border border-[#2D2110] relative cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.12)]"
+              >
                 <img
                   src={img}
                   alt={`Proyecto de ventana proyectante ${idx + 1}`}
@@ -582,6 +616,65 @@ export default function VentanaProyectantePage() {
 
       <ContactSection />
       <Footer />
+
+      {/* Lightbox Modal */}
+      {selectedImageIdx !== null && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 sm:p-6 md:p-10 select-none animate-fade-in"
+          onClick={() => setSelectedImageIdx(null)}
+        >
+          {/* Botón de cerrar */}
+          <button 
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white/70 hover:text-[#F59E1B] transition-colors p-3 bg-[#140F08]/60 rounded-full backdrop-blur-md z-[110] cursor-pointer border-0"
+            onClick={() => setSelectedImageIdx(null)}
+            aria-label="Cerrar"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Flecha Izquierda */}
+          <button 
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-[#F59E1B] transition-colors p-3 bg-[#140F08]/60 rounded-full backdrop-blur-md z-[110] cursor-pointer border-0"
+            onClick={prevImage}
+            aria-label="Anterior"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Flecha Derecha */}
+          <button 
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-[#F59E1B] transition-colors p-3 bg-[#140F08]/60 rounded-full backdrop-blur-md z-[110] cursor-pointer border-0"
+            onClick={nextImage}
+            aria-label="Siguiente"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Contenedor de la Imagen */}
+          <div 
+            className="relative max-w-5xl w-full h-[75vh] md:h-[85vh] flex flex-col items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src={GALERIA[selectedImageIdx]} 
+              alt={`Vista completa de Proyecto ${selectedImageIdx + 1}`} 
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl transition-all duration-300"
+              style={{ objectFit: 'contain' }}
+            />
+            
+            {/* Indicador de número de imagen */}
+            <div className="absolute bottom-[-40px] text-white/80 font-sans text-sm bg-[#140F08]/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+              {selectedImageIdx + 1} / {GALERIA.length}
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

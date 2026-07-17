@@ -95,11 +95,31 @@ const DATOS = [
   }
 ];
 
+const GALERIA_PRODUCTO = [
+  "/images/ventanas/ventana-corrediza.1.png",
+  "/images/ventanas/ventana-corrediza.2.png",
+  "/images/ventanas/ventana-corrediza.3.png"
+];
+
 const GALERIA = [
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop"
+  "/images/ventanas/ventana-corrediza.26.png",
+  "/images/ventanas/ventana-corrediza.2.png",
+  "/images/ventanas/ventana-corrediza.3.png",
+  "/images/ventanas/ventana-corrediza-galeria-1.jpg",
+  "/images/ventanas/ventana-corrediza-galeria-2.jpg",
+  "/images/ventanas/ventana-corrediza-galeria-3.jpg",
+  "/images/ventanas/ventana-corrediza-galeria-4.jpg",
+  "/images/ventanas/ventana-corrediza.5.png",
+  "/images/ventanas/ventana-corrediza.10.png",
+  "/images/ventanas/ventana-corrediza.17.png",
+  "/images/ventanas/ventana-corrediza.20.png",
+  "/images/ventanas/ventana-corrediza.25.png",
+  "/images/ventanas/ventana-corrediza.27.png",
+  "/images/ventanas/ventana-corrediza.24.png",
+  "/images/ventanas/ventana-corrediza.13.png"
+  
+  
+
 ];
 
 const APLICACIONES = [
@@ -131,18 +151,32 @@ export default function VentanaCorredizaPage() {
 
   const [activeSlide, setActiveSlide] = useState(0);
   const nextSlide = () => {
-    setActiveSlide((prev) => (prev + 1) % GALERIA.length);
+    setActiveSlide((prev) => (prev + 1) % GALERIA_PRODUCTO.length);
   };
   const prevSlide = () => {
-    setActiveSlide((prev) => (prev - 1 + GALERIA.length) % GALERIA.length);
+    setActiveSlide((prev) => (prev - 1 + GALERIA_PRODUCTO.length) % GALERIA_PRODUCTO.length);
+  };
+
+  const [selectedImageIdx, setSelectedImageIdx] = useState<number | null>(null);
+  const nextImage = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (selectedImageIdx !== null) {
+      setSelectedImageIdx((prev) => (prev! + 1) % GALERIA.length);
+    }
+  };
+  const prevImage = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (selectedImageIdx !== null) {
+      setSelectedImageIdx((prev) => (prev! - 1 + GALERIA.length) % GALERIA.length);
+    }
   };
 
   const [activeCard, setActiveCard] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const cards = [
     { img: "/images/ventanas/ventana-corrediza.1.png", alt: "Diseño Elegante Blanco" },
-    { img: GALERIA[1], alt: "Diseño Minimalista Negro" },
-    { img: GALERIA[2], alt: "Diseño Rústico Madera" }
+    { img: "/images/ventanas/ventana-corrediza.2.png", alt: "Diseño Elegante Blanco" },
+    { img: "/images/ventanas/ventana-corrediza.3.png", alt: "Diseño Elegante Blanco" }, 
   ];
 
   const getCardStyle = (idx: number) => {
@@ -275,7 +309,7 @@ export default function VentanaCorredizaPage() {
                       onMouseEnter={() => setHoveredCard(idx)}
                       onMouseLeave={() => setHoveredCard(null)}
                       style={getCardStyle(idx)}
-                      className="absolute top-1/2 left-1/2 w-[80%] h-[85%] rounded-[2rem] overflow-hidden border border-[#2D2110]/60 transition-all duration-500 ease-in-out cursor-pointer group bg-[#1B150B]"
+                      className="absolute top-[40%] left-1/2 w-[65%] h-[100%] rounded-[2rem] overflow-hidden border border-[#2D2110]/60 transition-all duration-500 ease-in-out cursor-pointer group bg-[#1B150B]"
                     >
                       {/* Dark overlay for background cards, fades on hover */}
                       <div className={`absolute inset-0 bg-[#140F08] z-10 transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-40 group-hover:opacity-10'}`} />
@@ -396,32 +430,32 @@ export default function VentanaCorredizaPage() {
       </section>
 
       {/* Aplicaciones (Ideal para) */}
-      <section className="py-24 px-6 bg-[#FAFAFA] relative border-t border-gray-100">
+      <section className="pt-6 pb-24 px-6 bg-[#FAFAFA] relative border-t border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left">
-              <h3 className="text-[#eab308] text-base font-bold tracking-[0.2em] uppercase mb-4">Aplicaciones</h3>
-              <Heading level="h2" className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-                Ideal <span className="text-[#eab308]">para</span>
+              <h3 className="text-[#F59E1B] text-sm font-bold tracking-[0.2em] uppercase mb-3">Aplicaciones</h3>
+              <Heading level="h2" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Ideal <span className="text-[#F59E1B]">para</span>
               </Heading>
-              <p className="text-gray-600 text-xl md:text-2xl mb-12 leading-relaxed font-light max-w-xl">
+              <p className="text-gray-600 text-lg mb-10 leading-relaxed font-light max-w-lg">
                 La ventana corrediza es perfecta para diferentes tipos de espacios y necesidades. Descubre si es la opción correcta para tu proyecto.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {APLICACIONES.map((app, idx) => (
-                  <div key={idx} className="flex items-center gap-5">
-                    <div className="w-8 h-8 rounded-full bg-[#F59E1B]/20 text-[#eab308] flex items-center justify-center shrink-0">
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                  <div key={idx} className="flex items-center gap-4">
+                    <div className="w-6 h-6 rounded-full bg-[#F59E1B]/20 text-[#F59E1B] flex items-center justify-center shrink-0">
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
                     </div>
-                    <span className="text-gray-800 font-semibold text-lg md:text-xl">{app}</span>
+                    <span className="text-gray-800 font-bold text-base">{app}</span>
                   </div>
                 ))}
               </div>
             </ScrollReveal>
 
             {/* Slider de Imágenes del Producto */}
-            <ScrollReveal direction="right" className="flex flex-col gap-6 mt-8 lg:mt-0">
+            <ScrollReveal direction="right" className="flex flex-col gap-6 mt-8 lg:mt-0 w-full max-w-[440px] lg:max-w-[480px] mx-auto">
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3] sm:aspect-[4/3] md:aspect-[16/10] lg:aspect-[3/4] border border-gray-200 group shadow-lg">
 
                 {/* Contenedor de Imágenes con Transición Suave */}
@@ -429,7 +463,7 @@ export default function VentanaCorredizaPage() {
                   className="absolute inset-0 w-full h-full flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${activeSlide * 100}%)` }}
                 >
-                  {GALERIA.map((img, idx) => (
+                  {GALERIA_PRODUCTO.map((img, idx) => (
                     <div key={idx} className="w-full h-full shrink-0 relative">
                       <img
                         src={img}
@@ -459,7 +493,7 @@ export default function VentanaCorredizaPage() {
 
                 {/* Indicadores inferiores (Dots) */}
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-                  {GALERIA.map((_, idx) => (
+                  {GALERIA_PRODUCTO.map((_, idx) => (
                     <button
                       key={idx}
                       onClick={() => setActiveSlide(idx)}
@@ -499,7 +533,11 @@ export default function VentanaCorredizaPage() {
 
           <ScrollReveal staggerChildren={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {GALERIA.map((img, idx) => (
-              <ScrollRevealItem key={idx} className="aspect-square md:aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden group border border-[#2D2110] relative cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
+              <ScrollRevealItem 
+                key={idx} 
+                onClick={() => setSelectedImageIdx(idx)}
+                className="aspect-square md:aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden group border border-[#2D2110] relative cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.12)]"
+              >
                 <img
                   src={img}
                   alt={`Proyecto de ventana corrediza ${idx + 1}`}
@@ -587,6 +625,65 @@ export default function VentanaCorredizaPage() {
 
       <ContactSection />
       <Footer />
+
+      {/* Lightbox Modal */}
+      {selectedImageIdx !== null && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 sm:p-6 md:p-10 select-none animate-fade-in"
+          onClick={() => setSelectedImageIdx(null)}
+        >
+          {/* Botón de cerrar */}
+          <button 
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white/70 hover:text-[#F59E1B] transition-colors p-3 bg-[#140F08]/60 rounded-full backdrop-blur-md z-[110] cursor-pointer border-0"
+            onClick={() => setSelectedImageIdx(null)}
+            aria-label="Cerrar"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Flecha Izquierda */}
+          <button 
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-[#F59E1B] transition-colors p-3 bg-[#140F08]/60 rounded-full backdrop-blur-md z-[110] cursor-pointer border-0"
+            onClick={prevImage}
+            aria-label="Anterior"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Flecha Derecha */}
+          <button 
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-[#F59E1B] transition-colors p-3 bg-[#140F08]/60 rounded-full backdrop-blur-md z-[110] cursor-pointer border-0"
+            onClick={nextImage}
+            aria-label="Siguiente"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Contenedor de la Imagen */}
+          <div 
+            className="relative max-w-5xl w-full h-[75vh] md:h-[85vh] flex flex-col items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src={GALERIA[selectedImageIdx]} 
+              alt={`Vista completa de Proyecto ${selectedImageIdx + 1}`} 
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl transition-all duration-300"
+              style={{ objectFit: 'contain' }}
+            />
+            
+            {/* Indicador de número de imagen */}
+            <div className="absolute bottom-[-40px] text-white/80 font-sans text-sm bg-[#140F08]/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+              {selectedImageIdx + 1} / {GALERIA.length}
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
